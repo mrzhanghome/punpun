@@ -6,7 +6,8 @@
 - **Title Deed (STRICT):**
   - ✅ **Chanote / Nor Sor 4 Jor (โฉนดครุฑแดง)** — strongly preferred.
   - ⚠️ **Nor Sor 3 Gor (น.ส.3 ก. ครุฑเขียว)** — acceptable if clearly labeled and transferable.
-  - ❌ **STRICTLY EXCLUDE:** *Sor Por Gor 4-01 (ส.ป.ก.)*, *Por Bor Tor 5 (ภ.บ.ท.5)*, *Sor Tor Gor (ส.ท.ก.)*, and forest reserve plots.
+  - ❓ **Unknown / Unstated (`title_deed_status: "unknown"`)** — **ALLOWED!** Especially on Facebook, sellers often omit the title deed type. List it as `"Unknown (Ask Seller)"` / `"ไม่ระบุ (ต้องถามผู้ขาย)"` with `title_deed_status: "unknown"`.
+  - ❌ **STRICTLY EXCLUDE:** Any plot that explicitly states *Sor Por Gor 4-01 (ส.ป.ก.)*, *Por Bor Tor 5 (ภ.บ.ท.5)*, *Sor Tor Gor (ส.ท.ก.)*, or forest reserve (`ป่าสงวน`).
 - **Budget (HARD CAP):** total price **≤ ฿2,500,000 THB** (current `criteria.max_budget_thb` in `data/plots.json`); highlight best value per rai and direct-from-owner (`เจ้าของขายเอง`) listings.
 - **Physical Priorities:**
   1. **Water:** Existing pond(s), year-round irrigation canal (*ลำเหมือง / เหมืองฝาย*), stream, or good groundwater depth.
@@ -39,7 +40,27 @@ Priority subdistricts: **Thung Pi (ต.ทุ่งปี้)**, **Ban Kat (ต.
 - DotProperty Samoeng: `https://www.dotproperty.co.th/en/land-for-sale/chiang-mai/samoeng`
 - FazWaz Mae Wang / San Pa Tong: `https://www.fazwaz.com/land-for-sale/thailand/chiang-mai/mae-wang?order_by=price|asc`
 
-### Thai Search Phrases (When Searching Google / Portals)
+### Facebook (logged-in browser session — owner-direct listings, often the cheapest)
+The user keeps a logged-in Facebook session in the browser. Facebook is where most owner-direct (`เจ้าของขายเอง`) rural plots appear, but listings are messy (missing deed/price, stale posts).
+- Marketplace: `https://www.facebook.com/marketplace/chiangmai/` (Property → Land) and Marketplace search with the Thai phrases below.
+- Facebook search → Posts / Groups: `https://www.facebook.com/search/posts?q=<thai phrase>` (URL-encode the phrase).
+- Rules: **read-only** (never post, comment, react, message, add friends, or join groups); scroll modestly (~40–60 posts per zone); if a checkpoint / CAPTCHA / "confirm it's you" / login wall appears, STOP and report — never solve or bypass it.
+- Marketplace price fields are often placeholders (฿1, ฿123) — read the post text for the real asking price. If the title deed is not mentioned in the post, include it with `title_deed_status: "unknown"`, `title_deed_en: "Unknown (Ask Seller)"`, `title_deed_th: "ไม่ระบุ (ต้องถามผู้ขาย)"`.
+
+#### Productive Chiang Mai Facebook Land Groups (Revisit Weekly)
+1. **ซื้อ-ขายบ้าน ที่ดิน แม่ริม แม่แตง เชียงใหม่**: `https://www.facebook.com/groups/271099162090762/`
+2. **ที่ดินเชียงใหม่ราคาหลักแสน**: `https://www.facebook.com/groups/160579518040515/`
+3. **บ้าน ที่ดิน ราคาถูก เชียงใหม่**: `https://www.facebook.com/groups/236116797208244/`
+4. **ซื้อขาย บ้านและที่ดิน เชียงใหม่**: `https://www.facebook.com/groups/911463042274859/`
+5. **ขาย บ้านที่ดิน เชียงใหม่**: `https://www.facebook.com/groups/2531174597196960/`
+6. **ซื้อ ขาย บ้านและที่ดินเชียงใหม่**: `https://www.facebook.com/groups/1709840645946215/`
+7. **ตลาดซื้อขายบ้านและที่ดิน เชียงใหม่และภาคเหนือ**: `https://www.facebook.com/groups/430225152136340/`
+8. **ซื้อขายที่ดินเชียงใหม่-ลำพูน-ทั่วภาคเหนือ**: `https://www.facebook.com/groups/298225005848173/`
+9. **ซื้อขายบ้านและที่ดินใน จ.เชียงใหม่ และ ภาคเหนือ**: `https://www.facebook.com/groups/322977734828852/`
+10. **กลุ่มซื้อขายที่ดิน เชียงดาว เชียงใหม่ ทั่วประเทศ โพสต์ฟรี**: `https://www.facebook.com/groups/428599314464047/`
+11. **ขายบ้านและที่ดินโซนสันทรายแม่โจ้หนองหารแม่แฝกเจดีย์แม่ครัว**: `https://www.facebook.com/groups/306527483862118/`
+
+### Thai Search Phrases (When Searching Google / Portals / Facebook)
 - `ขายที่ดิน แม่แตง เชียงใหม่ โฉนด เจ้าของขายเอง`
 - `ขายที่ดิน ดอยสะเก็ด แม่ออน โฉนด เจ้าของขายเอง`
 - `ขายที่ดิน แม่วาง สันป่าตอง ติดลำเหมือง โฉนด`
@@ -102,4 +123,4 @@ Save newly discovered plots to a temporary JSON array (e.g., `/tmp/week2_plots.j
 
 Allowed `district` keys: `mae-taeng`, `doi-saket`, `mae-on`, `mae-wang`, `san-pa-tong`, `samoeng`, `phrao`.
 Allowed `status` values: `shortlisted`, `visit`, `contacted`, `passed`, `sold`.
-Allowed `title_deed_status` values: `verified` (Red Chanote), `ns3g` (Nor Sor 3 Gor), `verify` (unstated — confirm before deposit).
+Allowed `title_deed_status` values: `verified` (Red Chanote), `ns3g` (Nor Sor 3 Gor), `unknown` (title deed not mentioned in post — list as Unknown), `verify` (needs verification before deposit).

@@ -491,7 +491,7 @@ def render_plot_card(plot: dict, display_idx: int) -> str:
         "sold": "badge-danger",
     }.get(status, "badge-amber")
     dist_cls = "badge-amber" if status == "shortlisted" else "badge-forest"
-    deed_icon = "✅" if plot["title_deed_status"] == "verified" else "⚠️"
+    deed_icon = "✅" if plot["title_deed_status"] == "verified" else ("❓" if plot["title_deed_status"] == "unknown" else "⚠️")
 
     size_label_en = f"Size ({esc(plot['dimensions_en'])})" if plot.get("dimensions_en") else "Size"
     size_label_th = f"เนื้อที่ ({esc(plot['dimensions_th'])})" if plot.get("dimensions_th") else "เนื้อที่"

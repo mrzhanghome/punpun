@@ -16,7 +16,7 @@ description: >-
 Maintains the live bilingual (`EN` + `ภาษาไทย`) Chiang Mai self-reliance land shortlist hosted on GitHub Pages (`https://mrzhanghome.github.io/punpun/`). Each weekly run:
 1. Exports existing listings from `data/plots.json` for deduplication.
 2. Politely re-checks existing listing URLs and marks dead/sold listings.
-3. Searches Thai & English portals across all 3 Chiang Mai target zones for fresh 1–5 Rai Chanote/NS3G plots within the budget (currently ≤ ฿2.5M total, see `criteria` in data/plots.json).
+3. Searches Thai & English portals (including Facebook) across all 3 Chiang Mai target zones for fresh 1–5 Rai plots within the budget (currently ≤ ฿2.5M total). Plots with confirmed Chanote/NS3G or unstated (`unknown`) title deeds are included; explicit `ส.ป.ก.` / `ภ.บ.ท.5` plots are excluded.
 4. Validates, merges, and tags new plots with `Week N`, renders `index.html`, and commits/pushes to GitHub Pages.
 
 ## Dependencies
@@ -69,10 +69,12 @@ Read [references/search_portals.md](./references/search_portals.md) and search a
 2. **Zone B:** Doi Saket & Mae On (`อ.ดอยสะเก็ด`, `อ.แม่ออน`)
 3. **Zone C:** Mae Wang, San Pa Tong & Samoeng (`อ.แม่วาง`, `อ.สันป่าตอง`, `อ.สะเมิง`)
 
+Sources: Teedin108, DotProperty, FazWaz, LivingInsider **and Facebook** (Marketplace + group/post search through the user's logged-in browser session — follow the read-only Facebook rules in `references/search_portals.md`; use `listing_source_en: "View Facebook Post"` and the post permalink as `listing_url`).
+
 Research rules:
 - Open actual listing detail pages to verify listings are **live**, extract exact size (`Rai-Ngan-Wah` and `sq.m`), exact total THB price, title deed, water/road/power details, and seller contact if public.
-- **Strictly exclude** any *Sor Por Gor (ส.ป.ก. 4-01)* or *Por Bor Tor 5 (ภ.บ.ท.5)* listings.
-- **Never attempt to solve or bypass CAPTCHAs or Cloudflare anti-bot challenges** — skip any gated site and use another accessible portal (`Teedin108`, `DotProperty`, `FazWaz`, `LivingInsider`).
+- **Strictly exclude** any plot that explicitly states *Sor Por Gor (ส.ป.ก. 4-01)* or *Por Bor Tor 5 (ภ.บ.ท.5)*. If a listing does not mention its title deed type, **include it** with `title_deed_status: "unknown"`, `title_deed_en: "Unknown (Ask Seller)"`, `title_deed_th: "ไม่ระบุ (ต้องถามผู้ขาย)"`.
+- **Never attempt to solve or bypass CAPTCHAs or Cloudflare anti-bot challenges** — skip any gated site and use another accessible portal (`Teedin108`, `DotProperty`, `FazWaz`, `LivingInsider`, **Facebook**).
 - **Current criteria (stored in `data/plots.json` → `criteria`): 1–5 Rai, total price ≤ ฿2.5M.** Read it from the JSON, not from memory — the user may change it. If the user changes criteria, run `apply-criteria` with the new flags first.
 - Aim for **2–4 strong newly discovered plots per zone** that fit the criteria (fewer is fine if the market has little in budget — never pad with out-of-budget plots).
 
