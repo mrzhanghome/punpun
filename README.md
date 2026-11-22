@@ -6,8 +6,19 @@ Bilingual (English + ภาษาไทย) weekly land shortlist and evaluation
 **[https://mrzhanghome.github.io/punpun/](https://mrzhanghome.github.io/punpun/)**
 
 ## Structure
-1. **Table of Contents / Sticky Section Navigator** for 1-click jumping between sections.
-2. **Thai Land Title Deeds: What to Buy vs. What to Avoid** (`Chanote` vs `Nor Sor 3 Gor` vs `Sor Por Gor 4-01`).
-3. **Top 5 Target Areas Within ~1 Hour of Chiang Mai** (Mae Taeng, Doi Saket/Mae On, San Pa Tong/Mae Wang, Samoeng, Phrao).
-4. **Field Questions for Sellers, Neighbors & Village Headmen** (Water, 2024 Flood History, Soil for Adobe Bricks, Public Road Frontage).
-5. **Week 1 Live Land Search Results (Nov 22, 2026)** — 12 verified live plots across Mae Taeng, Doi Saket, Mae On, Mae Wang, San Pa Tong, and Samoeng, filterable by status/district and sortable by price per rai or size.
+1. **Thai Land Title Deeds: What to Buy vs. What to Avoid** (`Chanote` vs `Nor Sor 3 Gor` vs `Sor Por Gor 4-01`).
+2. **Top 5 Target Areas Within ~1 Hour of Chiang Mai** (Mae Taeng, Doi Saket/Mae On, San Pa Tong/Mae Wang, Samoeng, Phrao).
+3. **Field Questions for Sellers, Neighbors & Village Headmen** (Water, 2024 Flood History, Soil for Adobe Bricks, Public Road Frontage).
+4. **Weekly Land Search Results** — Backed by `data/plots.json`, filterable by status, district, and week, and sortable by price per rai or size.
+
+## 🔁 Running Next Week's Search (Antigravity & Claude Code)
+This repository includes a reusable project skill (`chiangmai-land-search`) installed for both **Antigravity** (`.agents/skills/chiangmai-land-search/`) and **Claude Code** (`.claude/skills/chiangmai-land-search/` + `/weekly-land-search` command):
+
+- **In Antigravity:** Start a new session in this repo and say: *"Run our weekly Chiang Mai land search and update the board."*
+- **In Claude Code:** Type `/weekly-land-search` (or ask naturally to run the `chiangmai-land-search` skill).
+- **Manual CLI usage:**
+  ```bash
+  uv run .agents/skills/chiangmai-land-search/scripts/land_board.py summary --input data/plots.json --output /tmp/summary.json
+  uv run .agents/skills/chiangmai-land-search/scripts/land_board.py check-links --input data/plots.json --output /tmp/links.json --mark-dead
+  uv run .agents/skills/chiangmai-land-search/scripts/land_board.py render --input data/plots.json --html index.html
+  ```
