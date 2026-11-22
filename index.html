@@ -1,0 +1,1117 @@
+<!DOCTYPE html>
+<html lang="en" data-lang="both">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chiang Mai Self-Reliance Land Plan | แผนหาที่ดินเชียงใหม่วิถีพึ่งตนเอง (บ้านพันพรรณ)</title>
+  <meta name="description" content="Bilingual action plan (EN/TH) for finding and buying self-reliant homestead land near Chiang Mai inspired by Jon Jandai & Pun Pun.">
+  <style>
+    @layer base, theme, components, utilities;
+
+    @layer theme {
+      :root {
+        --bg-primary: #faf6f0;
+        --bg-surface: #ffffff;
+        --bg-elevated: #f3ece1;
+        --bg-accent-soft: #e9dfd0;
+        --text-primary: #2a211b;
+        --text-secondary: #5c4d42;
+        --text-thai: #3b4d3b;
+        --brand-terracotta: #b85635;
+        --brand-terracotta-dark: #8f3e22;
+        --brand-forest: #2e5a36;
+        --brand-forest-soft: #e6f0e8;
+        --brand-amber: #b3741e;
+        --brand-amber-soft: #fdf3e1;
+        --brand-danger: #9e2a2b;
+        --brand-danger-soft: #fbe9e9;
+        --border-subtle: #ded3c3;
+        --shadow-card: 0 4px 20px -2px rgba(42, 33, 27, 0.07);
+        --radius-md: 12px;
+        --radius-lg: 18px;
+      }
+
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --bg-primary: #191512;
+          --bg-surface: #231e1a;
+          --bg-elevated: #2d2621;
+          --bg-accent-soft: #382f28;
+          --text-primary: #f2eae1;
+          --text-secondary: #c2b4a5;
+          --text-thai: #a7d1ad;
+          --brand-terracotta: #e07a5f;
+          --brand-terracotta-dark: #f29b82;
+          --brand-forest: #6ab077;
+          --brand-forest-soft: #1e3322;
+          --brand-amber: #eab354;
+          --brand-amber-soft: #362a15;
+          --brand-danger: #e56b6f;
+          --brand-danger-soft: #3b1d1e;
+          --border-subtle: #3d342c;
+          --shadow-card: 0 4px 20px -2px rgba(0, 0, 0, 0.35);
+        }
+      }
+    }
+
+    @layer base {
+      *, *::before, *::after {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans Thai", "Sukhumvit Set", sans-serif;
+        background-color: var(--bg-primary);
+        color: var(--text-primary);
+        line-height: 1.65;
+        -webkit-font-smoothing: antialiased;
+      }
+
+      h1, h2, h3, h4 {
+        line-height: 1.28;
+        margin-block-start: 0;
+        font-weight: 700;
+      }
+
+      h1 {
+        font-size: clamp(1.75rem, 1.2rem + 2.2vw, 2.75rem);
+      }
+
+      h2 {
+        font-size: clamp(1.35rem, 1.05rem + 1.2vw, 1.9rem);
+        margin-block-end: 0.75rem;
+      }
+
+      h3 {
+        font-size: clamp(1.1rem, 0.98rem + 0.5vw, 1.35rem);
+        margin-block-end: 0.5rem;
+      }
+
+      a {
+        color: var(--brand-terracotta);
+        text-decoration-thickness: 1.5px;
+        text-underline-offset: 3px;
+      }
+
+      a:hover {
+        color: var(--brand-terracotta-dark);
+      }
+    }
+
+    @layer components {
+      .topbar {
+        position: sticky;
+        top: 0;
+        z-index: 50;
+        background: color-mix(in srgb, var(--bg-surface) 88%, transparent);
+        backdrop-filter: blur(12px);
+        border-block-end: 1px solid var(--border-subtle);
+        padding-block: 0.65rem;
+        padding-inline: clamp(1rem, 4vw, 2.5rem);
+      }
+
+      .topbar-inner {
+        max-inline-size: 1140px;
+        margin-inline: auto;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        gap: 0.75rem;
+      }
+
+      .brand-title {
+        font-weight: 800;
+        font-size: 1.05rem;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        color: var(--text-primary);
+        text-decoration: none;
+      }
+
+      .lang-switcher {
+        display: inline-flex;
+        background: var(--bg-elevated);
+        padding: 0.22rem;
+        border-radius: 999px;
+        border: 1px solid var(--border-subtle);
+        gap: 0.2rem;
+      }
+
+      .lang-btn {
+        border: none;
+        background: transparent;
+        color: var(--text-secondary);
+        font-size: 0.85rem;
+        font-weight: 600;
+        padding-block: 0.35rem;
+        padding-inline: 0.85rem;
+        border-radius: 999px;
+        cursor: pointer;
+        transition: all 0.15s ease;
+      }
+
+      .lang-btn[aria-pressed="true"] {
+        background: var(--brand-terracotta);
+        color: #ffffff;
+      }
+
+      .container {
+        max-inline-size: 1140px;
+        margin-inline: auto;
+        padding-inline: clamp(1rem, 4vw, 2.5rem);
+        padding-block: 2rem 4rem;
+      }
+
+      .hero {
+        background: linear-gradient(135deg, var(--bg-elevated) 0%, var(--bg-accent-soft) 100%);
+        border: 1px solid var(--border-subtle);
+        border-radius: var(--radius-lg);
+        padding: clamp(1.5rem, 4vw, 2.75rem);
+        margin-block-end: 2.25rem;
+        box-shadow: var(--shadow-card);
+      }
+
+      .hero-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.4rem;
+        background: var(--brand-forest-soft);
+        color: var(--brand-forest);
+        font-weight: 700;
+        font-size: 0.82rem;
+        padding-block: 0.3rem;
+        padding-inline: 0.8rem;
+        border-radius: 999px;
+        margin-block-end: 1rem;
+      }
+
+      .spec-pills {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+        gap: 0.85rem;
+        margin-block-start: 1.5rem;
+      }
+
+      .spec-pill {
+        background: var(--bg-surface);
+        border: 1px solid var(--border-subtle);
+        border-radius: var(--radius-md);
+        padding: 0.9rem 1.1rem;
+      }
+
+      .spec-pill-label {
+        font-size: 0.78rem;
+        text-transform: uppercase;
+        letter-spacing: 0.04em;
+        color: var(--text-secondary);
+        font-weight: 700;
+      }
+
+      .spec-pill-value {
+        font-size: 1.1rem;
+        font-weight: 800;
+        color: var(--brand-terracotta);
+        margin-block-start: 0.2rem;
+      }
+
+      .section-block {
+        margin-block-end: 2.75rem;
+      }
+
+      .section-header {
+        margin-block-end: 1.25rem;
+      }
+
+      .grid-cards {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+        gap: 1.2rem;
+      }
+
+      .card {
+        background: var(--bg-surface);
+        border: 1px solid var(--border-subtle);
+        border-radius: var(--radius-md);
+        padding: 1.35rem;
+        box-shadow: var(--shadow-card);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 0.9rem;
+      }
+
+      .card-featured {
+        border-color: var(--brand-terracotta);
+        border-width: 2px;
+      }
+
+      .tag-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.45rem;
+        align-items: center;
+      }
+
+      .badge {
+        font-size: 0.76rem;
+        font-weight: 700;
+        padding: 0.2rem 0.65rem;
+        border-radius: 999px;
+      }
+
+      .badge-forest {
+        background: var(--brand-forest-soft);
+        color: var(--brand-forest);
+      }
+
+      .badge-amber {
+        background: var(--brand-amber-soft);
+        color: var(--brand-amber);
+      }
+
+      .badge-danger {
+        background: var(--brand-danger-soft);
+        color: var(--brand-danger);
+      }
+
+      .th {
+        color: var(--text-thai);
+        font-size: 0.96em;
+        margin-block-start: 0.25rem;
+      }
+
+      .search-box-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+        gap: 0.9rem;
+      }
+
+      .keyword-card {
+        background: var(--bg-surface);
+        border: 1px solid var(--border-subtle);
+        border-radius: var(--radius-md);
+        padding: 1rem 1.15rem;
+        display: flex;
+        flex-direction: column;
+        gap: 0.65rem;
+      }
+
+      .keyword-code {
+        font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+        font-size: 0.95rem;
+        font-weight: 700;
+        background: var(--bg-elevated);
+        padding: 0.55rem 0.75rem;
+        border-radius: 8px;
+        border: 1px dashed var(--border-subtle);
+        user-select: all;
+      }
+
+      .btn-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.45rem;
+      }
+
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.35rem;
+        font-size: 0.82rem;
+        font-weight: 600;
+        padding: 0.42rem 0.75rem;
+        border-radius: 8px;
+        border: 1px solid var(--border-subtle);
+        background: var(--bg-elevated);
+        color: var(--text-primary);
+        text-decoration: none;
+        cursor: pointer;
+        transition: background 0.15s ease, transform 0.1s ease;
+      }
+
+      .btn:hover {
+        background: var(--bg-accent-soft);
+        color: var(--text-primary);
+      }
+
+      .btn-primary {
+        background: var(--brand-terracotta);
+        color: #ffffff;
+        border-color: var(--brand-terracotta);
+      }
+
+      .btn-primary:hover {
+        background: var(--brand-terracotta-dark);
+        color: #ffffff;
+      }
+
+      /* Progress bar & interactive checklist using :has(:checked) */
+      .progress-header {
+        background: var(--bg-surface);
+        border: 1px solid var(--border-subtle);
+        border-radius: var(--radius-md);
+        padding: 1rem 1.25rem;
+        margin-block-end: 1.25rem;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+      }
+
+      .progress-track {
+        flex: 1 1 220px;
+        block-size: 10px;
+        background: var(--bg-elevated);
+        border-radius: 999px;
+        overflow: hidden;
+      }
+
+      .progress-fill {
+        block-size: 100%;
+        inline-size: 0%;
+        background: var(--brand-forest);
+        transition: inline-size 0.25s ease;
+      }
+
+      .checklist-group {
+        background: var(--bg-surface);
+        border: 1px solid var(--border-subtle);
+        border-radius: var(--radius-md);
+        padding: 1.25rem;
+        margin-block-end: 1rem;
+      }
+
+      .check-item {
+        display: flex;
+        align-items: flex-start;
+        gap: 0.85rem;
+        padding: 0.75rem 0.85rem;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: background 0.15s ease, opacity 0.15s ease;
+        border: 1px solid transparent;
+      }
+
+      .check-item + .check-item {
+        margin-block-start: 0.35rem;
+      }
+
+      .check-item:hover {
+        background: var(--bg-elevated);
+      }
+
+      .check-item input[type="checkbox"] {
+        inline-size: 1.2rem;
+        block-size: 1.2rem;
+        margin-block-start: 0.2rem;
+        accent-color: var(--brand-forest);
+        flex-shrink: 0;
+        cursor: pointer;
+      }
+
+      .check-item:has(input:checked) {
+        background: var(--brand-forest-soft);
+        border-color: color-mix(in srgb, var(--brand-forest) 30%, transparent);
+      }
+
+      .check-item:has(input:checked) .check-text {
+        text-decoration: line-through;
+        opacity: 0.72;
+      }
+
+      .table-wrap {
+        overflow-x: auto;
+        background: var(--bg-surface);
+        border: 1px solid var(--border-subtle);
+        border-radius: var(--radius-md);
+        box-shadow: var(--shadow-card);
+      }
+
+      table {
+        inline-size: 100%;
+        border-collapse: collapse;
+        text-align: start;
+      }
+
+      th, td {
+        padding: 0.95rem 1.1rem;
+        border-block-end: 1px solid var(--border-subtle);
+        vertical-align: top;
+      }
+
+      th {
+        background: var(--bg-elevated);
+        font-size: 0.85rem;
+        text-transform: uppercase;
+        letter-spacing: 0.03em;
+      }
+
+      .script-box {
+        background: var(--bg-elevated);
+        border-inline-start: 4px solid var(--brand-terracotta);
+        padding: 1rem 1.25rem;
+        border-radius: 0 var(--radius-md) var(--radius-md) 0;
+        margin-block-top: 0.75rem;
+      }
+
+      footer {
+        text-align: center;
+        padding-block: 2rem;
+        color: var(--text-secondary);
+        font-size: 0.88rem;
+        border-block-start: 1px solid var(--border-subtle);
+      }
+    }
+
+    @layer utilities {
+      html[data-lang="en"] .th {
+        display: none !important;
+      }
+      html[data-lang="th"] .en {
+        display: none !important;
+      }
+      .muted {
+        color: var(--text-secondary);
+        font-size: 0.92rem;
+      }
+      .mt-0 { margin-block-start: 0; }
+      .mb-0 { margin-block-end: 0; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a href="#" class="brand-title">
+        <span>🌱</span>
+        <span class="en">Chiang Mai Pun-Pun Land Plan</span>
+        <span class="th">แผนหาที่ดินเชียงใหม่ (วิถีโจน จันใด)</span>
+      </a>
+      <div class="lang-switcher" role="group" aria-label="Language switcher">
+        <button type="button" class="lang-btn" data-set-lang="both" aria-pressed="true">EN + ไทย</button>
+        <button type="button" class="lang-btn" data-set-lang="th" aria-pressed="false">ภาษาไทย</button>
+        <button type="button" class="lang-btn" data-set-lang="en" aria-pressed="false">English</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-badge">
+        <span>🏡</span>
+        <span class="en">Inspired by Jon Jandai &amp; Pun Pun Center for Self-Reliance</span>
+        <span class="th">แรงบันดาลใจจาก โจน จันใด และศูนย์เรียนรู้บ้านพันพรรณ อ.แม่แตง</span>
+      </div>
+      <h1>
+        <div class="en">Finding Our Self-Reliant Homestead Land in Chiang Mai</div>
+        <div class="th">แผนค้นหาและซื้อที่ดินเพื่อชีวิตพึ่งตนเอง รอบเมืองเชียงใหม่ (ไม่เกิน 1 ชม.)</div>
+      </h1>
+      <p class="en mb-0">
+        A practical blueprint for finding raw or agricultural land within ~1 hour of Chiang Mai city where we can dig a year-round pond, use the excavated earth to build an adobe home (<em>Baan Din</em>), and grow an organic food forest.
+      </p>
+      <p class="th mb-0">
+        คู่มือปฏิบัติสำหรับค้นหาที่ดินทำเลดีห่างจากตัวเมืองเชียงใหม่ไม่เกิน 1 ชั่วโมง เพื่อขุดสระเก็บน้ำไว้ใช้ตลอดปี นำดินที่ขุดมาปั้นอิฐสร้าง <strong>บ้านดิน</strong> และทำเกษตรอินทรีย์สวนผสมพึ่งพาตนเองตามแนวทางบ้านพันพรรณ
+      </p>
+
+      <div class="spec-pills">
+        <div class="spec-pill">
+          <div class="spec-pill-label">
+            <span class="en">Ideal Size</span>
+            <span class="th">ขนาดที่ดินที่เหมาะสม</span>
+          </div>
+          <div class="spec-pill-value">2 – 5 Rai (ไร่)</div>
+          <div class="muted">
+            <span class="en">3,200 – 8,000 sq.m (pond + adobe house + orchard + paddy)</span>
+            <span class="th">เพียงพอสำหรับขุดสระ สร้างบ้านดิน สวนป่ากินได้ และแปลงผัก</span>
+          </div>
+        </div>
+        <div class="spec-pill">
+          <div class="spec-pill-label">
+            <span class="en">Distance to City</span>
+            <span class="th">ระยะทางจากตัวเมือง</span>
+          </div>
+          <div class="spec-pill-value">30 – 60 Mins (นาที)</div>
+          <div class="muted">
+            <span class="en">30–50 km radius from Chiang Mai Old City</span>
+            <span class="th">รัศมี 30–50 กม. จากคูเมืองเชียงใหม่ เดินทางสะดวก</span>
+          </div>
+        </div>
+        <div class="spec-pill">
+          <div class="spec-pill-label">
+            <span class="en">Required Title Deed</span>
+            <span class="th">เอกสารสิทธิ์ที่ต้องเลือก</span>
+          </div>
+          <div class="spec-pill-value">Chanote (โฉนด น.ส.4 จ.)</div>
+          <div class="muted">
+            <span class="en">Red Garuda (or Nor Sor 3 Gor). Avoid Sor Por Gor!</span>
+            <span class="th">โฉนดครุฑแดง (หรือ น.ส.3 ก.) หลีกเลี่ยงที่ดิน ส.ป.ก. เด็ดขาด</span>
+          </div>
+        </div>
+        <div class="spec-pill">
+          <div class="spec-pill-label">
+            <span class="en"> #1 Priority</span>
+            <span class="th">ปัจจัยสำคัญอันดับ 1</span>
+          </div>
+          <div class="spec-pill-value">Year-Round Water (น้ำดี)</div>
+          <div class="muted">
+            <span class="en">Irrigation canal (Muang Fai), stream, or good groundwater</span>
+            <span class="th">ติดลำเหมืองฝาย คลองชลประทาน หรือเจาะบาดาลน้ำดีไม่ลึก</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 1. TARGET DISTRICTS -->
+    <section class="section-block" id="districts">
+      <div class="section-header">
+        <h2>
+          <span class="en">1. Top 5 Target Areas Within ~1 Hour of Chiang Mai</span>
+          <span class="th">1. 5 โซนอำเภอเป้าหมายรอบเชียงใหม่ (เดินทาง ~1 ชั่วโมง)</span>
+        </h2>
+        <p class="muted mt-0">
+          <span class="en">Click the map buttons on each card to explore the terrain and valley pockets on Google Maps.</span>
+          <span class="th">กดปุ่มแผนที่ในแต่ละการ์ดเพื่อสำรวจภูมิประเทศและทำเลจริงบน Google Maps</span>
+        </p>
+      </div>
+
+      <div class="grid-cards">
+        <!-- Mae Taeng -->
+        <article class="card card-featured">
+          <div>
+            <div class="tag-row">
+              <span class="badge badge-forest">⭐ Top Pick / โซนบ้านพันพรรณ</span>
+              <span class="badge badge-amber">45–60 mins North</span>
+            </div>
+            <h3 style="margin-block-start: 0.65rem;">
+              <span class="en">Mae Taeng (อ.แม่แตง)</span>
+              <span class="th">อำเภอแม่แตง (ต.ช่อแล / ต.อินทขิล / ต.แม่หอพระ)</span>
+            </h3>
+            <p class="en">
+              <strong>Where Jon Jandai’s Pun Pun is located (Tambon Cho Lae).</strong> Fed by the Mae Ngad Dam irrigation system, so water is abundant even in the dry season. Surrounded by mountain views with an active community of natural builders and organic farmers.
+            </p>
+            <p class="th">
+              <strong>ที่ตั้งของศูนย์เรียนรู้บ้านพันพรรณ (ต.ช่อแล)</strong> จุดเด่นคือระบบน้ำชลประทานจากเขื่อนแม่งัดสมบูรณ์มาก มีน้ำทำเกษตรตลอดปี วิวภูเขาสวย และมีเครือข่ายเพื่อนบ้านที่ทำเกษตรอินทรีย์และบ้านดินอยู่แล้ว
+            </p>
+          </div>
+          <div class="btn-row">
+            <a class="btn btn-primary" href="https://www.google.com/maps/search/Pun+Pun+Center+for+Self+Reliance+Mae+Taeng" target="_blank" rel="noopener">📍 Pun Pun on Map</a>
+            <a class="btn" href="https://www.google.com/maps/search/Cho+Lae+Mae+Taeng+Chiang+Mai" target="_blank" rel="noopener">🗺️ Explore Cho Lae (ต.ช่อแล)</a>
+          </div>
+        </article>
+
+        <!-- Doi Saket & Mae On -->
+        <article class="card">
+          <div>
+            <div class="tag-row">
+              <span class="badge badge-forest">Permaculture Hub</span>
+              <span class="badge badge-amber">30–50 mins East</span>
+            </div>
+            <h3 style="margin-block-start: 0.65rem;">
+              <span class="en">Doi Saket &amp; Mae On (อ.ดอยสะเก็ด / อ.แม่ออน)</span>
+              <span class="th">อำเภอดอยสะเก็ด และ อำเภอแม่ออน</span>
+            </h3>
+            <p class="en">
+              Rolling foothills, natural streams, and close proximity to city hospitals and markets. Very popular with mixed Thai-foreign homesteads and organic micro-farms. Look slightly off the main highway (Route 118 / 1317) for reasonable per-rai prices.
+            </p>
+            <p class="th">
+              พื้นที่กึ่งเนินเขาและที่ราบเชิงเขา บรรยากาศร่มรื่น ใกล้เมือง เดินทางเข้าโรงพยาบาลและตลาดในเมืองสะดวกมาก แนะนำให้หาแปลงที่เข้าซอยจากถนนหลัก (สาย 118 หรือ 1317) เล็กน้อยเพื่อให้ได้ราคาที่ยังไม่แพงเกินไป
+            </p>
+          </div>
+          <div class="btn-row">
+            <a class="btn" href="https://www.google.com/maps/search/Doi+Saket+Chiang+Mai" target="_blank" rel="noopener">🗺️ Doi Saket Map</a>
+            <a class="btn" href="https://www.google.com/maps/search/Mae+On+Chiang+Mai" target="_blank" rel="noopener">🗺️ Mae On Map</a>
+          </div>
+        </article>
+
+        <!-- San Pa Tong & Mae Wang -->
+        <article class="card">
+          <div>
+            <div class="tag-row">
+              <span class="badge badge-forest">Great Value &amp; Water</span>
+              <span class="badge badge-amber">40–60 mins Southwest</span>
+            </div>
+            <h3 style="margin-block-start: 0.65rem;">
+              <span class="en">San Pa Tong &amp; Mae Wang (อ.สันป่าตอง / อ.แม่วาง)</span>
+              <span class="th">อำเภอสันป่าตอง และ อำเภอแม่วาง</span>
+            </h3>
+            <p class="en">
+              Fertile agricultural valleys transitioning toward Doi Inthanon foothills. Traditional <em>Muang Fai</em> (เหมืองฝาย) surface canals keep paddy and orchard land well-irrigated, and soil clay content is great for digging ponds and making adobe bricks.
+            </p>
+            <p class="th">
+              ที่ราบเกษตรกรรมและเชิงเขาทางไปดอยอินทนนท์ ดินดี มีระบบเหมืองฝายน้ำไหลผ่านหลายจุด เนื้อดินเหนียวปนทรายเหมาะมากกับการขุดสระทำโคกหนองนาและปั้นก้อนอิฐบ้านดิน ราคาต่อไร่ยังจับต้องได้ง่าย
+            </p>
+          </div>
+          <div class="btn-row">
+            <a class="btn" href="https://www.google.com/maps/search/Mae+Wang+Chiang+Mai" target="_blank" rel="noopener">🗺️ Mae Wang Map</a>
+            <a class="btn" href="https://www.google.com/maps/search/San+Pa+Tong+Chiang+Mai" target="_blank" rel="noopener">🗺️ San Pa Tong Map</a>
+          </div>
+        </article>
+
+        <!-- Samoeng -->
+        <article class="card">
+          <div>
+            <div class="tag-row">
+              <span class="badge badge-amber">Cool Mountain Climate</span>
+              <span class="badge badge-amber">50–70 mins West</span>
+            </div>
+            <h3 style="margin-block-start: 0.65rem;">
+              <span class="en">Samoeng (อ.สะเมิง)</span>
+              <span class="th">อำเภอสะเมิง</span>
+            </h3>
+            <p class="en">
+              Higher elevation with cooler air year-round, famous for strawberries and forest gardens. Winding mountain road to the city; be extra careful to verify <strong>Chanote</strong> title deeds here as much of Samoeng is protected forest reserve.
+            </p>
+            <p class="th">
+              อากาศเย็นสบายตลอดปี ธรรมชาติอุดมสมบูรณ์และเงียบสงบ เหมาะกับคนชอบอากาศหนาวและสวนป่า แต่ทางขึ้นเขาคดเคี้ยว และต้องระวังเรื่องเอกสารสิทธิ์เป็นพิเศษ (ต้องเลือกเฉพาะที่มีโฉนด น.ส.4 จ. เท่านั้น)
+            </p>
+          </div>
+          <div class="btn-row">
+            <a class="btn" href="https://www.google.com/maps/search/Samoeng+Chiang+Mai" target="_blank" rel="noopener">🗺️ Samoeng Map</a>
+          </div>
+        </article>
+
+        <!-- Phrao -->
+        <article class="card">
+          <div>
+            <div class="tag-row">
+              <span class="badge badge-forest">Budget Gem</span>
+              <span class="badge badge-amber">75–90 mins Northeast</span>
+            </div>
+            <h3 style="margin-block-start: 0.65rem;">
+              <span class="en">Phrao Valley (อ.พร้าว – Bonus Option)</span>
+              <span class="th">อำเภอพร้าว (ตัวเลือกเสริม เน้นที่ดินผืนใหญ่ราคาประหยัด)</span>
+            </h3>
+            <p class="en">
+              Just north of Mae Taeng. A bit over 1 hour, but land prices per rai are often half the cost of closer districts. Quiet, deeply agricultural valley with abundant mountain runoff water.
+            </p>
+            <p class="th">
+              เลยแม่แตงขึ้นไปเล็กน้อย ใช้เวลาเดินทางราว 1 ชม. 15 นาที แต่ราคาที่ดินต่อไร่ถูกกว่าโซนใกล้เมืองเกือบครึ่ง เป็นหุบเขาเกษตรกรรมที่เงียบสงบ ดินและน้ำอุดมสมบูรณ์มาก
+            </p>
+          </div>
+          <div class="btn-row">
+            <a class="btn" href="https://www.google.com/maps/search/Phrao+Chiang+Mai" target="_blank" rel="noopener">🗺️ Phrao Map</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- 2. THAI SEARCH HUB -->
+    <section class="section-block" id="search-hub">
+      <div class="section-header">
+        <h2>
+          <span class="en">2. One-Click Thai Search Hub (Avoid the Foreigner Markup)</span>
+          <span class="th">2. ศูนย์รวมคำค้นหาภาษาไทยและลิงก์ค้นหาที่ดินโดยตรง</span>
+        </h2>
+        <p class="muted mt-0">
+          <span class="en">The best rural plots are listed in Thai on Facebook Groups and local portals. Click <strong>Copy</strong> or open the search directly on Facebook / Google.</span>
+          <span class="th">ที่ดินแปลงสวยราคาชาวบ้านมักประกาศขายในกลุ่ม Facebook และเว็บที่ดินไทย กดปุ่มเพื่อคัดลอกคำค้นหา หรือกดเปิดค้นหาใน Facebook ได้ทันที</span>
+        </p>
+      </div>
+
+      <div class="search-box-grid">
+        <div class="keyword-card">
+          <div>
+            <strong>1. For Sale By Owner (No Agent Markup)</strong>
+            <div class="th">เจ้าของขายเอง (ไม่บวกค่านายหน้า)</div>
+          </div>
+          <div class="keyword-code" id="kw-1">ขายที่ดินเชียงใหม่ เจ้าของขายเอง</div>
+          <div class="btn-row">
+            <button type="button" class="btn btn-primary" data-copy="ขายที่ดินเชียงใหม่ เจ้าของขายเอง">📋 Copy Thai</button>
+            <a class="btn" href="https://www.facebook.com/search/top/?q=%E0%B8%82%E0%B8%B2%E0%B8%A2%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B8%94%E0%B8%B4%E0%B8%99%E0%B9%80%E0%B8%8A%E0%B8%B5%E0%B8%A2%E0%B8%87%E0%B9%83%E0%B8%AB%E0%B8%A1%E0%B9%88%20%E0%B9%80%E0%B8%88%E0%B9%89%E0%B8%B2%E0%B8%82%E0%B8%AD%E0%B8%87%E0%B8%82%E0%B8%B2%E0%B8%A2%E0%B9%80%E0%B8%AD%E0%B8%87" target="_blank" rel="noopener">🔎 Facebook</a>
+            <a class="btn" href="https://www.google.com/search?q=%E0%B8%82%E0%B8%B2%E0%B8%A2%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B8%94%E0%B8%B4%E0%B8%99%E0%B9%80%E0%B8%8A%E0%B8%B5%E0%B8%A2%E0%B8%87%E0%B9%83%E0%B8%AB%E0%B8%A1%E0%B9%88+%E0%B9%80%E0%B8%88%E0%B9%89%E0%B8%B2%E0%B8%82%E0%B8%AD%E0%B8%87%E0%B8%82%E0%B8%B2%E0%B8%A2%E0%B9%80%E0%B8%AD%E0%B8%87" target="_blank" rel="noopener">🌐 Google</a>
+          </div>
+        </div>
+
+        <div class="keyword-card">
+          <div>
+            <strong>2. Mae Taeng Chanote Land (Pun Pun Zone)</strong>
+            <div class="th">ที่ดินแม่แตง มีโฉนด (โซนบ้านพันพรรณ)</div>
+          </div>
+          <div class="keyword-code" id="kw-2">ขายที่ดิน แม่แตง เชียงใหม่ โฉนด</div>
+          <div class="btn-row">
+            <button type="button" class="btn btn-primary" data-copy="ขายที่ดิน แม่แตง เชียงใหม่ โฉนด">📋 Copy Thai</button>
+            <a class="btn" href="https://www.facebook.com/search/top/?q=%E0%B8%82%E0%B8%B2%E0%B8%A2%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B8%94%E0%B8%B4%E0%B8%99%20%E0%B9%81%E0%B8%A1%E0%B9%88%E0%B9%81%E0%B8%95%E0%B8%87%20%E0%B9%80%E0%B8%8A%E0%B8%B5%E0%B8%A2%E0%B8%87%E0%B9%83%E0%B8%AB%E0%B8%A1%E0%B9%88%20%E0%B9%82%E0%B8%89%E0%B8%99%E0%B8%94" target="_blank" rel="noopener">🔎 Facebook</a>
+            <a class="btn" href="https://www.google.com/search?q=%E0%B8%82%E0%B8%B2%E0%B8%A2%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B8%94%E0%B8%B4%E0%B8%99+%E0%B9%81%E0%B8%A1%E0%B9%88%E0%B9%81%E0%B8%95%E0%B8%87+%E0%B9%80%E0%B8%8A%E0%B8%B5%E0%B8%A2%E0%B8%87%E0%B9%83%E0%B8%AB%E0%B8%A1%E0%B9%88+%E0%B9%82%E0%B8%89%E0%B8%99%E0%B8%94" target="_blank" rel="noopener">🌐 Google</a>
+          </div>
+        </div>
+
+        <div class="keyword-card">
+          <div>
+            <strong>3. Mixed Farm / Khok Nong Na Plots</strong>
+            <div class="th">ที่ดินสวนผสม / โคกหนองนา เชียงใหม่</div>
+          </div>
+          <div class="keyword-code" id="kw-3">ขายที่ดิน สวนผสม โคกหนองนา เชียงใหม่</div>
+          <div class="btn-row">
+            <button type="button" class="btn btn-primary" data-copy="ขายที่ดิน สวนผสม โคกหนองนา เชียงใหม่">📋 Copy Thai</button>
+            <a class="btn" href="https://www.facebook.com/search/top/?q=%E0%B8%82%E0%B8%B2%E0%B8%A2%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B8%94%E0%B8%B4%E0%B8%99%20%E0%B8%AA%E0%B8%A7%E0%B8%99%E0%B8%9C%E0%B8%AA%E0%B8%A1%20%E0%B9%82%E0%B8%84%E0%B8%81%E0%B8%AB%E0%B8%99%E0%B8%AD%E0%B8%87%E0%B8%99%E0%B8%B2%20%E0%B9%80%E0%B8%8A%E0%B8%B5%E0%B8%A2%E0%B8%87%E0%B9%83%E0%B8%AB%E0%B8%A1%E0%B9%88" target="_blank" rel="noopener">🔎 Facebook</a>
+          </div>
+        </div>
+
+        <div class="keyword-card">
+          <div>
+            <strong>4. Doi Saket / Mae On By Owner</strong>
+            <div class="th">ที่ดินดอยสะเก็ด / แม่ออน เจ้าของขายเอง</div>
+          </div>
+          <div class="keyword-code" id="kw-4">ขายที่ดิน ดอยสะเก็ด แม่ออน เจ้าของขายเอง</div>
+          <div class="btn-row">
+            <button type="button" class="btn btn-primary" data-copy="ขายที่ดิน ดอยสะเก็ด แม่ออน เจ้าของขายเอง">📋 Copy Thai</button>
+            <a class="btn" href="https://www.facebook.com/search/top/?q=%E0%B8%82%E0%B8%B2%E0%B8%A2%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B8%94%E0%B8%B4%E0%B8%99%20%E0%B8%94%E0%B8%AD%E0%B8%A2%E0%B8%AA%E0%B8%B0%E0%B9%80%E0%B8%81%E0%B9%87%E0%B8%94%20%E0%B9%81%E0%B8%A1%E0%B9%88%E0%B8%AD%E0%B8%AD%E0%B8%99%20%E0%B9%80%E0%B8%88%E0%B9%89%E0%B8%B2%E0%B8%82%E0%B8%AD%E0%B8%87%E0%B8%82%E0%B8%B2%E0%B8%A2%E0%B9%80%E0%B8%AD%E0%B8%87" target="_blank" rel="noopener">🔎 Facebook</a>
+          </div>
+        </div>
+
+        <div class="keyword-card">
+          <div>
+            <strong>5. Land Next to Stream / Irrigation Canal</strong>
+            <div class="th">ที่ดินติดลำเหมือง / ติดคลองน้ำ เชียงใหม่</div>
+          </div>
+          <div class="keyword-code" id="kw-5">ขายที่ดิน เชียงใหม่ ติดลำเหมือง น้ำตลอดปี</div>
+          <div class="btn-row">
+            <button type="button" class="btn btn-primary" data-copy="ขายที่ดิน เชียงใหม่ ติดลำเหมือง น้ำตลอดปี">📋 Copy Thai</button>
+            <a class="btn" href="https://www.facebook.com/search/top/?q=%E0%B8%82%E0%B8%B2%E0%B8%A2%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B8%94%E0%B8%B4%E0%B8%99%20%E0%B9%80%E0%B8%8A%E0%B8%B5%E0%B8%A2%E0%B8%87%E0%B9%83%E0%B8%AB%E0%B8%A1%E0%B9%88%20%E0%B8%95%E0%B8%B4%E0%B8%94%E0%B8%A5%E0%B8%B3%E0%B9%80%E0%B8%AB%E0%B8%A1%E0%B8%B7%E0%B8%AD%E0%B8%87%20%E0%B8%99%E0%B9%89%E0%B8%B3%E0%B8%95%E0%B8%A5%E0%B8%AD%E0%B8%94%E0%B8%9B%E0%B8%B5" target="_blank" rel="noopener">🔎 Facebook</a>
+          </div>
+        </div>
+
+        <div class="keyword-card">
+          <div>
+            <strong>6. Essential Thai Land Platforms</strong>
+            <div class="th">เว็บไซต์รวมประกาศที่ดินและตรวจสอบโฉนด</div>
+          </div>
+          <div class="btn-row" style="margin-block-start: 0.3rem;">
+            <a class="btn btn-primary" href="https://www.teedin108.com/land/chiangmai/" target="_blank" rel="noopener">🏞️ Teedin108 (ที่ดิน108 เชียงใหม่)</a>
+            <a class="btn" href="https://landsmaps.dol.go.th/" target="_blank" rel="noopener">🧭 DOL LandsMaps (เช็คพิกัดโฉนด)</a>
+            <a class="btn" href="https://asset.led.go.th/" target="_blank" rel="noopener">⚖️ กรมบังคับคดี (ประมูลที่ดิน)</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. INTERACTIVE 4-PHASE ACTION PLAN -->
+    <section class="section-block" id="checklist">
+      <div class="section-header">
+        <h2>
+          <span class="en">3. Step-by-Step Action Plan &amp; Shared Checklist</span>
+          <span class="th">3. แผนปฏิบัติการ 4 ขั้นตอน (เช็คลิสต์บันทึกอัตโนมัติในเครื่อง)</span>
+        </h2>
+      </div>
+
+      <div class="progress-header">
+        <div>
+          <strong id="progress-label">0 / 12 Steps Completed (ดำเนินการแล้ว 0 / 12 ข้อ)</strong>
+        </div>
+        <div class="progress-track" aria-hidden="true">
+          <div class="progress-fill" id="progress-fill"></div>
+        </div>
+        <button type="button" class="btn" id="reset-checks">↺ Reset</button>
+      </div>
+
+      <!-- Phase 1 -->
+      <div class="checklist-group">
+        <h3>
+          <span class="en">Phase 1: Define Our Criteria &amp; Budget</span>
+          <span class="th">ระยะที่ 1: กำหนดขนาดที่ดิน งบประมาณ และโซนที่ชอบ</span>
+        </h3>
+        <label class="check-item">
+          <input type="checkbox" data-check-id="p1-1">
+          <div class="check-text">
+            <div class="en"><strong>Agree on target size &amp; total budget:</strong> Aim for 2–5 Rai with budget reserved for pond excavation (~30,000–60,000 THB), solar/borehole water, and adobe house building.</div>
+            <div class="th"><strong>ตกลงขนาดที่ดินและงบประมาณรวม:</strong> ตั้งเป้า 2–5 ไร่ โดยเผื่องบสำหรับค่าแม็คโครขุดสระ (~30,000–60,000 บาท) เจาะบาดาล/โซลาร์เซลล์ และสร้างบ้านดิน</div>
+          </div>
+        </label>
+        <label class="check-item">
+          <input type="checkbox" data-check-id="p1-2">
+          <div class="check-text">
+            <div class="en"><strong>Pick top 2–3 Districts to focus on:</strong> e.g., Mae Taeng (Cho Lae) + Doi Saket/Mae On + Mae Wang.</div>
+            <div class="th"><strong>เลือก 2–3 อำเภอเป้าหมายหลัก:</strong> เช่น แม่แตง (ต.ช่อแล) ดอยสะเก็ด/แม่ออน หรือ แม่วาง</div>
+          </div>
+        </label>
+        <label class="check-item">
+          <input type="checkbox" data-check-id="p1-3">
+          <div class="check-text">
+            <div class="en"><strong>Visit Pun Pun &amp; Jing Jai Farmers Market:</strong> Meet organic farmers and natural builders in Chiang Mai; let them know we are looking for 2–5 rai nearby.</div>
+            <div class="th"><strong>แวะไปเยี่ยมชมบ้านพันพรรณ และตลาดจริงใจมาร์เก็ต (เสาร์-อาทิตย์):</strong> พูดคุยทำความรู้จักกลุ่มคนทำเกษตรอินทรีย์และบ้านดิน เผื่อมีแปลงข้างเคียงบอกขาย</div>
+          </div>
+        </label>
+      </div>
+
+      <!-- Phase 2 -->
+      <div class="checklist-group">
+        <h3>
+          <span class="en">Phase 2: Online Scouting &amp; Price Benchmarking</span>
+          <span class="th">ระยะที่ 2: สำรวจราคาตลาดและคัดกรองแปลงจากออนไลน์</span>
+        </h3>
+        <label class="check-item">
+          <input type="checkbox" data-check-id="p2-1">
+          <div class="check-text">
+            <div class="en"><strong>Shortlist 10–15 listings from Facebook Groups &amp; Teedin108:</strong> Track price-per-rai in each subdistrict (*Tambon*) to know what a fair local price looks like.</div>
+            <div class="th"><strong>รวบรวมแปลงที่น่าสนใจ 10–15 แปลงจาก Facebook และ Teedin108:</strong> เพื่อเทียบราคาเฉลี่ยต่อไร่ในแต่ละตำบล จะได้รู้ราคากลางของพื้นที่</div>
+          </div>
+        </label>
+        <label class="check-item">
+          <input type="checkbox" data-check-id="p2-2">
+          <div class="check-text">
+            <div class="en"><strong>Ask sellers for the GPS pin &amp; Chanote photo before visiting:</strong> Check the parcel on <code>landsmaps.dol.go.th</code> to confirm public road frontage and exact shape.</div>
+            <div class="th"><strong>ขอพิกัด GPS และรูปหน้าโฉนดก่อนไปดูที่จริง:</strong> นำเลขโฉนดไปเช็คในแอป/เว็บ <code>LandsMaps</code> ของกรมที่ดิน เพื่อดูรูปแปลงและเช็คว่าติดทางสาธารณะจริงไหม</div>
+          </div>
+        </label>
+        <label class="check-item">
+          <input type="checkbox" data-check-id="p2-3">
+          <div class="check-text">
+            <div class="en"><strong>Filter out non-Chanote / Sor Por Gor land immediately:</strong> Only schedule viewings for Red Garuda (*Chanote / Nor Sor 4 Jor*) or Green Garuda (*Nor Sor 3 Gor*).</div>
+            <div class="th"><strong>คัดที่ดิน ส.ป.ก. หรือ ภ.บ.ท.5 ออกทันที:</strong> นัดดูเฉพาะแปลงที่เป็นโฉนดครุฑแดง (น.ส.4 จ.) หรือ น.ส.3 ก. เท่านั้น</div>
+          </div>
+        </label>
+      </div>
+
+      <!-- Phase 3 -->
+      <div class="checklist-group">
+        <h3>
+          <span class="en">Phase 3: Village Ground Game (How the Best Deals Are Found)</span>
+          <span class="th">ระยะที่ 3: ลงพื้นที่จริงและคุยกับผู้ใหญ่บ้าน (วิธีหาที่ดินราคาชาวบ้านแท้ๆ)</span>
+        </h3>
+        <label class="check-item">
+          <input type="checkbox" data-check-id="p3-1">
+          <div class="check-text">
+            <div class="en"><strong>Drive the village backroads &amp; look for handwritten signs:</strong> Many villagers simply hang a <code>ขายที่ดิน</code> sign with a phone number on the fence without posting online.</div>
+            <div class="th"><strong>ขับรถสำรวจตามซอยในหมู่บ้านเป้าหมาย:</strong> มองหาป้ายเขียนมือ <code>ขายที่ดิน เจ้าของขายเอง</code> ที่ติดไว้ตามรั้ว ซึ่งมักไม่เคยลงขายในอินเทอร์เน็ต</div>
+          </div>
+        </label>
+        <label class="check-item">
+          <input type="checkbox" data-check-id="p3-2">
+          <div class="check-text">
+            <div class="en"><strong>Talk to the <em>Phu Yai Baan</em> (ผู้ใหญ่บ้าน - Village Headman) &amp; local shop owners:</strong> Ask who in the village wants to sell 2–5 rai directly.</div>
+            <div class="th"><strong>แวะคุยกับผู้ใหญ่บ้าน กำนัน หรือร้านค้าในชุมชน:</strong> สอบถามว่ามีชาวบ้านคนไหนต้องการแบ่งขายที่ดิน 2–5 ไร่โดยตรงไหม (มักได้ราคาดีและรู้ประวัติที่ดินจริง)</div>
+          </div>
+        </label>
+        <label class="check-item">
+          <input type="checkbox" data-check-id="p3-3">
+          <div class="check-text">
+            <div class="en"><strong>Inspect water, soil clay quality, flood history (2024 floods), and neighbors' pesticide use:</strong> Talk to immediate neighbors before making an offer.</div>
+            <div class="th"><strong>เช็คแหล่งน้ำ เนื้อดิน ประวัติน้ำท่วม (โดยเฉพาะปี 2567) และสวนข้างเคียง:</strong> ถามเพื่อนบ้านรอบแปลงว่าน้ำแล้งไหม และสวนข้างๆ ฉีดยาฆ่าแมลงหนักหรือไม่</div>
+          </div>
+        </label>
+      </div>
+
+      <!-- Phase 4 -->
+      <div class="checklist-group">
+        <h3>
+          <span class="en">Phase 4: Verification &amp; Land Office Transfer (กรมที่ดิน)</span>
+          <span class="th">ระยะที่ 4: ตรวจสอบที่กรมที่ดิน ทำสัญญา และโอนกรรมสิทธิ์</span>
+        </h3>
+        <label class="check-item">
+          <input type="checkbox" data-check-id="p4-1">
+          <div class="check-text">
+            <div class="en"><strong>Verify the original Chanote at the District Land Office:</strong> Confirm no hidden mortgages, caveats, or boundary disputes, and consider requesting an official boundary survey (*Rang Wat*).</div>
+            <div class="th"><strong>นำสำเนาโฉนดไปเช็คต้นฉบับที่สำนักงานที่ดินสาขา:</strong> ตรวจสอบภาระผูกพัน การจำนอง หรืออายัด และให้เจ้าของเดิมชี้แนวเขตหมุดโฉนดให้ครบทุกหมุด (หรือยื่นรังวัดสอบเขต)</div>
+          </div>
+        </label>
+        <label class="check-item">
+          <input type="checkbox" data-check-id="p4-2">
+          <div class="check-text">
+            <div class="en"><strong>Transfer ownership at the Land Office:</strong> Wife purchases in her Thai name; both spouses sign the standard personal property (*Sin Suan Tua*) declaration.</div>
+            <div class="th"><strong>จดทะเบียนโอนกรรมสิทธิ์ที่กรมที่ดิน:</strong> ซื้อในชื่อภรรยาชาวไทย โดยคู่สมรสเซ็นรับรองว่าเป็นสินส่วนตัวตามระเบียบกรมที่ดิน</div>
+          </div>
+        </label>
+        <label class="check-item">
+          <input type="checkbox" data-check-id="p4-3">
+          <div class="check-text">
+            <div class="en"><strong>Optional protection — Register a Lifetime Usufruct (สิทธิเก็บกิน) or 30-Year Lease:</strong> Easily registered on the back of the Chanote at the Land Office for long-term protection of the foreign spouse.</div>
+            <div class="th"><strong>ทางเลือกเพิ่มเติม — จดทะเบียน "สิทธิเก็บกินตลอดชีพ" (Usufruct) หรือสัญญาเช่า:</strong> สามารถจดสลักหลังโฉนดให้คู่สมรสต่างชาติมีสิทธิอยู่อาศัยและใช้ประโยชน์ในที่ดินได้อย่างถูกกฎหมาย</div>
+          </div>
+        </label>
+      </div>
+    </section>
+
+    <!-- 4. TITLE DEED REFERENCE -->
+    <section class="section-block" id="title-deeds">
+      <div class="section-header">
+        <h2>
+          <span class="en">4. Thai Land Title Deeds: What to Buy vs. What to Avoid</span>
+          <span class="th">4. ประเภทเอกสารสิทธิ์ที่ดิน: แบบไหนซื้อได้ แบบไหนห้ามซื้อ</span>
+        </h2>
+      </div>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Title Deed (ประเภทเอกสาร)</th>
+              <th>Garuda Symbol (ตราครุฑ)</th>
+              <th>Verdict &amp; Explanation (คำแนะนำ)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <strong>Chanote (โฉนดที่ดิน น.ส.4 จ.)</strong>
+              </td>
+              <td><span class="badge badge-forest">Red Garuda (ครุฑแดง)</span></td>
+              <td>
+                <div class="en"><strong>✅ BEST &amp; SAFEST.</strong> Full freehold ownership with accurate GPS satellite boundary markers. Can be bought, sold, built upon, and subdivided immediately.</div>
+                <div class="th"><strong>✅ ดีที่สุดและปลอดภัย 100%</strong> เป็นกรรมสิทธิ์สมบูรณ์ มีพิกัดหมุดดาวเทียมชัดเจน ซื้อขาย โอน สร้างบ้านดิน ขุดสระได้ทันทีโดยไม่มีปัญหาทางกฎหมาย</div>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <strong>Nor Sor 3 Gor (น.ส.3 ก.)</strong>
+              </td>
+              <td><span class="badge badge-amber">Green Garuda (ครุฑเขียว)</span></td>
+              <td>
+                <div class="en"><strong>⚠️ ACCEPTABLE WITH CARE.</strong> Confirmed right of possession with aerial survey. Legally transferable and can be upgraded to a full Chanote. Verify boundary pins carefully.</div>
+                <div class="th"><strong>⚠️ ซื้อขายโอนได้ตามกฎหมาย</strong> มีระวางรูปถ่ายทางอากาศชัดเจนและสามารถยื่นขอออกเป็นโฉนดครุฑแดงได้ในอนาคต แต่ควรเช็คแนวเขตกับที่ดินข้างเคียงให้ชัดเจนก่อนซื้อ</div>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <strong>Sor Por Gor 4-01 (ส.ป.ก. 4-01)<br>Por Bor Tor 5 (ภ.บ.ท.5)<br>Sor Tor Gor (ส.ท.ก.)</strong>
+              </td>
+              <td><span class="badge badge-danger">Blue/Black or No Garuda (ห้ามซื้อขาย)</span></td>
+              <td>
+                <div class="en"><strong>❌ DO NOT BUY!</strong> Very common on cheap hillside plots around Chiang Mai. <em>Sor Por Gor</em> is state agricultural reform land—<strong>it is illegal to buy or sell even for Thai citizens</strong> (only passed by inheritance to farming heirs). Locals often offer "informal transfers" via the village headman, which carries risk of confiscation.</div>
+                <div class="th"><strong>❌ ห้ามซื้อเด็ดขาด!</strong> พบมากในที่ดินวิวภูเขาราคาถูกรอบเชียงใหม่ ตามกฎหมายที่ดิน ส.ป.ก. และ ภ.บ.ท.5 <strong>ห้ามซื้อขายเปลี่ยนมือแม้แต่คนไทยด้วยกันเอง</strong> (โอนได้เฉพาะทายาทเกษตรกร) การซื้อขายแบบทำสัญญาใจต่อหน้าผู้ใหญ่บ้านมีความเสี่ยงถูกยึดคืนสูงมาก</div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- 5. ON-SITE INSPECTION & THAI-ENGLISH QUESTION SCRIPT -->
+    <section class="section-block" id="questions">
+      <div class="section-header">
+        <h2>
+          <span class="en">5. Field Questions for Sellers, Neighbors &amp; Village Headmen</span>
+          <span class="th">5. ลิสต์คำถามสำคัญเวลาโทรถามเจ้าของที่ดิน หรือลงพื้นที่คุยกับชาวบ้าน</span>
+        </h2>
+        <p class="muted mt-0">
+          <span class="en">Use these questions when calling sellers or chatting with neighbors around a plot you like.</span>
+          <span class="th">ใช้คำถามเหล่านี้เช็คข้อมูลสำคัญก่อนตัดสินใจวางมัดจำ เพื่อป้องกันปัญหาเรื่องน้ำแล้ง น้ำท่วม หรือที่ดินตาบอด</span>
+        </p>
+      </div>
+
+      <div class="grid-cards">
+        <div class="card">
+          <div>
+            <h3>💧 1. Water &amp; Dry Season (เรื่องน้ำในหน้าแล้ง)</h3>
+            <div class="script-box">
+              <div class="en"><strong>Ask:</strong> "In March and April (peak dry season), does the canal/stream still have water? How deep do neighbors drill for borehole groundwater here, and is the water iron-heavy?"</div>
+              <div class="th"><strong>คำถาม:</strong> "ช่วงเดือนมีนาคม–เมษายน น้ำในลำเหมืองหรือคลองยังไหลไหมคะ? แถวนี้ถ้าเจาะบ่อบาดาลต้องเจาะลึกกี่เมตร และน้ำบาดาลเป็นสนิมหรือหินปูนเยอะไหม?"</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div>
+            <h3>🌊 2. Flood History (ประวัติน้ำท่วมปี 2567)</h3>
+            <div class="script-box">
+              <div class="en"><strong>Ask:</strong> "During the big Chiang Mai floods in September–October 2024, did water reach this plot or the access road? Does heavy rain drain quickly?"</div>
+              <div class="th"><strong>คำถาม:</strong> "ตอนน้ำท่วมใหญ่เชียงใหม่ช่วงกันยายน–ตุลาคม 2567 ที่ผ่านมา แปลงนี้และถนนทางเข้าน้ำท่วมหรือมีน้ำป่าไหลหลากไหมคะ?"</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div>
+            <h3>🧱 3. Soil &amp; Neighboring Chemicals (เนื้อดินและสารเคมีรอบข้าง)</h3>
+            <div class="script-box">
+              <div class="en"><strong>Ask:</strong> "What crops were grown on this plot previously? Do the orchards uphill spray heavy chemicals (like conventional longan or orange farms)?"</div>
+              <div class="th"><strong>คำถาม:</strong> "เมื่อก่อนที่แปลงนี้เคยปลูกอะไรมาก่อนคะ? แล้วสวนข้างเคียงที่อยู่ต้นน้ำ/เนินด้านบน เป็นสวนลำไยหรือสวนที่ฉีดยาฆ่าแมลงบ่อยไหม? (เพราะเราจะขุดสระเก็บน้ำและทำเกษตรอินทรีย์)"</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div>
+            <h3>🛣️ 4. Public Road &amp; Utilities (ทางสาธารณะและไฟฟ้า)</h3>
+            <div class="script-box">
+              <div class="en"><strong>Ask:</strong> "Is the access road officially marked as a public road (<em>Thang Satharana</em>) on the Chanote map, or is it a private servitude road? How far is the nearest PEA 3-phase/1-phase power pole?"</div>
+              <div class="th"><strong>คำถาม:</strong> "ถนนหน้าที่ดินระบุเป็น 'ทางสาธารณประโยชน์' ในระวางโฉนดเลยไหมคะ หรือเป็นทางภาระจำยอม? และเสาไฟฟ้าของการไฟฟ้าฯ อยู่ห่างจากแปลงกี่เมตร?"</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="en">Built for our Chiang Mai Self-Reliance Homestead Journey • Inspired by Jon Jandai &amp; Pun Pun</div>
+    <div class="th">สร้างขึ้นสำหรับแผนหาที่ดินและสร้างบ้านพึ่งตนเองที่เชียงใหม่ • แรงบันดาลใจจาก โจน จันใด (บ้านพันพรรณ)</div>
+  </footer>
+
+  <script>
+    // Language Switcher
+    const htmlEl = document.documentElement;
+    const langBtns = document.querySelectorAll('[data-set-lang]');
+    const savedLang = localStorage.getItem('cm_land_lang') || 'both';
+
+    function setLanguage(lang) {
+      htmlEl.setAttribute('data-lang', lang);
+      localStorage.setItem('cm_land_lang', lang);
+      langBtns.forEach(btn => {
+        btn.setAttribute('aria-pressed', btn.getAttribute('data-set-lang') === lang ? 'true' : 'false');
+      });
+    }
+    setLanguage(savedLang);
+
+    langBtns.forEach(btn => {
+      btn.addEventListener('click', () => setLanguage(btn.getAttribute('data-set-lang')));
+    });
+
+    // Copy Thai Keywords
+    document.querySelectorAll('[data-copy]').forEach(btn => {
+      btn.addEventListener('click', async () => {
+        const text = btn.getAttribute('data-copy');
+        try {
+          await navigator.clipboard.writeText(text);
+          const original = btn.textContent;
+          btn.textContent = '✅ Copied! (คัดลอกแล้ว)';
+          setTimeout(() => { btn.textContent = original; }, 1800);
+        } catch {
+          prompt('Copy this Thai search phrase:', text);
+        }
+      });
+    });
+
+    // Interactive Persistent Checklist
+    const checkboxes = document.querySelectorAll('input[type="checkbox"][data-check-id]');
+    const progressLabel = document.getElementById('progress-label');
+    const progressFill = document.getElementById('progress-fill');
+    const resetBtn = document.getElementById('reset-checks');
+
+    function updateChecklistUI() {
+      const total = checkboxes.length;
+      let checkedCount = 0;
+      checkboxes.forEach(cb => {
+        if (cb.checked) checkedCount++;
+      });
+      const pct = total ? Math.round((checkedCount / total) * 100) : 0;
+      progressLabel.textContent = `${checkedCount} / ${total} Steps Completed (ดำเนินการแล้ว ${checkedCount} / ${total} ข้อ — ${pct}%)`;
+      progressFill.style.inlineSize = `${pct}%`;
+    }
+
+    checkboxes.forEach(cb => {
+      const id = cb.getAttribute('data-check-id');
+      cb.checked = localStorage.getItem(`cm_check_${id}`) === '1';
+      cb.addEventListener('change', () => {
+        localStorage.setItem(`cm_check_${id}`, cb.checked ? '1' : '0');
+        updateChecklistUI();
+      });
+    });
+
+    resetBtn.addEventListener('click', () => {
+      checkboxes.forEach(cb => {
+        cb.checked = false;
+        localStorage.removeItem(`cm_check_${cb.getAttribute('data-check-id')}`);
+      });
+      updateChecklistUI();
+    });
+
+    updateChecklistUI();
+  </script>
+</body>
+</html>
