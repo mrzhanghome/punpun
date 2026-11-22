@@ -20,7 +20,8 @@ Maintains the live bilingual (`EN` + `ภาษาไทย`) Chiang Mai self-re
 4. Validates, merges, and tags new plots with `Week N`, renders `index.html`, and commits/pushes to GitHub Pages.
 
 ## Dependencies
-- **Browser / Web Research Capability**: Use Antigravity's `browser` subagents (4 parallel subagents — one per zone) when running in Antigravity, or Claude Code's web/browser tools + parallel subagents when running in Claude Code.
+- **Browser / Web Research Capability**: The user's real Chrome (Claude in Chrome in Claude Code, or Antigravity's browser) must be open and logged into Facebook. There is only **one** browser, so only one agent may drive it — see *Splitting the work* in Step 2.
+- **Run locally, not as a cloud routine**: Facebook needs the user's own logged-in browser session, and session cookies must never be copied into a prompt, file, or cloud environment.
 - **Reference Materials**: Read [references/search_portals.md](./references/search_portals.md) for target districts, portal URLs, Thai search strings, Pun Pun homestead criteria, and the exact `plots.json` schema.
 - **CLI Helper**: [scripts/land_board.py](./scripts/land_board.py) (stdlib Python 3, invoked via `uv run`).
 
@@ -64,13 +65,26 @@ uv run .agents/skills/chiangmai-land-search/scripts/land_board.py render \
 3. Determine `next_week = current_week + 1`.
 
 ### Step 2 — Parallel Browser Research Across 4 Zones
-Read [references/search_portals.md](./references/search_portals.md) and search all 4 zones in parallel (passing the list of already-known URLs from `/tmp/land_summary.json` so researchers skip duplicates):
+Read [references/search_portals.md](./references/search_portals.md) and search all 4 zones (passing the list of already-known URLs from `/tmp/land_summary.json` so researchers skip duplicates):
 1. **Zone A:** Mae Taeng (`อ.แม่แตง` — Cho Lae, Inthakhin, Khi Lek, Ban Pao, Mae Ho Phra)
 2. **Zone B:** Doi Saket & Mae On (`อ.ดอยสะเก็ด`, `อ.แม่ออน`)
 3. **Zone C:** Mae Wang, San Pa Tong & Samoeng (`อ.แม่วาง`, `อ.สันป่าตอง`, `อ.สะเมิง`)
 4. **Zone D:** Lamphun — Mueang Lamphun, Pa Sang, Ban Thi, optional Mae Tha (`อ.เมืองลำพูน`, `อ.ป่าซาง`, `อ.บ้านธิ`, `อ.แม่ทา`); avoid plots near the Northern Region Industrial Estate and low Ping/Kuang floodplain land (see Zone D cautions in the reference). Lampang and far-south Lamphun (Li, Thung Hua Chang) are out of scope.
 
 Sources: Teedin108, DotProperty, FazWaz, LivingInsider **and Facebook** (Marketplace + group/post search through the user's logged-in browser session — follow the read-only Facebook rules in `references/search_portals.md`; use `listing_source_en: "View Facebook Post"` and the post permalink as `listing_url`).
+
+#### Splitting the work (one browser, two lanes)
+Do **not** launch one browser agent per zone — they would fight over the single Chrome window. Run two lanes at once:
+
+| Lane | Who | Sources | Output |
+|---|---|---|---|
+| **Browser lane** | The **main session**, one tab, sequentially through all 4 zones | Facebook (Marketplace + groups), plus the portals that block plain HTTP: **Teedin108, FazWaz, LivingInsider** (they load normally in real Chrome; Teedin108 shows a Cloudflare "verifying…" page for a few seconds, then passes on its own) | `/tmp/week<N>_browser.json` |
+| **HTTP lane** | **One background helper agent** with no browser access (`curl` + web search, ≤ 1 req/s per site) | **DotProperty** (EN + Thai pages, all 4 zones), thailand-property.com, web search | `/tmp/week<N>_portals.json` |
+
+- Give the helper agent the criteria, zone list, Zone D cautions, the section-3 schema, and the known-URL list; tell it **not** to touch the browser or edit repo files, and to omit `id`/`week`.
+- While the helper runs, the main session works the browser lane, then spot-checks any `needs_browser_check` links from Step 1 in the same tab.
+- When both finish: review the helper's JSON (badges, statuses, deed flags), concatenate both files into `/tmp/week<N>_new_plots.json`, and continue to Step 3. `add-plots` deduplicates by URL, but also eyeball for the same plot listed on two sites.
+- Close the browser tab when done.
 
 Research rules:
 - Open actual listing detail pages to verify listings are **live**, extract exact size (`Rai-Ngan-Wah` and `sq.m`), exact total THB price, title deed, water/road/power details, and seller contact if public.
@@ -97,6 +111,9 @@ Research rules:
 - If a portal returns HTTP 403/429 or an anti-bot challenge page, the script stops immediately and logs `needs_browser_check` instead of hammering the server.
 
 ## Common Mistakes
+- **Running several browser agents in parallel:** only one agent can drive the user's Chrome. Use the two-lane split in Step 2.
+- **Returning raw Facebook URLs from page JavaScript:** URLs with query strings (`?fbid=…`, `__cft__`) get blocked from tool output. Extract only numeric IDs (Marketplace item ID, group post ID, photo `fbid`) and rebuild clean permalinks yourself.
+- **Trusting Marketplace search location:** Marketplace keyword search is fuzzy and mixes in far-away provinces and sub-1-rai lots. Read the post text for the real tambon/amphoe before keeping a plot.
 - **Editing `index.html` plot cards by hand:** Always edit `data/plots.json` via `land_board.py` and run `render`; manual edits inside `<!-- PLOTS_START -->..<!-- PLOTS_END -->` will be overwritten on the next render.
 - **Confusing per-Rai price with total price on Teedin108:** Teedin108 header fields frequently show the *per-Rai* price (e.g., `฿450,000`) while the description gives the total (e.g., `฿1,500,000`). Always read the full listing body and verify `price_total_thb / size_rai_num`.
 - **Letting *Sor Por Gor (ส.ป.ก.)* slip in from Samoeng or hillside Mae Taeng:** Always confirm Red Garuda Chanote (`โฉนด น.ส.4 จ.`) or Green Garuda (`น.ส.3 ก.`), or explicitly flag `title_deed_status: "verify"` with a top warning bullet when unstated in lowland agricultural zones.

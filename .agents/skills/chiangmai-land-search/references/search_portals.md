@@ -18,6 +18,8 @@
 
 ## 2. Target Districts & Portal Entry URLs
 
+**Access notes (checked 2026-11-22):** DotProperty and thailand-property.com work over plain HTTP (`curl`). **Teedin108, FazWaz and LivingInsider return 403/Cloudflare to `curl` but load normally in the user's real Chrome** (no login needed) — search them in the browser lane. If any site shows an interactive challenge (checkbox, puzzle, "confirm it's you"), stop and skip it; never try to solve or bypass it.
+
 ### Zone A — Mae Taeng (อ.แม่แตง) [Pun Pun Home District, 45–60 mins North]
 Priority subdistricts: **Cho Lae (ต.ช่อแล)**, **Inthakhin (ต.อินทขิล)**, **Khi Lek (ต.ขี้เหล็ก)**, **Ban Pao (ต.บ้านเป้า)**, **Mae Ho Phra (ต.แม่หอพระ)**.
 - Teedin108 Mae Taeng: `https://www.teedin108.com/land/amphur/573/`
@@ -27,7 +29,7 @@ Priority subdistricts: **Cho Lae (ต.ช่อแล)**, **Inthakhin (ต.อ�
 
 ### Zone B — Doi Saket & Mae On (อ.ดอยสะเก็ด / อ.แม่ออน) [30–55 mins East]
 Priority subdistricts: **Mae Pong (ต.แม่โป่ง)**, **Sa-Nga Ban (ต.สง่าบ้าน)**, **Samran Rat (ต.สำราญราษฎร์)**, **Pa Pong (ต.ป่าป้อง)**, **On Klang (ต.ออนกลาง)**, **On Nuea (ต.ออนเหนือ)**.
-- Teedin108 Chiang Mai: `https://www.teedin108.com/land/chiangmai/`
+- Teedin108 Chiang Mai (province): `https://www.teedin108.com/land/province/38/`
 - DotProperty Doi Saket: `https://www.dotproperty.co.th/en/land-for-sale/chiang-mai/doi-saket`
 - DotProperty Mae On: `https://www.dotproperty.co.th/en/land-for-sale/chiang-mai/mae-on`
 - FazWaz Doi Saket: `https://www.fazwaz.com/land-for-sale/thailand/chiang-mai/doi-saket?order_by=price|asc`
@@ -55,7 +57,7 @@ Zone D cautions (add a ⚠️ bullet on every Lamphun plot that touches one of t
 
 Portals:
 - DotProperty Lamphun: `https://www.dotproperty.co.th/en/land-for-sale/lamphun` (district pages: `/lamphun/mueang-lamphun`, `/lamphun/pa-sang`, `/lamphun/ban-thi`, `/lamphun/mae-tha`)
-- Teedin108 Lamphun: `https://www.teedin108.com/land/lamphun/`
+- Teedin108 Lamphun (province 39): `https://www.teedin108.com/land/province/39/` — districts: Mueang Lamphun `/land/amphur/595/`, Pa Sang `/land/amphur/600/`, Ban Thi `/land/amphur/601/`, Mae Tha `/land/amphur/596/`
 - FazWaz Lamphun: `https://www.fazwaz.com/land-for-sale/thailand/lamphun?order_by=price|asc`
 - LivingInsider: `https://www.livinginsider.com/land-buysell` (search `ลำพูน`, `ป่าซาง`, `บ้านธิ`)
 - Facebook group #8 (ซื้อขายที่ดินเชียงใหม่-ลำพูน) below covers Lamphun.
@@ -79,6 +81,9 @@ The user keeps a logged-in Facebook session in the browser. Facebook is where mo
 9. **ซื้อขายบ้านและที่ดินใน จ.เชียงใหม่ และ ภาคเหนือ**: `https://www.facebook.com/groups/322977734828852/`
 10. **กลุ่มซื้อขายที่ดิน เชียงดาว เชียงใหม่ ทั่วประเทศ โพสต์ฟรี**: `https://www.facebook.com/groups/428599314464047/`
 11. **ขายบ้านและที่ดินโซนสันทรายแม่โจ้หนองหารแม่แฝกเจดีย์แม่ครัว**: `https://www.facebook.com/groups/306527483862118/`
+12. **ซื้อขาย บ้าน ที่ดิน ลำพูน ป่าซาง สารภี บ้านธิ แม่ทา เวียงหนองล่อง** (Zone D): `https://www.facebook.com/groups/3934415109961272/` — use in-group search, e.g. `/groups/3934415109961272/search/?q=ไร่ โฉนด`
+
+Facebook Marketplace tip: `https://www.facebook.com/marketplace/chiangmai/search/?query=<thai phrase>&maxPrice=2500000` covers Lamphun too (e.g. `ที่ดิน ป่าซาง`, `ที่ดิน 2 ไร่ ลำพูน`, `สวนลำไย ลำพูน`).
 
 ### Thai Search Phrases (When Searching Google / Portals / Facebook)
 - `ขายที่ดิน แม่แตง เชียงใหม่ โฉนด เจ้าของขายเอง`
