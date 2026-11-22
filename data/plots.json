@@ -1732,9 +1732,9 @@
       "price_per_rai_thb": 933661,
       "price_note_en": "Total / per Rai",
       "price_note_th": "ราคารวม (เฉลี่ย/ไร่)",
-      "title_deed_status": "unknown",
-      "title_deed_en": "Unknown (Ask Seller)",
-      "title_deed_th": "ไม่ระบุ (ต้องถามผู้ขาย)",
+      "title_deed_status": "verified",
+      "title_deed_en": "Chanote (Nor Sor 4)",
+      "title_deed_th": "โฉนด (น.ส.4)",
       "drive_mins": "~60–70",
       "bullets": [
         {
@@ -1761,9 +1761,9 @@
         {
           "icon": "⚠️",
           "label_en": "Check",
-          "text_en": "Edge of the drive limit (~60–70 min). Deed type not stated (portal says 'Ownership, Leasehold' — clarify). Ask about stream flooding and legal road access.",
+          "text_en": "Edge of the drive limit (~60–70 min). Chanote per the FazWaz cross-post of this listing (DotProperty says 'Ownership, Leasehold') — ask for a deed copy. Ask about stream flooding and legal road access.",
           "label_th": "สิ่งที่ต้องเช็ค",
-          "text_th": "ระยะทางเกือบเกินกำหนด (~60–70 นาที) ไม่ระบุเอกสารสิทธิ์ (เว็บระบุ Ownership, Leasehold ต้องถาม) ถามเรื่องน้ำหลากจากลำธารและทางสาธารณะ"
+          "text_th": "ระยะทางเกือบเกินกำหนด (~60–70 นาที) FazWaz ระบุโฉนด (DotProperty ระบุ Ownership, Leasehold) ขอสำเนาโฉนดเพื่อยืนยัน ถามเรื่องน้ำหลากจากลำธารและทางสาธารณะ"
         }
       ],
       "contact": "",
@@ -1773,7 +1773,7 @@
       "map_url": "https://www.google.com/maps/search/Tha+Khum+Ngoen+Mae+Tha+Lamphun",
       "map_label_en": "Area Map",
       "map_label_th": "แผนที่โซน",
-      "last_checked": "2026-11-22"
+      "last_checked": "2026-11-23"
     },
     {
       "id": "w1-31",
