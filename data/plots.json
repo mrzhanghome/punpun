@@ -1837,6 +1837,447 @@
       "map_label_en": "Area Map",
       "map_label_th": "แผนที่โซน",
       "last_checked": "2026-11-22"
+    },
+    {
+      "id": "w1-32",
+      "week": 1,
+      "status": "shortlisted",
+      "district": "pa-sang",
+      "district_en": "Pa Sang (Lamphun)",
+      "district_th": "อ.ป่าซาง จ.ลำพูน",
+      "badge_en": "Teedin108 • ฿590k Red Chanote",
+      "badge_th": "Teedin108 • โฉนดครุฑแดง 5.9 แสน",
+      "title_en": "Nakhon Chedi 2-Rai Canal-Side Plot on High Ground + Free Riverbank Strip",
+      "title_th": "ที่ดิน 2 ไร่ ติดคลองแม่วังส้าน ที่สูงน้ำไม่ท่วม ต.นครเจดีย์ อ.ป่าซาง",
+      "size_rai_str": "2-0-00",
+      "size_rai_num": 2.0,
+      "size_sqm": 3200,
+      "dimensions_en": "~76 m × 37 m",
+      "dimensions_th": "หน้ากว้าง ~76 × ลึก 37 ม.",
+      "price_total_thb": 590000,
+      "price_per_rai_thb": 295000,
+      "price_note_en": "Total / per Rai",
+      "price_note_th": "ราคารวม (เฉลี่ย/ไร่)",
+      "title_deed_status": "verified",
+      "title_deed_en": "Chanote (Red Garuda)",
+      "title_deed_th": "โฉนดครุฑแดง (น.ส.4 จ.)",
+      "drive_mins": "~55–65",
+      "bullets": [
+        {
+          "icon": "💧",
+          "label_en": "Water",
+          "text_en": "Side borders the Mae Wang San canal, plus 2+ ngan of accreted canal-bank land thrown in.",
+          "label_th": "แหล่งน้ำ",
+          "text_th": "ด้านข้างติดคลองแม่วังส้าน แถมที่งอกริมคลองอีกกว่า 2 งาน"
+        },
+        {
+          "icon": "⛰️",
+          "label_en": "Terrain",
+          "text_en": "High ground that does not flood; mountain views; suits khok-nong-na.",
+          "label_th": "สภาพที่ดิน",
+          "text_th": "ที่สูง น้ำไม่ท่วม วิวเขา เหมาะทำโคกหนองนา"
+        },
+        {
+          "icon": "⚡",
+          "label_en": "Road & Power",
+          "text_en": "Electricity on site; 550 m in from a paved road (through-access at the back); 2.9 km to Hwy 106 and Kad Ui Di Ui On.",
+          "label_th": "ทางเข้า/ไฟฟ้า",
+          "text_th": "มีไฟฟ้า เข้าซอยจากถนนลาดยาง 550 ม. ทะลุได้อีกด้าน ห่างถนน 106 และกาดอุ้ยดีอุ้ยออน 2.9 กม."
+        },
+        {
+          "icon": "⚠️",
+          "label_en": "Check",
+          "text_en": "Stated 76×37 m ≈ 1.76 rai vs '2 rai' — confirm deed area; accreted strip is not on the Chanote.",
+          "label_th": "สิ่งที่ต้องเช็ค",
+          "text_th": "ขนาด 76×37 ม. ≈ 1.76 ไร่ ไม่ตรงกับ 2 ไร่ เช็คเนื้อที่ในโฉนด ที่งอกไม่อยู่ในโฉนด"
+        }
+      ],
+      "contact": "📞 091-876-5330 (ตั๊ก) • LINE: ratchraksa",
+      "listing_url": "https://www.teedin108.com/land/view/4115542/",
+      "listing_source_en": "View Teedin108",
+      "listing_source_th": "ดูประกาศ Teedin108",
+      "map_url": "https://www.google.com/maps/search/Nakhon+Chedi+Pa+Sang+Lamphun",
+      "map_label_en": "Area Map",
+      "map_label_th": "แผนที่โซน",
+      "last_checked": "2026-11-22"
+    },
+    {
+      "id": "w1-33",
+      "week": 1,
+      "status": "visit",
+      "district": "pa-sang",
+      "district_en": "Pa Sang (Lamphun)",
+      "district_th": "อ.ป่าซาง จ.ลำพูน",
+      "badge_en": "Teedin108 • 4.6-Rai Longan Orchard",
+      "badge_th": "Teedin108 • สวนลำไย 4.6 ไร่",
+      "title_en": "Nakhon Chedi 4.6-Rai Bearing Longan Orchard on Concrete Road",
+      "title_th": "สวนลำไย 4 ไร่ 2 งาน 39 ตร.ว. ติดถนนคอนกรีต ต.นครเจดีย์ อ.ป่าซาง",
+      "size_rai_str": "4-2-39",
+      "size_rai_num": 4.6,
+      "size_sqm": 7356,
+      "dimensions_en": "~86 m × 135 m",
+      "dimensions_th": "หน้ากว้าง ~86 × ลึก 135 ม.",
+      "price_total_thb": 2000000,
+      "price_per_rai_thb": 435019,
+      "price_note_en": "Total / per Rai",
+      "price_note_th": "ราคารวม (เฉลี่ย/ไร่)",
+      "title_deed_status": "unknown",
+      "title_deed_en": "Unknown (Ask Seller)",
+      "title_deed_th": "ไม่ระบุ (ต้องถามผู้ขาย)",
+      "drive_mins": "~55–65",
+      "bullets": [
+        {
+          "icon": "🌳",
+          "label_en": "Orchard",
+          "text_en": "~60 longan trees fruiting every year across the whole plot.",
+          "label_th": "สวนผลไม้",
+          "text_th": "ต้นลำไยประมาณ 60 ต้น ออกลูกดกทุกปี"
+        },
+        {
+          "icon": "⚡",
+          "label_en": "Utilities",
+          "text_en": "Water and electricity connected; 86 m frontage on a concrete road, ~2 km from Hwy 106.",
+          "label_th": "สาธารณูปโภค",
+          "text_th": "มีน้ำ-ไฟครบ ติดถนนคอนกรีตหน้ากว้าง 86 ม. ห่างทางหลวง 106 ประมาณ 2 กม."
+        },
+        {
+          "icon": "💰",
+          "label_en": "Fees",
+          "text_en": "Seller pays transfer fees and taxes (~฿435k/rai).",
+          "label_th": "ค่าธรรมเนียม",
+          "text_th": "เจ้าของรับผิดชอบค่าโอนและภาษีทั้งหมด"
+        },
+        {
+          "icon": "⚠️",
+          "label_en": "Check",
+          "text_en": "Deed type not stated; the same orchard is reposted many times since Aug — ask why it hasn't sold.",
+          "label_th": "สิ่งที่ต้องเช็ค",
+          "text_th": "ไม่ระบุเอกสารสิทธิ์ ประกาศซ้ำหลายครั้งตั้งแต่ ส.ค. ถามเหตุผลที่ยังขายไม่ได้"
+        }
+      ],
+      "contact": "📞 081-909-4239",
+      "listing_url": "https://www.teedin108.com/land/view/4149532/",
+      "listing_source_en": "View Teedin108",
+      "listing_source_th": "ดูประกาศ Teedin108",
+      "map_url": "https://www.google.com/maps/search/Nakhon+Chedi+Pa+Sang+Lamphun",
+      "map_label_en": "Area Map",
+      "map_label_th": "แผนที่โซน",
+      "last_checked": "2026-11-22"
+    },
+    {
+      "id": "w1-34",
+      "week": 1,
+      "status": "visit",
+      "district": "pa-sang",
+      "district_en": "Pa Sang (Lamphun)",
+      "district_th": "อ.ป่าซาง จ.ลำพูน",
+      "badge_en": "Teedin108 • By Owner • ฿400k",
+      "badge_th": "Teedin108 • เจ้าของขายเอง • 4 แสน",
+      "title_en": "Nam Dip 1.3-Rai Longan Orchard (By Owner)",
+      "title_th": "สวนลำไย 1.3 ไร่ ต.น้ำดิบ อ.ป่าซาง (เจ้าของขายเอง)",
+      "size_rai_str": "1-1-20",
+      "size_rai_num": 1.3,
+      "size_sqm": 2080,
+      "dimensions_en": "",
+      "dimensions_th": "",
+      "price_total_thb": 400000,
+      "price_per_rai_thb": 307692,
+      "price_note_en": "Total / per Rai",
+      "price_note_th": "ราคารวม (เฉลี่ย/ไร่)",
+      "title_deed_status": "unknown",
+      "title_deed_en": "Unknown (Ask Seller)",
+      "title_deed_th": "ไม่ระบุ (ต้องถามผู้ขาย)",
+      "drive_mins": "~50–60",
+      "bullets": [
+        {
+          "icon": "🌳",
+          "label_en": "Land",
+          "text_en": "Existing longan orchard, owner selling with no agent.",
+          "label_th": "สภาพที่ดิน",
+          "text_th": "สวนลำไย เจ้าของขายเองไม่ผ่านนายหน้า"
+        },
+        {
+          "icon": "💰",
+          "label_en": "Value",
+          "text_en": "฿400k total (~฿308k/rai) — cheapest entry in Pa Sang.",
+          "label_th": "ความคุ้มค่า",
+          "text_th": "รวม 4 แสน (ไร่ละ ~3 แสน) ถูกที่สุดในป่าซาง"
+        },
+        {
+          "icon": "❓",
+          "label_en": "Details",
+          "text_en": "Listing gives almost nothing else — ask for deed, road, water and power.",
+          "label_th": "รายละเอียด",
+          "text_th": "ประกาศให้ข้อมูลน้อยมาก ต้องถามเอกสารสิทธิ์ ถนน น้ำ ไฟ"
+        },
+        {
+          "icon": "⚠️",
+          "label_en": "Check",
+          "text_en": "Nam Dip lies on the Ping floodplain — ask about 2024 flooding.",
+          "label_th": "สิ่งที่ต้องเช็ค",
+          "text_th": "ต.น้ำดิบอยู่ในที่ราบลุ่มแม่น้ำปิง ถามประวัติน้ำท่วมปี 2567"
+        }
+      ],
+      "contact": "",
+      "listing_url": "https://www.teedin108.com/land/view/4109022/",
+      "listing_source_en": "View Teedin108",
+      "listing_source_th": "ดูประกาศ Teedin108",
+      "map_url": "https://www.google.com/maps/search/Nam+Dip+Pa+Sang+Lamphun",
+      "map_label_en": "Area Map",
+      "map_label_th": "แผนที่โซน",
+      "last_checked": "2026-11-22"
+    },
+    {
+      "id": "w1-35",
+      "week": 1,
+      "status": "visit",
+      "district": "pa-sang",
+      "district_en": "Pa Sang (Lamphun)",
+      "district_th": "อ.ป่าซาง จ.ลำพูน",
+      "badge_en": "Teedin108 • Paddy on Highway",
+      "badge_th": "Teedin108 • ที่นาติดทางหลวง",
+      "title_en": "Tha Tum 4.3-Rai Paddy Field on Tha Tum–Nong Ngueak Road",
+      "title_th": "ที่นา 4 ไร่ 1 งาน 30 ตร.ว. ติดถนนท่าตุ้ม-หนองเงือก ต.ท่าตุ้ม อ.ป่าซาง",
+      "size_rai_str": "4-1-30",
+      "size_rai_num": 4.33,
+      "size_sqm": 6920,
+      "dimensions_en": "",
+      "dimensions_th": "",
+      "price_total_thb": 1384000,
+      "price_per_rai_thb": 320000,
+      "price_note_en": "Total / per Rai",
+      "price_note_th": "ราคารวม (เฉลี่ย/ไร่)",
+      "title_deed_status": "unknown",
+      "title_deed_en": "Unknown (Ask Seller)",
+      "title_deed_th": "ไม่ระบุ (ต้องถามผู้ขาย)",
+      "drive_mins": "~50–60",
+      "bullets": [
+        {
+          "icon": "🌾",
+          "label_en": "Soil",
+          "text_en": "Paddy land — heavy clay ideal for pond lining and adobe bricks.",
+          "label_th": "ดิน",
+          "text_th": "ที่นา ดินเหนียวเหมาะขุดสระและทำอิฐบ้านดิน"
+        },
+        {
+          "icon": "🛣️",
+          "label_en": "Road",
+          "text_en": "~75 m frontage on the paved Tha Tum–Nong Ngueak highway; 3 km to Route 116.",
+          "label_th": "ถนน",
+          "text_th": "ติดถนนลาดยางท่าตุ้ม-หนองเงือก หน้ากว้าง ~75 ม. ห่างถนน 116 ประมาณ 3 กม."
+        },
+        {
+          "icon": "💰",
+          "label_en": "Value",
+          "text_en": "฿800/sq wah = ~฿320k/rai for 4.3 rai.",
+          "label_th": "ความคุ้มค่า",
+          "text_th": "ตารางวาละ 800 บาท (ไร่ละ ~3.2 แสน)"
+        },
+        {
+          "icon": "⚠️",
+          "label_en": "Check",
+          "text_en": "No electricity yet; Tha Tum borders the Ping — check flood history; deed type not stated.",
+          "label_th": "สิ่งที่ต้องเช็ค",
+          "text_th": "ยังไม่มีไฟฟ้า ต.ท่าตุ้มติดแม่น้ำปิง เช็คน้ำท่วม ไม่ระบุเอกสารสิทธิ์"
+        }
+      ],
+      "contact": "📞 098-815-7678",
+      "listing_url": "https://www.teedin108.com/land/view/4081618/",
+      "listing_source_en": "View Teedin108",
+      "listing_source_th": "ดูประกาศ Teedin108",
+      "map_url": "https://www.google.com/maps/search/Tha+Tum+Pa+Sang+Lamphun",
+      "map_label_en": "Area Map",
+      "map_label_th": "แผนที่โซน",
+      "last_checked": "2026-11-22"
+    },
+    {
+      "id": "w1-36",
+      "week": 1,
+      "status": "visit",
+      "district": "mae-tha-lamphun",
+      "district_en": "Mae Tha (Lamphun)",
+      "district_th": "อ.แม่ทา จ.ลำพูน",
+      "badge_en": "Teedin108 • Red Chanote",
+      "badge_th": "Teedin108 • โฉนดครุฑแดง",
+      "title_en": "Tha Kat 3-Rai Chanote Plot on Concrete Road (Mae Tha)",
+      "title_th": "ที่ดิน 3 ไร่ 23 ตร.ว. โฉนด ติดถนนคอนกรีต ต.ทากาศ อ.แม่ทา",
+      "size_rai_str": "3-0-23",
+      "size_rai_num": 3.06,
+      "size_sqm": 4892,
+      "dimensions_en": "",
+      "dimensions_th": "",
+      "price_total_thb": 1834500,
+      "price_per_rai_thb": 600000,
+      "price_note_en": "Total / per Rai",
+      "price_note_th": "ราคารวม (เฉลี่ย/ไร่)",
+      "title_deed_status": "verified",
+      "title_deed_en": "Chanote (Red Garuda)",
+      "title_deed_th": "โฉนดครุฑแดง (น.ส.4 จ.)",
+      "drive_mins": "~55–65",
+      "bullets": [
+        {
+          "icon": "📜",
+          "label_en": "Deed",
+          "text_en": "Chanote (Nor Sor 4 Jor), 1,223 sq wah; ฿600k/rai.",
+          "label_th": "เอกสารสิทธิ์",
+          "text_th": "โฉนด น.ส.4 จ. เนื้อที่ 1,223 ตร.ว. ไร่ละ 6 แสน"
+        },
+        {
+          "icon": "🛣️",
+          "label_en": "Road",
+          "text_en": "~29 m frontage on a concrete road; fuel station ~1.4 km.",
+          "label_th": "ถนน",
+          "text_th": "ติดถนนคอนกรีตหน้ากว้าง ~29 ม. ใกล้ปั๊มน้ำมัน ~1.4 กม."
+        },
+        {
+          "icon": "🌳",
+          "label_en": "Use",
+          "text_en": "Zoned rural-agricultural — fine for orchard, farm, homestead.",
+          "label_th": "การใช้ประโยชน์",
+          "text_th": "ผังเมืองชนบทและเกษตรกรรม เหมาะทำสวน ฟาร์ม บ้านสวน"
+        },
+        {
+          "icon": "⚠️",
+          "label_en": "Check",
+          "text_en": "Part of the plot is zoned forest-conservation (5.3) — confirm where you can build; no water source mentioned.",
+          "label_th": "สิ่งที่ต้องเช็ค",
+          "text_th": "บางส่วนอยู่ในผังอนุรักษ์ป่าไม้ (5.3) เช็คจุดที่สร้างบ้านได้ ไม่ระบุแหล่งน้ำ"
+        }
+      ],
+      "contact": "",
+      "listing_url": "https://www.teedin108.com/land/view/4137146/",
+      "listing_source_en": "View Teedin108",
+      "listing_source_th": "ดูประกาศ Teedin108",
+      "map_url": "https://www.google.com/maps/search/Tha+Kat+Mae+Tha+Lamphun",
+      "map_label_en": "Area Map",
+      "map_label_th": "แผนที่โซน",
+      "last_checked": "2026-11-22"
+    },
+    {
+      "id": "w1-37",
+      "week": 1,
+      "status": "shortlisted",
+      "district": "san-pa-tong",
+      "district_en": "San Pa Tong",
+      "district_th": "อ.สันป่าตอง",
+      "badge_en": "Teedin108 • By Owner • ฿257k/Rai",
+      "badge_th": "Teedin108 • เจ้าของขายเอง • ไร่ละ 2.6 แสน",
+      "title_en": "San Pa Tong 3.5-Rai Plot near Thung Siao (By Owner, ฿900k)",
+      "title_th": "ที่ดิน 3 ไร่ 2 งาน ใกล้แยกทุ่งเสี้ยว อ.สันป่าตอง (เจ้าของขายเอง 9 แสน)",
+      "size_rai_str": "3-2-00",
+      "size_rai_num": 3.5,
+      "size_sqm": 5600,
+      "dimensions_en": "",
+      "dimensions_th": "",
+      "price_total_thb": 900000,
+      "price_per_rai_thb": 257143,
+      "price_note_en": "Total / per Rai",
+      "price_note_th": "ราคารวม (เฉลี่ย/ไร่)",
+      "title_deed_status": "unknown",
+      "title_deed_en": "Unknown (Ask Seller)",
+      "title_deed_th": "ไม่ระบุ (ต้องถามผู้ขาย)",
+      "drive_mins": "~35–45",
+      "bullets": [
+        {
+          "icon": "⚡",
+          "label_en": "Utilities",
+          "text_en": "Water and electricity ready; road frontage inside Soi Kao Mai Lanna.",
+          "label_th": "สาธารณูปโภค",
+          "text_th": "น้ำ-ไฟพร้อม ติดถนนในซอยเก้าไม้ล้านนา"
+        },
+        {
+          "icon": "🛣️",
+          "label_en": "Access",
+          "text_en": "700 m from the Thung Siao junction main road; ~15–25 min to the Hang Dong international schools.",
+          "label_th": "การเดินทาง",
+          "text_th": "ห่างถนนใหญ่แยกทุ่งเสี้ยว 700 ม. ใกล้โรงเรียนนานาชาติหางดง"
+        },
+        {
+          "icon": "💰",
+          "label_en": "Value",
+          "text_en": "฿900k for 3.5 rai (~฿257k/rai) — cheapest per rai in Zone C.",
+          "label_th": "ความคุ้มค่า",
+          "text_th": "9 แสน ได้ 3.5 ไร่ (ไร่ละ ~2.6 แสน) ถูกสุดในโซนตะวันตกเฉียงใต้"
+        },
+        {
+          "icon": "⚠️",
+          "label_en": "Check",
+          "text_en": "Very cheap for San Pa Tong and deed not stated — confirm Chanote (not ส.ป.ก.) and legal road before visiting. (Tambon Ban Klang, San Pa Tong — not Lamphun's Ban Klang.)",
+          "label_th": "สิ่งที่ต้องเช็ค",
+          "text_th": "ราคาถูกมากและไม่ระบุเอกสารสิทธิ์ ต้องยืนยันว่าเป็นโฉนด (ไม่ใช่ ส.ป.ก.) และทางสาธารณะก่อนไปดู"
+        }
+      ],
+      "contact": "📞 080-119-5461 (เจ้าของ)",
+      "listing_url": "https://www.teedin108.com/land/view/4147383/",
+      "listing_source_en": "View Teedin108",
+      "listing_source_th": "ดูประกาศ Teedin108",
+      "map_url": "https://www.google.com/maps/search/Thung+Siao+San+Pa+Tong+Chiang+Mai",
+      "map_label_en": "Area Map",
+      "map_label_th": "แผนที่โซน",
+      "last_checked": "2026-11-22"
+    },
+    {
+      "id": "w1-38",
+      "week": 1,
+      "status": "visit",
+      "district": "mae-wang",
+      "district_en": "Mae Wang",
+      "district_th": "อ.แม่วาง",
+      "badge_en": "Teedin108 • Corner Chanote • Views",
+      "badge_th": "Teedin108 • แปลงมุม โฉนด วิวเขา",
+      "title_en": "Thung Pi 1.5-Rai Corner Chanote Plot with Mountain Views",
+      "title_th": "ที่ดินแปลงมุม 1 ไร่ 2 งาน 4 ตร.ว. โฉนด วิวเขา ต.ทุ่งปี้ อ.แม่วาง",
+      "size_rai_str": "1-2-04",
+      "size_rai_num": 1.51,
+      "size_sqm": 2416,
+      "dimensions_en": "69 m × 41 m",
+      "dimensions_th": "หน้ากว้าง 69 × ลึก 41 ม.",
+      "price_total_thb": 1510000,
+      "price_per_rai_thb": 1000000,
+      "price_note_en": "Total / per Rai",
+      "price_note_th": "ราคารวม (เฉลี่ย/ไร่)",
+      "title_deed_status": "verified",
+      "title_deed_en": "Chanote (Red Garuda)",
+      "title_deed_th": "โฉนดครุฑแดง (น.ส.4 จ.)",
+      "drive_mins": "~45–55",
+      "bullets": [
+        {
+          "icon": "📜",
+          "label_en": "Deed",
+          "text_en": "Red Garuda Chanote; corner plot with gravel roads on two sides.",
+          "label_th": "เอกสารสิทธิ์",
+          "text_th": "โฉนดครุฑแดง แปลงมุม ติดถนนหินคลุก 2 ด้าน"
+        },
+        {
+          "icon": "⚡",
+          "label_en": "Utilities",
+          "text_en": "Electricity and village water pass the plot.",
+          "label_th": "สาธารณูปโภค",
+          "text_th": "ไฟฟ้าและน้ำประปาหมู่บ้านผ่านหน้าแปลง"
+        },
+        {
+          "icon": "🏥",
+          "label_en": "Nearby",
+          "text_en": "3.5 km to Mae Wang hospital & district office; ~7 km to the San Pa Tong–Mae Wang canal road.",
+          "label_th": "ใกล้เคียง",
+          "text_th": "ห่างโรงพยาบาลและที่ว่าการอำเภอแม่วาง 3.5 กม. ถนนคันคลอง 7 กม."
+        },
+        {
+          "icon": "⚠️",
+          "label_en": "Check",
+          "text_en": "฿2,500/sq wah (~฿1M/rai) is pricey for Thung Pi; transfer fee split 50/50; listed Jan 2026 — confirm still available.",
+          "label_th": "สิ่งที่ต้องเช็ค",
+          "text_th": "ตารางวาละ 2,500 ค่อนข้างแพง ค่าโอนคนละครึ่ง ประกาศตั้งแต่ ม.ค. 69 เช็คว่ายังขายอยู่"
+        }
+      ],
+      "contact": "",
+      "listing_url": "https://www.teedin108.com/land/view/3975901/",
+      "listing_source_en": "View Teedin108",
+      "listing_source_th": "ดูประกาศ Teedin108",
+      "map_url": "https://www.google.com/maps/search/Thung+Pi+Mae+Wang+Chiang+Mai",
+      "map_label_en": "Area Map",
+      "map_label_th": "แผนที่โซน",
+      "last_checked": "2026-11-22"
     }
   ]
 }
