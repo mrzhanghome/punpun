@@ -3,7 +3,7 @@
 Bilingual (English + ภาษาไทย) weekly land shortlist and evaluation guide for finding self-reliant homestead land within ~1 hour of Chiang Mai city, inspired by **Jon Jandai & Pun Pun Center for Self-Reliance (บ้านพันพรรณ อ.แม่แตง)**.
 
 ## 🌐 Live GitHub Pages Site
-**[https://lxwxjx-oss.github.io/punpun/](https://lxwxjx-oss.github.io/punpun/)**
+**[https://mrzhanghome.github.io/punpun/](https://mrzhanghome.github.io/punpun/)**
 
 ## Structure
 1. **Weekly Land Search Results & Shortlist** (Filterable by `Shortlisted`, `To Visit`, `Contacted`, `Passed`).
