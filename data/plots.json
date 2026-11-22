@@ -1,4 +1,10 @@
 {
+  "criteria": {
+    "min_rai": 1.0,
+    "max_rai": 5.0,
+    "max_budget_thb": 2500000,
+    "set_on": "2026-11-22"
+  },
   "current_week": 1,
   "last_updated_iso": "2026-11-22",
   "last_updated_en": "Nov 22, 2026",
@@ -133,12 +139,12 @@
     {
       "id": "w1-03",
       "week": 1,
-      "status": "shortlisted",
+      "status": "passed",
       "district": "mae-taeng",
       "district_en": "Mae Taeng",
       "district_th": "อ.แม่แตง",
-      "badge_en": "Top Pick • Ready Homestead",
-      "badge_th": "ตัวเต็ง #3 • บ้านสวนพร้อมอยู่",
+      "badge_en": "Out of criteria",
+      "badge_th": "เกินเกณฑ์ที่ตั้งไว้",
       "title_en": "Mae Taeng 5-Rai Bamboo & Fruit Farm + 2 Ponds + House",
       "title_th": "ที่ดินสวนแม่แตง 5 ไร่ พร้อมบ้าน + บ่อน้ำ 2 สระ + ป่าไผ่ ต.ขี้เหล็ก",
       "size_rai_str": "5-0-7",
@@ -182,6 +188,13 @@
           "text_en": "Nor Sor 3 Gor deed (legal & transferable) — verify boundary pins & Chanote upgrade process.",
           "label_th": "สิ่งที่ต้องเช็ค",
           "text_th": "เป็น น.ส.3 ก. (โอนได้ถูกกฎหมาย) — ควรตรวจสอบแนวเขตและยื่นออกโฉนดที่กรมที่ดินแม่แตง"
+        },
+        {
+          "icon": "🚫",
+          "label_en": "Out of criteria",
+          "text_en": "Passed automatically: size 5.02 rai outside 1-5 rai; price 5,000,000 THB over budget 2,500,000 THB.",
+          "label_th": "เกินเกณฑ์",
+          "text_th": "ตัดออกอัตโนมัติ: size 5.02 rai outside 1-5 rai; price 5,000,000 THB over budget 2,500,000 THB"
         }
       ],
       "contact": "📞 087-545-6668 • Line: jaibaansarnfun_1",
@@ -196,12 +209,12 @@
     {
       "id": "w1-04",
       "week": 1,
-      "status": "shortlisted",
+      "status": "passed",
       "district": "mae-on",
       "district_en": "Mae On",
       "district_th": "อ.แม่ออน",
-      "badge_en": "Top Pick • Off-Grid Value",
-      "badge_th": "ตัวเต็ง #4 • ผืนใหญ่ราคาดี",
+      "badge_en": "Out of criteria",
+      "badge_th": "เกินเกณฑ์ที่ตั้งไว้",
       "title_en": "On Klang 6-Rai Mountain-View Red Garuda Chanote",
       "title_th": "ที่ดิน 6 ไร่ วิวเขา โฉนดครุฑแดง ไร่ละ 5.4 แสน ต.ออนกลาง",
       "size_rai_str": "6-0-28",
@@ -238,6 +251,13 @@
           "text_en": "Off-grid currently (grid power/water ~600m away); verify groundwater depth & availability (posted Jan 2026).",
           "label_th": "สิ่งที่ต้องเช็ค",
           "text_th": "ไฟฟ้าและประปาห่าง ~600 ม. (เหมาะทำระบบโซลาร์+บาดาล) และเช็คความลึกน้ำบาดาล"
+        },
+        {
+          "icon": "🚫",
+          "label_en": "Out of criteria",
+          "text_en": "Passed automatically: size 6.07 rai outside 1-5 rai; price 3,300,000 THB over budget 2,500,000 THB.",
+          "label_th": "เกินเกณฑ์",
+          "text_th": "ตัดออกอัตโนมัติ: size 6.07 rai outside 1-5 rai; price 3,300,000 THB over budget 2,500,000 THB"
         }
       ],
       "contact": "📞 094-573-5168 (คุณปิยวิทย์ / Ref 0104241)",
@@ -252,12 +272,12 @@
     {
       "id": "w1-05",
       "week": 1,
-      "status": "shortlisted",
+      "status": "passed",
       "district": "mae-taeng",
       "district_en": "Mae Taeng",
       "district_th": "อ.แม่แตง",
-      "badge_en": "Top Pick • Pun Pun Tambon!",
-      "badge_th": "ตัวเต็ง #5 • ตำบลเดียวกับบ้านพันพรรณ!",
+      "badge_en": "Out of criteria",
+      "badge_th": "เกินเกณฑ์ที่ตั้งไว้",
       "title_en": "Cho Lae 5.14-Rai Rice Field Bordering Public Canal",
       "title_th": "ที่นา 5 ไร่ 56 ตร.ว. ติดคลองสาธารณะ ต.ช่อแล (ตรงข้ามร้านหลงนา)",
       "size_rai_str": "5-0-56",
@@ -294,6 +314,13 @@
           "text_en": "Confirm Red Garuda Chanote copy, dry-season canal flow, and cost of running electricity 200m.",
           "label_th": "สิ่งที่ต้องเช็ค",
           "text_th": "ขอดูหน้าโฉนดครุฑแดง เช็คน้ำคลองหน้าแล้ง และค่าลากเสาไฟ 200 ม."
+        },
+        {
+          "icon": "🚫",
+          "label_en": "Out of criteria",
+          "text_en": "Passed automatically: size 5.14 rai outside 1-5 rai; price 4,990,000 THB over budget 2,500,000 THB.",
+          "label_th": "เกินเกณฑ์",
+          "text_th": "ตัดออกอัตโนมัติ: size 5.14 rai outside 1-5 rai; price 4,990,000 THB over budget 2,500,000 THB"
         }
       ],
       "contact": "",
@@ -406,6 +433,13 @@
           "text_en": "At ฿317k/rai, MUST verify whether it is Chanote / Nor Sor 3 Gor vs. Sor Por Gor before visiting!",
           "label_th": "เช็คด่วนก่อนไปดู",
           "text_th": "ราคาถูกมาก (3.17 แสน/ไร่) ต้องขอดูเอกสารสิทธิ์ก่อนว่าใช่โฉนดหรือ น.ส.3 ก. (ห้ามซื้อถ้าเป็น ส.ป.ก.)"
+        },
+        {
+          "icon": "✂️",
+          "label_en": "Fits if split",
+          "text_en": "Listing is 6 Rai but sold in part — ask for a ≤5 Rai portion within budget.",
+          "label_th": "ซื้อแบ่งได้",
+          "text_th": "ประกาศ 6 ไร่ แต่แบ่งขายได้ — ขอซื้อไม่เกิน 5 ไร่ ให้อยู่ในงบ"
         }
       ],
       "contact": "",
@@ -415,17 +449,18 @@
       "map_url": "https://www.google.com/maps/search/Khi+Lek+Mae+Taeng+Chiang+Mai",
       "map_label_en": "Area Map",
       "map_label_th": "แผนที่ ต.ขี้เหล็ก",
-      "last_checked": "2026-11-22"
+      "last_checked": "2026-11-22",
+      "keep_despite_criteria": true
     },
     {
       "id": "w1-08",
       "week": 1,
-      "status": "visit",
+      "status": "passed",
       "district": "doi-saket",
       "district_en": "Doi Saket",
       "district_th": "อ.ดอยสะเก็ด",
-      "badge_en": "Fresh Nov 2026 • 2 Chanotes",
-      "badge_th": "ประกาศใหม่ พ.ย. 69 • 2 โฉนด",
+      "badge_en": "Out of criteria",
+      "badge_th": "เกินเกณฑ์ที่ตั้งไว้",
       "title_en": "Sa-Nga Ban 4.49-Rai Orchard/Paddy + Large Private Pond",
       "title_th": "ที่ดินสวนผสมและนา 4.49 ไร่ ติดถนนคอนกรีต พร้อมบ่อน้ำใหญ่ ต.สง่าบ้าน",
       "size_rai_str": "4-1-97",
@@ -462,6 +497,13 @@
           "text_en": "Higher total price (฿4.95M) due to town proximity; verify rainy-season drainage on paddy section.",
           "label_th": "สิ่งที่ต้องเช็ค",
           "text_th": "ราคาค่อนข้างสูงตามทำเลใกล้เมือง และเช็คระดับน้ำขังหน้าฝนในส่วนที่เป็นที่นา"
+        },
+        {
+          "icon": "🚫",
+          "label_en": "Out of criteria",
+          "text_en": "Passed automatically: price 4,950,000 THB over budget 2,500,000 THB.",
+          "label_th": "เกินเกณฑ์",
+          "text_th": "ตัดออกอัตโนมัติ: price 4,950,000 THB over budget 2,500,000 THB"
         }
       ],
       "contact": "",
@@ -476,12 +518,12 @@
     {
       "id": "w1-09",
       "week": 1,
-      "status": "visit",
+      "status": "passed",
       "district": "mae-on",
       "district_en": "Mae On",
       "district_th": "อ.แม่ออน",
-      "badge_en": "Fresh Nov 2026 • 2 Ponds",
-      "badge_th": "ประกาศใหม่ พ.ย. 69 • มี 2 บ่อ",
+      "badge_en": "Out of criteria",
+      "badge_th": "เกินเกณฑ์ที่ตั้งไว้",
       "title_en": "On Nuea 3.34-Rai Foothill Lot + 2 Ponds + Container House",
       "title_th": "ที่ดินวิวเขา 3.34 ไร่ ติดถนนคอนกรีต พร้อมบ่อน้ำ 2 บ่อ และบ้านคอนเทนเนอร์",
       "size_rai_str": "3-1-35",
@@ -518,6 +560,13 @@
           "text_en": "Test foothill soil clay ratio for adobe bricks & check dry-season pond water retention.",
           "label_th": "สิ่งที่ต้องเช็ค",
           "text_th": "เช็คความเหนียวของเนื้อดินแถบเชิงเขาสำหรับปั้นอิฐดินดิบ และเช็คว่าบ่อเก็บน้ำอยู่ตลอดแล้งไหม"
+        },
+        {
+          "icon": "🚫",
+          "label_en": "Out of criteria",
+          "text_en": "Passed automatically: price 3,800,000 THB over budget 2,500,000 THB.",
+          "label_th": "เกินเกณฑ์",
+          "text_th": "ตัดออกอัตโนมัติ: price 3,800,000 THB over budget 2,500,000 THB"
         }
       ],
       "contact": "",
@@ -581,12 +630,12 @@
     {
       "id": "w1-11",
       "week": 1,
-      "status": "visit",
+      "status": "passed",
       "district": "mae-taeng",
       "district_en": "Mae Taeng",
       "district_th": "อ.แม่แตง",
-      "badge_en": "Pun Pun Zone • Exact GPS",
-      "badge_th": "โซน ต.ช่อแล • มีพิกัดตรง",
+      "badge_en": "Out of criteria",
+      "badge_th": "เกินเกณฑ์ที่ตั้งไว้",
       "title_en": "Cho Lae 4.13-Rai Land near Mae Ngad Dam & Wat Ban Den",
       "title_th": "ที่ดิน 4 ไร่ 50.3 ตร.ว. ย่านเมืองแกน ใกล้เขื่อนแม่งัด ต.ช่อแล",
       "size_rai_str": "4-0-50",
@@ -616,6 +665,13 @@
           "text_en": "Ask agent for Chanote photo, exact canal/water access, and flood history near Ping River / Mueang Kaen.",
           "label_th": "สิ่งที่ต้องเช็ค",
           "text_th": "ขอดูหน้าโฉนด ตรวจสอบแหล่งน้ำในแปลง และประวัติน้ำท่วมบริเวณลุ่มน้ำปิง-เมืองแกน"
+        },
+        {
+          "icon": "🚫",
+          "label_en": "Out of criteria",
+          "text_en": "Passed automatically: price 3,990,000 THB over budget 2,500,000 THB.",
+          "label_th": "เกินเกณฑ์",
+          "text_th": "ตัดออกอัตโนมัติ: price 3,990,000 THB over budget 2,500,000 THB"
         }
       ],
       "contact": "📞 089-435-0422 (บอย / Code T-142713) • Line: puttisaninta",
@@ -630,12 +686,12 @@
     {
       "id": "w1-12",
       "week": 1,
-      "status": "visit",
+      "status": "passed",
       "district": "samoeng",
       "district_en": "Samoeng",
       "district_th": "อ.สะเมิง",
-      "badge_en": "Cool Climate • Streamfront",
-      "badge_th": "อากาศเย็น • หลังติดลำธาร",
+      "badge_en": "Out of criteria",
+      "badge_th": "เกินเกณฑ์ที่ตั้งไว้",
       "title_en": "Samoeng Tai 4.2-Rai Chanote + Paved Road + Natural Stream",
       "title_th": "ที่ดินสะเมิงใต้ 4.2 ไร่ หน้าติดถนนดำ หลังติดลำธารและภูเขา (โฉนด)",
       "size_rai_str": "4-0-80",
@@ -665,6 +721,13 @@
           "text_en": "Posted Jan 2025 (verify still available); inspect stream bank runoff during heavy rain; winding mountain road to city.",
           "label_th": "สิ่งที่ต้องเช็ค",
           "text_th": "ประกาศตั้งแต่ ม.ค. 68 (เช็คว่ายังว่างไหม) และเช็คแนวน้ำป่าในลำธารช่วงหน้าฝน"
+        },
+        {
+          "icon": "🚫",
+          "label_en": "Out of criteria",
+          "text_en": "Passed automatically: price 4,500,000 THB over budget 2,500,000 THB.",
+          "label_th": "เกินเกณฑ์",
+          "text_th": "ตัดออกอัตโนมัติ: price 4,500,000 THB over budget 2,500,000 THB"
         }
       ],
       "contact": "",

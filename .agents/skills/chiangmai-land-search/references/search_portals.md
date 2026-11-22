@@ -2,12 +2,12 @@
 
 ## 1. Homestead Criteria (Jon Jandai / Pun Pun Style)
 - **Location:** Within ~30–65 minutes of Chiang Mai Old City.
-- **Size:** **2 to 6 Rai** (3,200–9,600 sq.m) — enough for a water retention pond, adobe/earthen house (*บ้านดิน*), raised mounds (*โคกหนองนา*), and organic food forest.
+- **Size:** **1 to 5 Rai** (1,600–8,000 sq.m) — enough for a water retention pond, adobe/earthen house (*บ้านดิน*), raised mounds (*โคกหนองนา*), and organic food forest.
 - **Title Deed (STRICT):**
   - ✅ **Chanote / Nor Sor 4 Jor (โฉนดครุฑแดง)** — strongly preferred.
   - ⚠️ **Nor Sor 3 Gor (น.ส.3 ก. ครุฑเขียว)** — acceptable if clearly labeled and transferable.
   - ❌ **STRICTLY EXCLUDE:** *Sor Por Gor 4-01 (ส.ป.ก.)*, *Por Bor Tor 5 (ภ.บ.ท.5)*, *Sor Tor Gor (ส.ท.ก.)*, and forest reserve plots.
-- **Price Target:** Ideally **฿300k–฿1.2M / Rai** (total **≤ ฿5M THB**), highlighting best value per rai and direct-from-owner (`เจ้าของขายเอง`) listings.
+- **Budget (HARD CAP):** total price **≤ ฿2,500,000 THB** (current `criteria.max_budget_thb` in `data/plots.json`); highlight best value per rai and direct-from-owner (`เจ้าของขายเอง`) listings.
 - **Physical Priorities:**
   1. **Water:** Existing pond(s), year-round irrigation canal (*ลำเหมือง / เหมืองฝาย*), stream, or good groundwater depth.
   2. **Soil:** Clay-loam / paddy / mixed orchard soil suitable for pond lining and adobe bricks.

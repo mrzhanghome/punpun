@@ -2,7 +2,7 @@
 name: chiangmai-land-search
 description: >-
   Run a thorough weekly search for self-reliant homestead land near Chiang Mai
-  (Jon Jandai / Pun Pun style: 2-6 Rai, Chanote/NS3G, within ~1 hour of Chiang
+  (Jon Jandai / Pun Pun style: 1-5 Rai, budget <= 2.5M THB, Chanote/NS3G, within ~1 hour of Chiang
   Mai city), re-verify existing listing URLs in data/plots.json, merge newly
   discovered plots tagged by week, regenerate index.html, and push the live
   bilingual (EN/TH) GitHub Pages board. Use when the user asks to run a weekly
@@ -16,7 +16,7 @@ description: >-
 Maintains the live bilingual (`EN` + `ภาษาไทย`) Chiang Mai self-reliance land shortlist hosted on GitHub Pages (`https://mrzhanghome.github.io/punpun/`). Each weekly run:
 1. Exports existing listings from `data/plots.json` for deduplication.
 2. Politely re-checks existing listing URLs and marks dead/sold listings.
-3. Searches Thai & English portals across all 3 Chiang Mai target zones for fresh 2–6 Rai Chanote/NS3G plots.
+3. Searches Thai & English portals across all 3 Chiang Mai target zones for fresh 1–5 Rai Chanote/NS3G plots within the budget (currently ≤ ฿2.5M total, see `criteria` in data/plots.json).
 4. Validates, merges, and tags new plots with `Week N`, renders `index.html`, and commits/pushes to GitHub Pages.
 
 ## Dependencies
@@ -49,7 +49,8 @@ uv run .agents/skills/chiangmai-land-search/scripts/land_board.py render \
 |---|---|---|
 | `summary` | Writes current week, counts by status/district/week, and all existing URLs to `--output`. | `--input`, `--output` |
 | `check-links` | Checks active plots at 1 req/s; classifies `live`, `dead`, `sold_detected`, or `needs_browser_check`. | `--input`, `--output`, `--mark-dead`, `--include-closed` |
-| `add-plots` | Validates required fields, rejects `ส.ป.ก.` / `ภ.บ.ท.5`, deduplicates by URL, computes `price_per_rai_thb`, stamps week/date. | `--input`, `--batch`, `--week`, `--date`, `--output` |
+| `add-plots` | Validates required fields, rejects `ส.ป.ก.` / `ภ.บ.ท.5`, skips plots outside `criteria` (size/budget; override with `--allow-out-of-criteria`), deduplicates by URL, computes `price_per_rai_thb`, stamps week/date. | `--input`, `--batch`, `--week`, `--date`, `--output` |
+| `apply-criteria` | Optionally updates `criteria` (`--min-rai`, `--max-rai`, `--max-budget`) then auto-marks existing plots outside size/budget as `passed` (skip with `keep_despite_criteria: true` on a plot). | `--input`, `--output`, optional criteria flags |
 | `update-status` | Updates an existing plot's status (`shortlisted`/`visit`/`contacted`/`passed`/`sold`) and appends bilingual notes. | `--input`, `--id`, `--status`, `--note-en`, `--note-th`, `--output` |
 | `render` | Deterministically rewrites `index.html` between `PLOTS_START..PLOTS_END`, hero badges/stats, and side-nav counts. | `--input`, `--html` |
 
@@ -72,7 +73,8 @@ Research rules:
 - Open actual listing detail pages to verify listings are **live**, extract exact size (`Rai-Ngan-Wah` and `sq.m`), exact total THB price, title deed, water/road/power details, and seller contact if public.
 - **Strictly exclude** any *Sor Por Gor (ส.ป.ก. 4-01)* or *Por Bor Tor 5 (ภ.บ.ท.5)* listings.
 - **Never attempt to solve or bypass CAPTCHAs or Cloudflare anti-bot challenges** — skip any gated site and use another accessible portal (`Teedin108`, `DotProperty`, `FazWaz`, `LivingInsider`).
-- Aim for **2–4 strong newly discovered plots per zone** (6–10 high-quality new listings per weekly update).
+- **Current criteria (stored in `data/plots.json` → `criteria`): 1–5 Rai, total price ≤ ฿2.5M.** Read it from the JSON, not from memory — the user may change it. If the user changes criteria, run `apply-criteria` with the new flags first.
+- Aim for **2–4 strong newly discovered plots per zone** that fit the criteria (fewer is fine if the market has little in budget — never pad with out-of-budget plots).
 
 ### Step 3 — Merge, Render & Verify
 1. Save newly curated listings in bilingual English + Thai (`EN` + `ภาษาไทย`) into `/tmp/week<N>_new_plots.json` following the schema in [references/search_portals.md](./references/search_portals.md).

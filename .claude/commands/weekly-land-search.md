@@ -6,6 +6,8 @@ Load and follow the complete runbook in `.agents/skills/chiangmai-land-search/SK
 
 User arguments (optional week number, focus districts, or budget overrides): $ARGUMENTS
 
+Current criteria live in `data/plots.json` → `criteria` (1–5 rai, ≤ ฿2.5M total); respect them.
+
 Execute all 4 steps:
 1. Run `summary` and `check-links --mark-dead` via `uv run .agents/skills/chiangmai-land-search/scripts/land_board.py`.
 2. Perform thorough parallel research across Mae Taeng, Doi Saket/Mae On, and Mae Wang/San Pa Tong/Samoeng (skipping duplicates already in `data/plots.json`, strictly excluding Sor Por Gor / Por Bor Tor 5, and never bypassing CAPTCHAs).

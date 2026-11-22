@@ -5,6 +5,7 @@ Subcommands:
   summary       Export compact board stats & existing URLs (for deduping new searches).
   check-links   Politely check existing listing URLs (1 req/s) for 404/sold status.
   add-plots     Validate, deduplicate, and merge a weekly batch of plots into plots.json.
+  apply-criteria Mark existing plots outside board criteria (size/budget) as 'passed'.
   update-status Update a single plot's status (shortlisted/visit/contacted/passed/sold) & notes.
   render        Deterministically render the weekly results & stats into index.html.
 
@@ -27,6 +28,7 @@ from urllib import request as urllib_request
 
 
 REQUESTS_PER_SECOND = 1.0  # Polite default rate limit for public listing portals
+DEFAULT_CRITERIA = {"min_rai": 1.0, "max_rai": 5.0, "max_budget_thb": 2500000}
 VALID_STATUSES = ("shortlisted", "visit", "contacted", "passed", "sold")
 VALID_DISTRICTS = {
     "mae-taeng": ("Mae Taeng", "อ.แม่แตง"),
@@ -127,6 +129,24 @@ def format_thb_per_rai(amount: int) -> str:
     if amount >= 1_000_000:
         return f"฿{amount / 1_000_000:.2f}M/ไร่"
     return f"฿{round(amount / 1_000):,}k/ไร่"
+
+
+def get_criteria(board: dict) -> dict:
+    crit = dict(DEFAULT_CRITERIA)
+    crit.update(board.get("criteria", {}))
+    return crit
+
+
+def criteria_violation(plot: dict, crit: dict) -> str | None:
+    """Returns a reason string if the plot is outside size/budget criteria."""
+    rai = float(plot.get("size_rai_num", 0))
+    total = int(plot.get("price_total_thb", 0))
+    reasons = []
+    if rai < crit["min_rai"] or rai > crit["max_rai"]:
+        reasons.append(f"size {rai:.2f} rai outside {crit['min_rai']:g}-{crit['max_rai']:g} rai")
+    if total > crit["max_budget_thb"]:
+        reasons.append(f"price {total:,} THB over budget {crit['max_budget_thb']:,} THB")
+    return "; ".join(reasons) if reasons else None
 
 
 def check_forbidden_deeds(plot: dict) -> str | None:
@@ -310,6 +330,12 @@ def cmd_add_plots(args: argparse.Namespace) -> None:
             skipped.append({"title": raw["title_en"], "reason": deed_err})
             continue
 
+        if not args.allow_out_of_criteria:
+            crit_err = criteria_violation(raw, get_criteria(board))
+            if crit_err:
+                skipped.append({"title": raw["title_en"], "reason": f"Out of criteria: {crit_err}"})
+                continue
+
         norm_url = normalize_url(raw["listing_url"])
         if norm_url in existing_urls:
             skipped.append({"title": raw["title_en"], "reason": "Duplicate listing_url already in board"})
@@ -376,6 +402,40 @@ def cmd_add_plots(args: argparse.Namespace) -> None:
 
     write_json(board, args.output)
     print(f"Added {len(added)} plot(s): {added}; Skipped {len(skipped)}: {skipped}")
+
+
+def cmd_apply_criteria(args: argparse.Namespace) -> None:
+    board = load_json(args.input)
+    if args.max_rai is not None or args.min_rai is not None or args.max_budget is not None:
+        crit = get_criteria(board)
+        if args.min_rai is not None:
+            crit["min_rai"] = args.min_rai
+        if args.max_rai is not None:
+            crit["max_rai"] = args.max_rai
+        if args.max_budget is not None:
+            crit["max_budget_thb"] = args.max_budget
+        crit["set_on"] = date.today().isoformat()
+        board["criteria"] = crit
+    crit = get_criteria(board)
+    changed = []
+    for plot in board.get("plots", []):
+        if plot["status"] in ("passed", "sold"):
+            continue
+        reason = criteria_violation(plot, crit)
+        if reason and not (plot.get("keep_despite_criteria")):
+            plot["status"] = "passed"
+            plot["badge_en"] = "Out of criteria"
+            plot["badge_th"] = "เกินเกณฑ์ที่ตั้งไว้"
+            plot["bullets"].append({
+                "icon": "🚫",
+                "label_en": "Out of criteria",
+                "text_en": f"Passed automatically: {reason}.",
+                "label_th": "เกินเกณฑ์",
+                "text_th": f"ตัดออกอัตโนมัติ: {reason}",
+            })
+            changed.append({"id": plot["id"], "reason": reason})
+    write_json(board, args.output)
+    print(f"Criteria: {crit}; marked {len(changed)} plot(s) as passed: {changed}")
 
 
 def cmd_update_status(args: argparse.Namespace) -> None:
@@ -657,6 +717,46 @@ def cmd_render(args: argparse.Namespace) -> None:
     )
     doc = re.sub(r"<!-- HERO_STATS_START -->.*?<!-- HERO_STATS_END -->", lambda _: hero_stats, doc, count=1, flags=re.S)
 
+    # Update criteria pills (size + budget) from board criteria
+    crit = get_criteria(board)
+    min_r, max_r = crit["min_rai"], crit["max_rai"]
+    budget = crit["max_budget_thb"]
+    budget_m = f"{budget / 1_000_000:g}"
+    sqm_lo, sqm_hi = int(min_r * 1600), int(max_r * 1600)
+    pills = (
+        "<!-- CRITERIA_PILLS_START -->\n"
+        '        <div class="spec-pill">\n'
+        '          <div class="spec-pill-label">\n'
+        '            <span class="en">Target Size</span>\n'
+        '            <span class="th">ขนาดที่ดินเป้าหมาย</span>\n'
+        "          </div>\n"
+        '          <div class="spec-pill-value">\n'
+        f'            <span class="en">{min_r:g} – {max_r:g} Rai</span>\n'
+        f'            <span class="th">{min_r:g} – {max_r:g} ไร่</span>\n'
+        "          </div>\n"
+        '          <div class="muted">\n'
+        f'            <span class="en">{sqm_lo:,} – {sqm_hi:,} sq.m (pond + adobe house + orchard)</span>\n'
+        '            <span class="th">ขุดสระ + สร้างบ้านดิน + สวนป่ากินได้</span>\n'
+        "          </div>\n"
+        "        </div>\n"
+        '        <div class="spec-pill">\n'
+        '          <div class="spec-pill-label">\n'
+        '            <span class="en">Max Budget</span>\n'
+        '            <span class="th">งบประมาณสูงสุด</span>\n'
+        "          </div>\n"
+        '          <div class="spec-pill-value">\n'
+        f'            <span class="en">฿{budget_m}M THB</span>\n'
+        f'            <span class="th">{budget_m} ล้านบาท</span>\n'
+        "          </div>\n"
+        '          <div class="muted">\n'
+        '            <span class="en">Total land price, including everything</span>\n'
+        '            <span class="th">ราคาที่ดินรวมทั้งหมดไม่เกินงบนี้</span>\n'
+        "          </div>\n"
+        "        </div>\n"
+        "        <!-- CRITERIA_PILLS_END -->"
+    )
+    doc = re.sub(r"<!-- CRITERIA_PILLS_START -->.*?<!-- CRITERIA_PILLS_END -->", lambda _: pills, doc, count=1, flags=re.S)
+
     # Update side nav counts
     doc = re.sub(
         r"<!-- NAV_RESULTS_LABEL_START -->.*?<!-- NAV_RESULTS_LABEL_END -->",
@@ -691,7 +791,15 @@ def main() -> None:
     p_add.add_argument("--batch", required=True, help="Path to new plots JSON file")
     p_add.add_argument("--week", type=int, required=True, help="Week number (e.g., 2, 3, ...)")
     p_add.add_argument("--date", default=None, help="ISO date YYYY-MM-DD (defaults to today)")
+    p_add.add_argument("--allow-out-of-criteria", action="store_true", help="Do not skip plots outside size/budget criteria")
     p_add.add_argument("--output", required=True, help="Output updated plots.json path")
+
+    p_crit = sub.add_parser("apply-criteria", help="Optionally update criteria, then mark out-of-criteria plots as passed")
+    p_crit.add_argument("--input", required=True, help="Path to data/plots.json")
+    p_crit.add_argument("--min-rai", type=float, default=None, help="New minimum size in rai")
+    p_crit.add_argument("--max-rai", type=float, default=None, help="New maximum size in rai")
+    p_crit.add_argument("--max-budget", type=int, default=None, help="New max total budget in THB")
+    p_crit.add_argument("--output", required=True, help="Output updated plots.json path")
 
     p_upd = sub.add_parser("update-status", help="Update status and/or notes on an existing plot")
     p_upd.add_argument("--input", required=True, help="Path to data/plots.json")
@@ -714,6 +822,8 @@ def main() -> None:
         cmd_check_links(args)
     elif args.command == "add-plots":
         cmd_add_plots(args)
+    elif args.command == "apply-criteria":
+        cmd_apply_criteria(args)
     elif args.command == "update-status":
         cmd_update_status(args)
     elif args.command == "render":
