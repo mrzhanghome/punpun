@@ -99,7 +99,7 @@
       }
 
       h1 {
-        font-size: clamp(1.7rem, 1.2rem + 2vw, 2.6rem);
+        font-size: clamp(1.7rem, 1.2rem + 2vw, 2.55rem);
       }
 
       h2 {
@@ -108,7 +108,7 @@
       }
 
       h3 {
-        font-size: clamp(1.08rem, 0.98rem + 0.45vw, 1.3rem);
+        font-size: clamp(1.05rem, 0.96rem + 0.45vw, 1.26rem);
         margin-block-end: 0.45rem;
       }
 
@@ -128,7 +128,7 @@
         position: sticky;
         top: 0;
         z-index: 50;
-        background: color-mix(in srgb, var(--bg-surface) 88%, transparent);
+        background: color-mix(in srgb, var(--bg-surface) 90%, transparent);
         backdrop-filter: blur(12px);
         border-block-end: 1px solid var(--border-subtle);
         padding-block: 0.65rem;
@@ -136,7 +136,7 @@
       }
 
       .topbar-inner {
-        max-inline-size: 1140px;
+        max-inline-size: 1180px;
         margin-inline: auto;
         display: flex;
         flex-wrap: wrap;
@@ -183,7 +183,7 @@
       }
 
       .container {
-        max-inline-size: 1140px;
+        max-inline-size: 1180px;
         margin-inline: auto;
         padding-inline: clamp(1rem, 4vw, 2.5rem);
         padding-block: 2rem 4rem;
@@ -254,21 +254,39 @@
         margin-block-end: 1.15rem;
       }
 
-      /* Filter Bar for Weekly Results */
+      /* Filter & Sort Controls */
+      .controls-panel {
+        background: var(--bg-surface);
+        border: 1px solid var(--border-subtle);
+        border-radius: var(--radius-md);
+        padding: 1rem 1.15rem;
+        margin-block-end: 1.25rem;
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+      }
+
+      .controls-row {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        gap: 0.65rem;
+      }
+
       .filter-bar {
         display: flex;
         flex-wrap: wrap;
-        gap: 0.45rem;
-        margin-block-end: 1.25rem;
+        gap: 0.4rem;
       }
 
       .filter-btn {
         border: 1px solid var(--border-subtle);
-        background: var(--bg-surface);
+        background: var(--bg-elevated);
         color: var(--text-secondary);
-        font-size: 0.84rem;
+        font-size: 0.82rem;
         font-weight: 600;
-        padding: 0.4rem 0.85rem;
+        padding: 0.36rem 0.78rem;
         border-radius: 999px;
         cursor: pointer;
         transition: all 0.15s ease;
@@ -280,10 +298,28 @@
         border-color: var(--brand-forest);
       }
 
+      .district-btn[aria-pressed="true"] {
+        background: var(--brand-terracotta);
+        color: #ffffff;
+        border-color: var(--brand-terracotta);
+      }
+
+      .sort-select {
+        font-family: inherit;
+        font-size: 0.84rem;
+        font-weight: 600;
+        padding: 0.4rem 0.75rem;
+        border-radius: 8px;
+        border: 1px solid var(--border-subtle);
+        background: var(--bg-elevated);
+        color: var(--text-primary);
+        cursor: pointer;
+      }
+
       /* Weekly Plot Cards */
       .plot-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
         gap: 1.25rem;
       }
 
@@ -291,12 +327,12 @@
         background: var(--bg-surface);
         border: 1px solid var(--border-subtle);
         border-radius: var(--radius-md);
-        padding: 1.35rem;
+        padding: 1.3rem;
         box-shadow: var(--shadow-card);
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-        gap: 1rem;
+        gap: 0.95rem;
       }
 
       .plot-card[data-status="shortlisted"] {
@@ -311,19 +347,19 @@
       .plot-meta-grid {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
-        gap: 0.65rem;
+        gap: 0.6rem;
         background: var(--bg-elevated);
-        padding: 0.85rem;
+        padding: 0.8rem;
         border-radius: 10px;
       }
 
       .plot-meta-item {
-        font-size: 0.86rem;
+        font-size: 0.85rem;
       }
 
       .plot-meta-label {
         color: var(--text-secondary);
-        font-size: 0.75rem;
+        font-size: 0.74rem;
         display: block;
       }
 
@@ -336,8 +372,23 @@
         padding: 0;
         margin: 0;
         display: grid;
-        gap: 0.35rem;
-        font-size: 0.9rem;
+        gap: 0.4rem;
+        font-size: 0.89rem;
+      }
+
+      .plot-checklist li {
+        display: flex;
+        gap: 0.45rem;
+        align-items: flex-start;
+      }
+
+      .contact-pill {
+        font-size: 0.8rem;
+        color: var(--text-secondary);
+        background: var(--bg-elevated);
+        padding: 0.35rem 0.7rem;
+        border-radius: 8px;
+        border: 1px dashed var(--border-subtle);
       }
 
       .grid-cards {
@@ -366,14 +417,14 @@
       .tag-row {
         display: flex;
         flex-wrap: wrap;
-        gap: 0.45rem;
+        gap: 0.4rem;
         align-items: center;
       }
 
       .badge {
-        font-size: 0.76rem;
+        font-size: 0.75rem;
         font-weight: 700;
-        padding: 0.22rem 0.65rem;
+        padding: 0.22rem 0.62rem;
         border-radius: 999px;
       }
 
@@ -395,7 +446,7 @@
       .th {
         color: var(--text-thai);
         font-size: 0.96em;
-        margin-block-start: 0.2rem;
+        margin-block-start: 0.18rem;
       }
 
       .btn-row {
@@ -408,7 +459,7 @@
         display: inline-flex;
         align-items: center;
         gap: 0.35rem;
-        font-size: 0.82rem;
+        font-size: 0.81rem;
         font-weight: 600;
         padding: 0.42rem 0.75rem;
         border-radius: 8px;
@@ -501,7 +552,7 @@
       }
       .muted {
         color: var(--text-secondary);
-        font-size: 0.92rem;
+        font-size: 0.9rem;
       }
       .mt-0 { margin-block-start: 0; }
       .mb-0 { margin-block-end: 0; }
@@ -531,18 +582,18 @@
     <section class="hero">
       <div class="hero-badge">
         <span>🏡</span>
-        <span class="en">Inspired by Jon Jandai &amp; Pun Pun Center for Self-Reliance</span>
-        <span class="th">แรงบันดาลใจจาก โจน จันใด และศูนย์เรียนรู้บ้านพันพรรณ อ.แม่แตง</span>
+        <span class="en">Week 1 Live Search • Updated Nov 22, 2026 • Inspired by Jon Jandai &amp; Pun Pun</span>
+        <span class="th">อัปเดตสัปดาห์ที่ 1 • 22 พ.ย. 2569 • แรงบันดาลใจจาก โจน จันใด (บ้านพันพรรณ)</span>
       </div>
       <h1>
         <div class="en">Our Chiang Mai Land Search &amp; Shortlist</div>
         <div class="th">บันทึกผลการค้นหาและคัดเลือกที่ดินรอบเชียงใหม่ (ไม่เกิน 1 ชม.)</div>
       </h1>
       <p class="en mb-0">
-        Shared weekly board for reviewing candidate plots where we can dig a year-round pond, build an earthen home (<em>Baan Din</em>), and grow an organic food forest.
+        Shared weekly board of <strong>verified live listings</strong> across Mae Taeng, Doi Saket, Mae On, Mae Wang, San Pa Tong, and Samoeng — vetted for pond digging, earthen home building (<em>Baan Din</em>), and organic food forests.
       </p>
       <p class="th mb-0">
-        หน้าสรุปแปลงที่ดินรายสัปดาห์เพื่อใช้ปรึกษาและคัดเลือกร่วมกัน สำหรับหาที่ดินขุดสระเก็บน้ำ สร้าง <strong>บ้านดิน</strong> และทำสวนเกษตรอินทรีย์พึ่งตนเอง
+        บอร์ดสรุปประกาศที่ดิน <strong>ที่ตรวจสอบแล้วว่าเปิดขายจริง</strong> ในโซนแม่แตง ดอยสะเก็ด แม่ออน แม่วาง สันป่าตอง และสะเมิง เพื่อใช้คัดเลือกแปลงที่เหมาะสำหรับขุดสระ สร้าง <strong>บ้านดิน</strong> และทำเกษตรอินทรีย์พึ่งตนเอง
       </p>
 
       <div class="spec-pills">
@@ -552,11 +603,11 @@
             <span class="th">ขนาดที่ดินเป้าหมาย</span>
           </div>
           <div class="spec-pill-value">
-            <span class="en">2 – 5 Rai</span>
-            <span class="th">2 – 5 ไร่</span>
+            <span class="en">2 – 6 Rai</span>
+            <span class="th">2 – 6 ไร่</span>
           </div>
           <div class="muted">
-            <span class="en">3,200 – 8,000 sq.m (pond + adobe house + orchard)</span>
+            <span class="en">3,200 – 9,600 sq.m (pond + adobe house + orchard)</span>
             <span class="th">ขุดสระ + สร้างบ้านดิน + สวนป่ากินได้</span>
           </div>
         </div>
@@ -580,26 +631,26 @@
             <span class="th">เอกสารสิทธิ์ที่ต้องเลือก</span>
           </div>
           <div class="spec-pill-value">
-            <span class="en">Chanote (Red Garuda)</span>
-            <span class="th">โฉนดครุฑแดง (น.ส.4 จ.)</span>
+            <span class="en">Chanote / Nor Sor 3 Gor</span>
+            <span class="th">โฉนดครุฑแดง / น.ส.3 ก.</span>
           </div>
           <div class="muted">
-            <span class="en">Full ownership (or Nor Sor 3 Gor). No Sor Por Gor!</span>
-            <span class="th">กรรมสิทธิ์สมบูรณ์ (ห้ามซื้อที่ดิน ส.ป.ก.)</span>
+            <span class="en">Zero Sor Por Gor (ส.ป.ก.) included in this board</span>
+            <span class="th">คัดที่ดิน ส.ป.ก. และ ภ.บ.ท.5 ออกทั้งหมดแล้ว</span>
           </div>
         </div>
         <div class="spec-pill">
           <div class="spec-pill-label">
-            <span class="en">#1 Priority</span>
-            <span class="th">ปัจจัยสำคัญอันดับ 1</span>
+            <span class="en">Week 1 Findings</span>
+            <span class="th">ผลการค้นหาสัปดาห์ที่ 1</span>
           </div>
           <div class="spec-pill-value">
-            <span class="en">Year-Round Water</span>
-            <span class="th">มีแหล่งน้ำตลอดปี</span>
+            <span class="en">12 Live Plots Found</span>
+            <span class="th">คัดมาแล้ว 12 แปลงจริง</span>
           </div>
           <div class="muted">
-            <span class="en">Irrigation canal (Muang Fai), stream, or borehole</span>
-            <span class="th">ติดลำเหมืองฝาย คลองน้ำ หรือเจาะบาดาลน้ำดี</span>
+            <span class="en">฿1.2M – ฿5.0M (from ฿317k/rai!)</span>
+            <span class="th">ราคา 1.2 – 5.0 ล้านบาท (เริ่มต้นไร่ละ 3.17 แสน!)</span>
           </div>
         </div>
       </div>
@@ -610,81 +661,558 @@
       <div class="section-header">
         <div>
           <h2 class="mb-0">
-            <span class="en">1. Weekly Land Search Results &amp; Shortlist</span>
-            <span class="th">1. รายการแปลงที่ดินที่สนใจ (อัปเดตรายสัปดาห์)</span>
+            <span class="en">1. Week 1 Land Search Results (Nov 22, 2026)</span>
+            <span class="th">1. ผลการค้นหาที่ดิน สัปดาห์ที่ 1 (22 พ.ย. 2569)</span>
           </h2>
           <p class="muted mt-0 mb-0">
-            <span class="en">Updated weekly with candidate plots, map pins, prices, and inspection notes.</span>
-            <span class="th">รวบรวมแปลงที่ดินที่น่าสนใจพร้อมพิกัด ราคา และบันทึกการตรวจสอบในแต่ละสัปดาห์</span>
+            <span class="en">All 12 plots below were verified live on Teedin108, DotProperty, FazWaz, and LivingInsider. Filter by district or sort by price per rai.</span>
+            <span class="th">ทั้ง 12 แปลงตรวจสอบแล้วจากประกาศจริงบน Teedin108, DotProperty, FazWaz และ LivingInsider สามารถกรองตามอำเภอหรือเรียงตามราคาต่อไร่ได้</span>
           </p>
+        </div>
+        <div class="badge badge-forest" id="visible-count">12 / 12</div>
+      </div>
+
+      <div class="controls-panel">
+        <div class="controls-row">
+          <div class="filter-bar" role="group" aria-label="Filter plots by status">
+            <button type="button" class="filter-btn" data-status-filter="all" aria-pressed="true">
+              <span class="en">All Status (12)</span><span class="th">ทุกสถานะ (12)</span>
+            </button>
+            <button type="button" class="filter-btn" data-status-filter="shortlisted" aria-pressed="false">
+              ⭐ <span class="en">Top Picks (5)</span><span class="th">ตัวเต็งเข้ารอบ (5)</span>
+            </button>
+            <button type="button" class="filter-btn" data-status-filter="visit" aria-pressed="false">
+              👀 <span class="en">To Review / Visit (7)</span><span class="th">น่าสนใจ / รอดูเพิ่ม (7)</span>
+            </button>
+          </div>
+          <label>
+            <select class="sort-select" id="sort-plots" aria-label="Sort plots">
+              <option value="default">Sort: Recommended (เรียงตามแนะนำ)</option>
+              <option value="price-rai-asc">Lowest Price / Rai (ราคาต่อไร่ถูกสุด)</option>
+              <option value="price-total-asc">Lowest Total Price (ราคารวมถูกสุด)</option>
+              <option value="size-desc">Largest Size (พื้นที่มากสุด)</option>
+            </select>
+          </label>
+        </div>
+
+        <div class="filter-bar" role="group" aria-label="Filter plots by district">
+          <button type="button" class="filter-btn district-btn" data-district-filter="all" aria-pressed="true">
+            <span class="en">All Districts</span><span class="th">ทุกอำเภอ</span>
+          </button>
+          <button type="button" class="filter-btn district-btn" data-district-filter="mae-taeng" aria-pressed="false">
+            <span class="en">Mae Taeng (4)</span><span class="th">แม่แตง (4)</span>
+          </button>
+          <button type="button" class="filter-btn district-btn" data-district-filter="doi-saket" aria-pressed="false">
+            <span class="en">Doi Saket (2)</span><span class="th">ดอยสะเก็ด (2)</span>
+          </button>
+          <button type="button" class="filter-btn district-btn" data-district-filter="mae-on" aria-pressed="false">
+            <span class="en">Mae On (2)</span><span class="th">แม่ออน (2)</span>
+          </button>
+          <button type="button" class="filter-btn district-btn" data-district-filter="mae-wang" aria-pressed="false">
+            <span class="en">Mae Wang (1)</span><span class="th">แม่วาง (1)</span>
+          </button>
+          <button type="button" class="filter-btn district-btn" data-district-filter="san-pa-tong" aria-pressed="false">
+            <span class="en">San Pa Tong (2)</span><span class="th">สันป่าตอง (2)</span>
+          </button>
+          <button type="button" class="filter-btn district-btn" data-district-filter="samoeng" aria-pressed="false">
+            <span class="en">Samoeng (1)</span><span class="th">สะเมิง (1)</span>
+          </button>
         </div>
       </div>
 
-      <div class="filter-bar" role="group" aria-label="Filter plots by status">
-        <button type="button" class="filter-btn" data-filter="all" aria-pressed="true">
-          <span class="en">All Plots</span><span class="th">ทั้งหมด</span>
-        </button>
-        <button type="button" class="filter-btn" data-filter="shortlisted" aria-pressed="false">
-          ⭐ <span class="en">Shortlisted</span><span class="th">เข้ารอบ</span>
-        </button>
-        <button type="button" class="filter-btn" data-filter="visit" aria-pressed="false">
-          👀 <span class="en">To Visit</span><span class="th">รอไปดูที่จริง</span>
-        </button>
-        <button type="button" class="filter-btn" data-filter="contacted" aria-pressed="false">
-          📞 <span class="en">Contacted</span><span class="th">ติดต่อแล้ว</span>
-        </button>
-        <button type="button" class="filter-btn" data-filter="passed" aria-pressed="false">
-          ❌ <span class="en">Passed</span><span class="th">ตัดออก</span>
-        </button>
-      </div>
-
       <div class="plot-grid" id="plot-grid">
-        <!-- SAMPLE TEMPLATE CARD (Replace or add new cards here each week) -->
-        <article class="plot-card" data-status="shortlisted">
+        <!-- PLOT 1: Mae Pong, Doi Saket -->
+        <article class="plot-card" data-status="shortlisted" data-district="doi-saket" data-price-total="1300000" data-price-rai="511811" data-size-rai="2.54" data-order="1">
           <div>
             <div class="tag-row" style="justify-content: space-between;">
-              <span class="badge badge-forest">
-                <span class="en">⭐ Sample Template (Week 1)</span>
-                <span class="th">⭐ ตัวอย่างรูปแบบการ์ดบันทึกแปลงที่ดิน</span>
-              </span>
-              <span class="muted">Mae Taeng / แม่แตง</span>
+              <span class="badge badge-forest">⭐ <span class="en">Top Pick • By Owner</span><span class="th">ตัวเต็ง #1 • เจ้าของขายเอง</span></span>
+              <span class="badge badge-amber"><span class="en">Doi Saket</span><span class="th">อ.ดอยสะเก็ด</span></span>
             </div>
-
-            <h3 style="margin-block-start: 0.65rem;">
-              <span class="en">[Example] Plot #1 — Cho Lae Valley Paddy &amp; Orchard Land</span>
-              <span class="th">[ตัวอย่าง] แปลงที่ 1 — ที่ดินวิวเขาใกล้คลองชลประทาน ต.ช่อแล อ.แม่แตง</span>
+            <h3 style="margin-block-start: 0.6rem;">
+              <span class="en">#1 — Mae Pong Fruit Orchard + 2 Fish Ponds (By Owner!)</span>
+              <span class="th">#1 — สวนผลไม้พร้อมบ่อปลา 2 บ่อ วิวภูเขา ต.แม่โป่ง (เจ้าของขายเอง)</span>
             </h3>
-
             <div class="plot-meta-grid">
               <div class="plot-meta-item">
                 <span class="plot-meta-label"><span class="en">Size</span><span class="th">เนื้อที่</span></span>
-                <span class="plot-meta-val"><span class="en">3 Rai 1 Ngan</span><span class="th">3 ไร่ 1 งาน</span></span>
+                <span class="plot-meta-val">2-2-16 <span class="en">Rai (4,064 m²)</span><span class="th">ไร่ (2.54 ไร่)</span></span>
               </div>
               <div class="plot-meta-item">
-                <span class="plot-meta-label"><span class="en">Price (Total / Per Rai)</span><span class="th">ราคารวม (เฉลี่ย/ไร่)</span></span>
-                <span class="plot-meta-val">1.3M THB (400k / ไร่)</span>
+                <span class="plot-meta-label"><span class="en">Price (Total / per Rai)</span><span class="th">ราคารวม (เฉลี่ย/ไร่)</span></span>
+                <span class="plot-meta-val">฿1.30M <span class="muted">(฿512k/ไร่)</span></span>
               </div>
               <div class="plot-meta-item">
                 <span class="plot-meta-label"><span class="en">Title Deed</span><span class="th">เอกสารสิทธิ์</span></span>
-                <span class="plot-meta-val"><span class="en">Chanote (Red Garuda)</span><span class="th">โฉนดครุฑแดง (น.ส.4 จ.)</span></span>
+                <span class="plot-meta-val">✅ <span class="en">Chanote (Nor Sor 4)</span><span class="th">โฉนด (น.ส.4)</span></span>
               </div>
               <div class="plot-meta-item">
-                <span class="plot-meta-label"><span class="en">Drive to CM City</span><span class="th">เวลาเดินทางเข้าเมือง</span></span>
-                <span class="plot-meta-val"><span class="en">~50 mins (42 km)</span><span class="th">~50 นาที (42 กม.)</span></span>
+                <span class="plot-meta-label"><span class="en">Drive to CM City</span><span class="th">เวลาเข้าเมือง</span></span>
+                <span class="plot-meta-val">~35–45 <span class="en">mins</span><span class="th">นาที</span></span>
               </div>
             </div>
-
-            <ul class="plot-checklist" style="margin-block-start: 0.85rem;">
-              <li>💧 <span class="en"><strong>Water:</strong> Borders Mae Ngad irrigation canal; water flows year-round.</span><span class="th"><strong>แหล่งน้ำ:</strong> ติดลำเหมืองชลประทานเขื่อนแม่งัด มีน้ำตลอดปี</span></li>
-              <li>🌊 <span class="en"><strong>Flood Check:</strong> Did not flood in Sep–Oct 2024.</span><span class="th"><strong>ประวัติน้ำท่วม:</strong> น้ำไม่ท่วมตอนวิกฤตเดือน ก.ย.–ต.ค. 2567</span></li>
-              <li>🛣️ <span class="en"><strong>Road &amp; Power:</strong> Public concrete road frontage; electricity 50m away.</span><span class="th"><strong>ทางเข้าและไฟฟ้า:</strong> ติดถนนสาธารณะคอนกรีต ห่างเสาไฟฟ้า 50 เมตร</span></li>
-              <li>📝 <span class="en"><strong>Our Notes:</strong> Replace this example card with our first real listings this week!</span><span class="th"><strong>บันทึกเพิ่มเติม:</strong> นี่คือการ์ดตัวอย่าง เมื่อเจอแปลงจริงสามารถส่งลิงก์มาอัปเดตลงตารางนี้ได้ทุกสัปดาห์</span></li>
+            <ul class="plot-checklist" style="margin-block-start: 0.8rem;">
+              <li><span>💧</span><div><span class="en"><strong>Water:</strong> 2 fish ponds already dug + gov't water supply connected.</span><span class="th"><strong>แหล่งน้ำ:</strong> ขุดบ่อปลาไว้แล้ว 2 บ่อ + มีน้ำประปาเข้าถึง</span></div></li>
+              <li><span>🌳</span><div><span class="en"><strong>Food Forest:</strong> Mature bananas, longans, mangoes &amp; pomelos; mountain view.</span><span class="th"><strong>สวนผลไม้:</strong> กล้วย ลำไย มะม่วง ส้มโอ พร้อมเก็บเกี่ยว วิวภูเขา</span></div></li>
+              <li><span>⚡</span><div><span class="en"><strong>Road &amp; Power:</strong> Direct road access + gov't electricity; transfer fee included, negotiable!</span><span class="th"><strong>ทางเข้า/ไฟฟ้า:</strong> ถนนและไฟฟ้าหลวงเข้าถึง รวมค่าโอนและต่อรองได้</span></div></li>
+              <li><span>⚠️</span><div><span class="en"><strong>Check:</strong> Posted Oct 2025 (live on FazWaz) — confirm still unsold &amp; dry-season pond level.</span><span class="th"><strong>สิ่งที่ต้องเช็ค:</strong> ประกาศตั้งแต่ ต.ค. 68 — เช็คว่ายังว่างไหม และเช็คระดับน้ำในบ่อช่วงหน้าแล้ง</span></div></li>
             </ul>
           </div>
-
           <div class="btn-row">
-            <a class="btn btn-primary" href="https://www.google.com/maps/search/Cho+Lae+Mae+Taeng+Chiang+Mai" target="_blank" rel="noopener">📍 <span class="en">Google Maps Pin</span><span class="th">พิกัดแผนที่</span></a>
-            <a class="btn" href="https://landsmaps.dol.go.th/" target="_blank" rel="noopener">🧭 <span class="en">Check on LandsMaps</span><span class="th">เช็คระวางโฉนด</span></a>
+            <a class="btn btn-primary" href="https://www.fazwaz.com/property-sales/land-for-sale-in-mae-pong-chiang-mai-u5762600" target="_blank" rel="noopener">🔗 <span class="en">View FazWaz Listing</span><span class="th">ดูประกาศจริง</span></a>
+            <a class="btn" href="https://www.google.com/maps/search/Wat+Thep+Nimit+Mae+Pong+Doi+Saket+Chiang+Mai" target="_blank" rel="noopener">📍 <span class="en">Area Map</span><span class="th">แผนที่โซน</span></a>
+          </div>
+        </article>
+
+        <!-- PLOT 2: Thung Pi, Mae Wang -->
+        <article class="plot-card" data-status="shortlisted" data-district="mae-wang" data-price-total="1500000" data-price-rai="455581" data-size-rai="3.29" data-order="2">
+          <div>
+            <div class="tag-row" style="justify-content: space-between;">
+              <span class="badge badge-forest">⭐ <span class="en">Top Pick • Best Farm Value</span><span class="th">ตัวเต็ง #2 • คุ้มค่าที่สุด</span></span>
+              <span class="badge badge-amber"><span class="en">Mae Wang</span><span class="th">อ.แม่วาง</span></span>
+            </div>
+            <h3 style="margin-block-start: 0.6rem;">
+              <span class="en">#2 — Thung Pi Elevated Paddy &amp; Orchard, Doi Inthanon View</span>
+              <span class="th">#2 — ที่นาและสวนลำไย ที่ดอนน้ำไม่ท่วม วิวดอยอินทนนท์ ต.ทุ่งปี้</span>
+            </h3>
+            <div class="plot-meta-grid">
+              <div class="plot-meta-item">
+                <span class="plot-meta-label"><span class="en">Size (80m × 75m)</span><span class="th">เนื้อที่ (หน้ากว้าง 80×75 ม.)</span></span>
+                <span class="plot-meta-val">3-1-17 <span class="en">Rai (5,268 m²)</span><span class="th">ไร่ (3.29 ไร่)</span></span>
+              </div>
+              <div class="plot-meta-item">
+                <span class="plot-meta-label"><span class="en">Price (Total / per Rai)</span><span class="th">ราคารวม (เฉลี่ย/ไร่)</span></span>
+                <span class="plot-meta-val">฿1.50M <span class="muted">(฿456k/ไร่)</span></span>
+              </div>
+              <div class="plot-meta-item">
+                <span class="plot-meta-label"><span class="en">Title Deed</span><span class="th">เอกสารสิทธิ์</span></span>
+                <span class="plot-meta-val">✅ <span class="en">Chanote × 2 Deeds</span><span class="th">โฉนด 2 แปลง พร้อมโอน</span></span>
+              </div>
+              <div class="plot-meta-item">
+                <span class="plot-meta-label"><span class="en">Drive to CM City</span><span class="th">เวลาเข้าเมือง</span></span>
+                <span class="plot-meta-val">~45–55 <span class="en">mins</span><span class="th">นาที</span></span>
+              </div>
+            </div>
+            <ul class="plot-checklist" style="margin-block-start: 0.8rem;">
+              <li><span>💧</span><div><span class="en"><strong>Water &amp; Elevation:</strong> Elevated non-flooding ground (<em>Thi Don</em>), abundant farm water, tap water + power.</span><span class="th"><strong>น้ำและระดับดิน:</strong> เป็นที่ดอนน้ำไม่ท่วม น้ำท่าอุดมสมบูรณ์ มีไฟฟ้า-ประปาพร้อม</span></div></li>
+              <li><span>🌾</span><div><span class="en"><strong>Land Shape:</strong> Square-ish 80m × 75m — ideal layout for pond + adobe house + food forest; Doi Inthanon sunset view!</span><span class="th"><strong>รูปแปลง:</strong> สี่เหลี่ยมสวย 80×75 ม. จัดวางโคกหนองนาและบ้านดินง่ายมาก เห็นวิวดอยอินทนนท์</span></div></li>
+              <li><span>🛣️</span><div><span class="en"><strong>Access:</strong> Paved road from Ban Kat (3 km); direct negotiation with owner. Posted Sep 2026.</span><span class="th"><strong>ทางเข้า:</strong> ถนนลาดยาง/คอนกรีตจากบ้านกาด (3 กม.) คุยต่อรองกับเจ้าของตรงได้ (ลงประกาศ ก.ย. 69)</span></div></li>
+              <li><span>⚠️</span><div><span class="en"><strong>Check:</strong> Currently rented for farming — confirm tenant vacating date &amp; exact canal access.</span><span class="th"><strong>สิ่งที่ต้องเช็ค:</strong> ปัจจุบันให้เช่าทำเกษตร — เช็คกำหนดคืนพื้นที่และระยะห่างลำเหมือง</span></div></li>
+            </ul>
+          </div>
+          <div class="btn-row">
+            <a class="btn btn-primary" href="https://www.teedin108.com/land/view/4106289/" target="_blank" rel="noopener">🔗 <span class="en">View Teedin108</span><span class="th">ดูประกาศ Teedin108</span></a>
+            <a class="btn" href="https://www.google.com/maps/search/Thung+Pi+Mae+Wang+Chiang+Mai" target="_blank" rel="noopener">📍 <span class="en">Area Map</span><span class="th">แผนที่ ต.ทุ่งปี้</span></a>
+          </div>
+        </article>
+
+        <!-- PLOT 3: Ban Pang Pao, Khi Lek, Mae Taeng -->
+        <article class="plot-card" data-status="shortlisted" data-district="mae-taeng" data-price-total="5000000" data-price-rai="996512" data-size-rai="5.02" data-order="3">
+          <div>
+            <div class="tag-row" style="justify-content: space-between;">
+              <span class="badge badge-forest">⭐ <span class="en">Top Pick • Ready Homestead</span><span class="th">ตัวเต็ง #3 • บ้านสวนพร้อมอยู่</span></span>
+              <span class="badge badge-amber"><span class="en">Mae Taeng</span><span class="th">อ.แม่แตง</span></span>
+            </div>
+            <h3 style="margin-block-start: 0.6rem;">
+              <span class="en">#3 — Mae Taeng 5-Rai Bamboo &amp; Fruit Farm + 2 Ponds + House</span>
+              <span class="th">#3 — ที่ดินสวนแม่แตง 5 ไร่ พร้อมบ้าน + บ่อน้ำ 2 สระ + ป่าไผ่ ต.ขี้เหล็ก</span>
+            </h3>
+            <div class="plot-meta-grid">
+              <div class="plot-meta-item">
+                <span class="plot-meta-label"><span class="en">Size</span><span class="th">เนื้อที่</span></span>
+                <span class="plot-meta-val">5-0-7 <span class="en">Rai (8,028 m²)</span><span class="th">ไร่ (5.02 ไร่)</span></span>
+              </div>
+              <div class="plot-meta-item">
+                <span class="plot-meta-label"><span class="en">Price (Reduced from ฿6M)</span><span class="th">ราคารวม (ลดจาก 6 ล้าน)</span></span>
+                <span class="plot-meta-val">฿5.00M <span class="muted">(฿997k/ไร่)</span></span>
+              </div>
+              <div class="plot-meta-item">
+                <span class="plot-meta-label"><span class="en">Title Deed</span><span class="th">เอกสารสิทธิ์</span></span>
+                <span class="plot-meta-val">⚠️ <span class="en">Nor Sor 3 Gor (Green)</span><span class="th">น.ส.3 ก. (ครุฑเขียว)</span></span>
+              </div>
+              <div class="plot-meta-item">
+                <span class="plot-meta-label"><span class="en">Drive to CM City</span><span class="th">เวลาเข้าเมือง</span></span>
+                <span class="plot-meta-val">~35–45 <span class="en">mins</span><span class="th">นาที</span></span>
+              </div>
+            </div>
+            <ul class="plot-checklist" style="margin-block-start: 0.8rem;">
+              <li><span>💧</span><div><span class="en"><strong>2 Existing Ponds:</strong> Heart-shaped front pond + bean-shaped pond beside the garden pavilion.</span><span class="th"><strong>บ่อน้ำ 2 สระ:</strong> สระรูปหัวใจหน้าทางเข้า + สระรูปถั่วหน้าเรือนเล็กริมน้ำ</span></div></li>
+              <li><span>🏡</span><div><span class="en"><strong>Move-In Ready:</strong> 2-bed/2-bath house + caretaker cottage + open bamboo craft workshop!</span><span class="th"><strong>สิ่งปลูกสร้างครบ:</strong> บ้าน 2 นอน 2 น้ำ + บ้านคนสวน + โรงเรือนโล่งทำเฟอร์นิเจอร์ไม้ไผ่</span></div></li>
+              <li><span>🎋</span><div><span class="en"><strong>Mature Food Forest:</strong> Golden teak, Kim Sung bamboo, mango &amp; longan trees. Boosted Nov 2026!</span><span class="th"><strong>สวนป่าสมบูรณ์:</strong> ปลูกสักทอง ไผ่กิมซุง มะม่วง ลำไย เต็มแปลง (ดันประกาศล่าสุด พ.ย. 69)</span></div></li>
+              <li><span>⚠️</span><div><span class="en"><strong>Check:</strong> Nor Sor 3 Gor deed (legal &amp; transferable) — verify boundary pins &amp; Chanote upgrade process.</span><span class="th"><strong>สิ่งที่ต้องเช็ค:</strong> เป็น น.ส.3 ก. (โอนได้ถูกกฎหมาย) — ควรตรวจสอบแนวเขตและยื่นออกโฉนดที่กรมที่ดินแม่แตง</span></div></li>
+            </ul>
+            <div class="contact-pill" style="margin-block-start: 0.7rem;">📞 087-545-6668 • Line: <code>jaibaansarnfun_1</code></div>
+          </div>
+          <div class="btn-row">
+            <a class="btn btn-primary" href="https://www.livinginsider.com/detail/land-for-sale-chiang-mai-3059654" target="_blank" rel="noopener">🔗 <span class="en">View LivingInsider</span><span class="th">ดูประกาศและรูปภาพ</span></a>
+            <a class="btn" href="https://www.google.com/maps/search/Ban+Pang+Pao+Khi+Lek+Mae+Taeng+Chiang+Mai" target="_blank" rel="noopener">📍 <span class="en">Area Map</span><span class="th">แผนที่ ต.ขี้เหล็ก</span></a>
+          </div>
+        </article>
+
+        <!-- PLOT 4: On Klang, Mae On -->
+        <article class="plot-card" data-status="shortlisted" data-district="mae-on" data-price-total="3300000" data-price-rai="543657" data-size-rai="6.07" data-order="4">
+          <div>
+            <div class="tag-row" style="justify-content: space-between;">
+              <span class="badge badge-forest">⭐ <span class="en">Top Pick • Off-Grid Value</span><span class="th">ตัวเต็ง #4 • ผืนใหญ่ราคาดี</span></span>
+              <span class="badge badge-amber"><span class="en">Mae On</span><span class="th">อ.แม่ออน</span></span>
+            </div>
+            <h3 style="margin-block-start: 0.6rem;">
+              <span class="en">#4 — On Klang 6-Rai Mountain-View Red Garuda Chanote</span>
+              <span class="th">#4 — ที่ดิน 6 ไร่ วิวเขา โฉนดครุฑแดง ไร่ละ 5.4 แสน ต.ออนกลาง</span>
+            </h3>
+            <div class="plot-meta-grid">
+              <div class="plot-meta-item">
+                <span class="plot-meta-label"><span class="en">Size (39m × 162m)</span><span class="th">เนื้อที่ (หน้ากว้าง 39×162 ม.)</span></span>
+                <span class="plot-meta-val">6-0-28 <span class="en">Rai (9,712 m²)</span><span class="th">ไร่ (6.07 ไร่)</span></span>
+              </div>
+              <div class="plot-meta-item">
+                <span class="plot-meta-label"><span class="en">Price (Negotiable)</span><span class="th">ราคารวม (ต่อรองได้)</span></span>
+                <span class="plot-meta-val">฿3.30M <span class="muted">(฿544k/ไร่)</span></span>
+              </div>
+              <div class="plot-meta-item">
+                <span class="plot-meta-label"><span class="en">Title Deed</span><span class="th">เอกสารสิทธิ์</span></span>
+                <span class="plot-meta-val">✅ <span class="en">Chanote (Red Garuda)</span><span class="th">โฉนดครุฑแดง</span></span>
+              </div>
+              <div class="plot-meta-item">
+                <span class="plot-meta-label"><span class="en">Drive to CM City</span><span class="th">เวลาเข้าเมือง</span></span>
+                <span class="plot-meta-val">~45–55 <span class="en">mins</span><span class="th">นาที</span></span>
+              </div>
+            </div>
+            <ul class="plot-checklist" style="margin-block-start: 0.8rem;">
+              <li><span>⛰️</span><div><span class="en"><strong>Pure Off-Grid Canvas:</strong> 6+ Rai mountain-view Red Garuda Chanote at ~฿544k/rai — huge budget left for solar, borehole &amp; adobe home!</span><span class="th"><strong>ผืนใหญ่คุ้มมาก:</strong> 6 ไร่กว่า โฉนดครุฑแดง เหลืองบเยอะสำหรับขุดสระ เจาะบาดาล โซลาร์เซลล์ และสร้างบ้านดิน</span></div></li>
+              <li><span>🛣️</span><div><span class="en"><strong>Road:</strong> 39m frontage on 5m-wide public dirt road, 700m off 2-lane paved road, 5 km to Hwy 1317.</span><span class="th"><strong>ทางเข้า:</strong> ติดถนนดินสาธารณะกว้าง 5 ม. ห่างถนนลาดยาง 700 ม. ห่างถนนสาย 1317 แค่ 5 กม.</span></div></li>
+              <li><span>⚠️</span><div><span class="en"><strong>Check:</strong> Off-grid currently (grid power/water ~600m away); verify groundwater depth &amp; availability (posted Jan 2026).</span><span class="th"><strong>สิ่งที่ต้องเช็ค:</strong> ไฟฟ้าและประปาห่าง ~600 ม. (เหมาะทำระบบโซลาร์+บาดาล) และเช็คความลึกน้ำบาดาล</span></div></li>
+            </ul>
+            <div class="contact-pill" style="margin-block-start: 0.7rem;">📞 094-573-5168 (คุณปิยวิทย์ / Ref 0104241)</div>
+          </div>
+          <div class="btn-row">
+            <a class="btn btn-primary" href="https://www.teedin108.com/land/view/3975920/" target="_blank" rel="noopener">🔗 <span class="en">View Teedin108</span><span class="th">ดูประกาศ Teedin108</span></a>
+            <a class="btn" href="https://www.google.com/maps/search/Wat+On+Klang+Mae+On+Chiang+Mai" target="_blank" rel="noopener">📍 <span class="en">Area Map</span><span class="th">แผนที่ ต.ออนกลาง</span></a>
+          </div>
+        </article>
+
+        <!-- PLOT 5: Cho Lae, Mae Taeng (Pun Pun Tambon!) -->
+        <article class="plot-card" data-status="shortlisted" data-district="mae-taeng" data-price-total="4990000" data-price-rai="970817" data-size-rai="5.14" data-order="5">
+          <div>
+            <div class="tag-row" style="justify-content: space-between;">
+              <span class="badge badge-forest">⭐ <span class="en">Top Pick • Pun Pun Tambon!</span><span class="th">ตัวเต็ง #5 • ตำบลเดียวกับบ้านพันพรรณ!</span></span>
+              <span class="badge badge-amber"><span class="en">Mae Taeng</span><span class="th">อ.แม่แตง</span></span>
+            </div>
+            <h3 style="margin-block-start: 0.6rem;">
+              <span class="en">#5 — Cho Lae 5.14-Rai Rice Field Bordering Public Canal</span>
+              <span class="th">#5 — ที่นา 5 ไร่ 56 ตร.ว. ติดคลองสาธารณะ ต.ช่อแล (ตรงข้ามร้านหลงนา)</span>
+            </h3>
+            <div class="plot-meta-grid">
+              <div class="plot-meta-item">
+                <span class="plot-meta-label"><span class="en">Size</span><span class="th">เนื้อที่</span></span>
+                <span class="plot-meta-val">5-0-56 <span class="en">Rai (8,224 m²)</span><span class="th">ไร่ (5.14 ไร่)</span></span>
+              </div>
+              <div class="plot-meta-item">
+                <span class="plot-meta-label"><span class="en">Price (Total / per Rai)</span><span class="th">ราคารวม (เฉลี่ย/ไร่)</span></span>
+                <span class="plot-meta-val">฿4.99M <span class="muted">(฿971k/ไร่)</span></span>
+              </div>
+              <div class="plot-meta-item">
+                <span class="plot-meta-label"><span class="en">Title Deed</span><span class="th">เอกสารสิทธิ์</span></span>
+                <span class="plot-meta-val">⚠️ <span class="en">Verify Chanote Copy</span><span class="th">เช็คสำเนาโฉนดกับผู้ขาย</span></span>
+              </div>
+              <div class="plot-meta-item">
+                <span class="plot-meta-label"><span class="en">Drive to CM City</span><span class="th">เวลาเข้าเมือง</span></span>
+                <span class="plot-meta-val">~45–55 <span class="en">mins</span><span class="th">นาที</span></span>
+              </div>
+            </div>
+            <ul class="plot-checklist" style="margin-block-start: 0.8rem;">
+              <li><span>📍</span><div><span class="en"><strong>Exact Pun Pun Zone:</strong> Right in Tambon Cho Lae opposite Lhong Na Restaurant, 200m off Rural Hwy 3038! Fresh Nov 2026 listing.</span><span class="th"><strong>โซนบ้านพันพรรณแท้ๆ:</strong> อยู่ใน ต.ช่อแล ตรงข้ามร้านหลงนา ห่างทางหลวงชนบท 3038 แค่ 200 ม. (ลงประกาศใหม่ พ.ย. 69)</span></div></li>
+              <li><span>💧</span><div><span class="en"><strong>Canal &amp; Soil:</strong> Front borders a public canal with 3m filled road access; clay paddy soil ideal for pond + adobe bricks!</span><span class="th"><strong>น้ำและดิน:</strong> ด้านหน้าติดคลองสาธารณะ มีทางถมกว้าง 3 ม. ดินนาเหมาะมากกับขุดสระและปั้นอิฐบ้านดิน</span></div></li>
+              <li><span>⚠️</span><div><span class="en"><strong>Check:</strong> Confirm Red Garuda Chanote copy, dry-season canal flow, and cost of running electricity 200m.</span><span class="th"><strong>สิ่งที่ต้องเช็ค:</strong> ขอดูหน้าโฉนดครุฑแดง เช็คน้ำคลองหน้าแล้ง และค่าลากเสาไฟ 200 ม.</span></div></li>
+            </ul>
+          </div>
+          <div class="btn-row">
+            <a class="btn btn-primary" href="https://www.dotproperty.co.th/en/ads/land-for-sale-in-cho-lae-chiang-mai_c325a278975a-afbf-d532-b8ae-248f8f89" target="_blank" rel="noopener">🔗 <span class="en">View DotProperty</span><span class="th">ดูประกาศจริง</span></a>
+            <a class="btn" href="https://www.google.com/maps/search/Lhong+Na+Restaurant+Cho+Lae+Mae+Taeng+Chiang+Mai" target="_blank" rel="noopener">📍 <span class="en">Exact Area Map</span><span class="th">แผนที่ร้านหลงนา ต.ช่อแล</span></a>
+          </div>
+        </article>
+
+        <!-- PLOT 6: Makham Luang, San Pa Tong (By Owner Woodland) -->
+        <article class="plot-card" data-status="visit" data-district="san-pa-tong" data-price-total="2500000" data-price-rai="1076426" data-size-rai="2.32" data-order="6">
+          <div>
+            <div class="tag-row" style="justify-content: space-between;">
+              <span class="badge badge-amber">👀 <span class="en">To Visit • By Owner</span><span class="th">น่าสนใจ • เจ้าของขายเอง</span></span>
+              <span class="badge badge-forest"><span class="en">San Pa Tong</span><span class="th">อ.สันป่าตอง</span></span>
+            </div>
+            <h3 style="margin-block-start: 0.6rem;">
+              <span class="en">#6 — Planted Woodland (Suan Pa) + Year-Round Canal &amp; Borehole</span>
+              <span class="th">#6 — ที่ดินสวนป่า 2.3 ไร่ หลังติดลำเหมืองน้ำตลอดปี + บาดาล (เจ้าของขายเอง)</span>
+            </h3>
+            <div class="plot-meta-grid">
+              <div class="plot-meta-item">
+                <span class="plot-meta-label"><span class="en">Size</span><span class="th">เนื้อที่</span></span>
+                <span class="plot-meta-val">2-1-29 <span class="en">Rai (3,716 m²)</span><span class="th">ไร่ (2.32 ไร่)</span></span>
+              </div>
+              <div class="plot-meta-item">
+                <span class="plot-meta-label"><span class="en">Price (Negotiable)</span><span class="th">ราคารวม (ต่อรองได้)</span></span>
+                <span class="plot-meta-val">฿2.50M <span class="muted">(฿1.08M/ไร่)</span></span>
+              </div>
+              <div class="plot-meta-item">
+                <span class="plot-meta-label"><span class="en">Title Deed</span><span class="th">เอกสารสิทธิ์</span></span>
+                <span class="plot-meta-val">⚠️ <span class="en">Verify Chanote w/ Owner</span><span class="th">เช็คโฉนดกับเจ้าของตรง</span></span>
+              </div>
+              <div class="plot-meta-item">
+                <span class="plot-meta-label"><span class="en">Drive to CM City</span><span class="th">เวลาเข้าเมือง</span></span>
+                <span class="plot-meta-val">~35–40 <span class="en">mins</span><span class="th">นาที</span></span>
+              </div>
+            </div>
+            <ul class="plot-checklist" style="margin-block-start: 0.8rem;">
+              <li><span>💧</span><div><span class="en"><strong>Triple Water:</strong> Rear borders year-round flowing canal (<em>Lam Mueang</em>) + shallow borehole + municipal tap water!</span><span class="th"><strong>น้ำ 3 ระบบ:</strong> ด้านหลังติดลำเหมืองมีน้ำไหลตลอดปี + บ่อบาดาลน้ำตื้น + น้ำประปาหมู่บ้าน</span></div></li>
+              <li><span>🌲</span><div><span class="en"><strong>Shady Forest Plot:</strong> Fenced &amp; planted with Mahogany and Acacia trees; paved asphalt road, 2 km to hospital. Posted Sep 2026.</span><span class="th"><strong>สวนป่าร่มรื่น:</strong> ล้อมรั้วแล้ว ปลูกมะฮอกกานีและกระถินเทพา ติดถนนลาดยาง ห่าง รพ.สันป่าตอง 2 กม.</span></div></li>
+              <li><span>⚠️</span><div><span class="en"><strong>Check:</strong> Next to a small housing estate (less remote); verify Chanote copy directly with owner (Khun Sommai).</span><span class="th"><strong>สิ่งที่ต้องเช็ค:</strong> ใกล้หมู่บ้านจัดสรร (ความเงียบสงบปานกลาง) และขอดูหน้าโฉนดกับเจ้าของ</span></div></li>
+            </ul>
+          </div>
+          <div class="btn-row">
+            <a class="btn btn-primary" href="https://www.teedin108.com/land/view/4107329/" target="_blank" rel="noopener">🔗 <span class="en">View Teedin108</span><span class="th">ดูประกาศ Teedin108</span></a>
+            <a class="btn" href="https://www.google.com/maps/search/18%C2%B036'17.6%22N+98%C2%B054'01.6%22E" target="_blank" rel="noopener">📍 <span class="en">Exact GPS Pin</span><span class="th">พิกัด GPS แปลงจริง</span></a>
+          </div>
+        </article>
+
+        <!-- PLOT 7: Khi Lek, Mae Taeng (Lowest / Rai) -->
+        <article class="plot-card" data-status="visit" data-district="mae-taeng" data-price-total="1900000" data-price-rai="316667" data-size-rai="6.00" data-order="7">
+          <div>
+            <div class="tag-row" style="justify-content: space-between;">
+              <span class="badge badge-amber">👀 <span class="en">Lowest ฿/Rai • Divisible</span><span class="th">ราคาต่อไร่ถูกสุด • แบ่งซื้อได้</span></span>
+              <span class="badge badge-forest"><span class="en">Mae Taeng</span><span class="th">อ.แม่แตง</span></span>
+            </div>
+            <h3 style="margin-block-start: 0.6rem;">
+              <span class="en">#7 — Khi Lek 6-Rai Longan &amp; Lemon Farm + Pond (Can Buy Part!)</span>
+              <span class="th">#7 — สวนลำไยและมะนาว 6 ไร่ พร้อมบ่อน้ำ ต.ขี้เหล็ก (แบ่งซื้อได้!)</span>
+            </h3>
+            <div class="plot-meta-grid">
+              <div class="plot-meta-item">
+                <span class="plot-meta-label"><span class="en">Size</span><span class="th">เนื้อที่</span></span>
+                <span class="plot-meta-val">6-0-0 <span class="en">Rai (9,600 m²)</span><span class="th">ไร่ (แบ่งขายได้)</span></span>
+              </div>
+              <div class="plot-meta-item">
+                <span class="plot-meta-label"><span class="en">Price (Total / per Rai)</span><span class="th">ราคารวม (เฉลี่ย/ไร่)</span></span>
+                <span class="plot-meta-val">฿1.90M <span class="muted">(฿317k/ไร่!)</span></span>
+              </div>
+              <div class="plot-meta-item">
+                <span class="plot-meta-label"><span class="en">Title Deed</span><span class="th">เอกสารสิทธิ์</span></span>
+                <span class="plot-meta-val">⚠️ <span class="en">Verify Deed Type!</span><span class="th">ต้องเช็คประเภทเอกสารสิทธิ์!</span></span>
+              </div>
+              <div class="plot-meta-item">
+                <span class="plot-meta-label"><span class="en">Drive to CM City</span><span class="th">เวลาเข้าเมือง</span></span>
+                <span class="plot-meta-val">~35–45 <span class="en">mins</span><span class="th">นาที</span></span>
+              </div>
+            </div>
+            <ul class="plot-checklist" style="margin-block-start: 0.8rem;">
+              <li><span>💧</span><div><span class="en"><strong>Pond &amp; Power:</strong> Existing pond in lower part of farm, electricity available, 200+ longan &amp; lemon trees.</span><span class="th"><strong>บ่อน้ำและไฟฟ้า:</strong> มีบ่อน้ำอยู่ด้านล่างแปลง ไฟฟ้าเข้าถึง ต้นลำไยกว่า 200 ต้น + มะนาว</span></div></li>
+              <li><span>✂️</span><div><span class="en"><strong>Flexible Size:</strong> Listing explicitly says it can be purchased as a whole (6 Rai) or in part! Updated Nov 15, 2026.</span><span class="th"><strong>ยืดหยุ่นมาก:</strong> ผู้ขายระบุว่าซื้อยกแปลง 6 ไร่ หรือแบ่งซื้อบางส่วนได้ (อัปเดตล่าสุด 15 พ.ย. 69)</span></div></li>
+              <li><span>⚠️</span><div><span class="en"><strong>CRITICAL Check:</strong> At ฿317k/rai, MUST verify whether it is Chanote / Nor Sor 3 Gor vs. Sor Por Gor before visiting!</span><span class="th"><strong>เช็คด่วนก่อนไปดู:</strong> ราคาถูกมาก (3.17 แสน/ไร่) ต้องขอดูเอกสารสิทธิ์ก่อนว่าใช่โฉนดหรือ น.ส.3 ก. (ห้ามซื้อถ้าเป็น ส.ป.ก.)</span></div></li>
+            </ul>
+          </div>
+          <div class="btn-row">
+            <a class="btn btn-primary" href="https://www.dotproperty.co.th/en/ads/land-for-sale-in-khi-lek-chiang-mai_d3573ac04cbf-de9f-a572-fd42-a245e089" target="_blank" rel="noopener">🔗 <span class="en">View DotProperty</span><span class="th">ดูประกาศจริง</span></a>
+            <a class="btn" href="https://www.google.com/maps/search/Khi+Lek+Mae+Taeng+Chiang+Mai" target="_blank" rel="noopener">📍 <span class="en">Area Map</span><span class="th">แผนที่ ต.ขี้เหล็ก</span></a>
+          </div>
+        </article>
+
+        <!-- PLOT 8: Sa-Nga Ban, Doi Saket -->
+        <article class="plot-card" data-status="visit" data-district="doi-saket" data-price-total="4950000" data-price-rai="1101836" data-size-rai="4.49" data-order="8">
+          <div>
+            <div class="tag-row" style="justify-content: space-between;">
+              <span class="badge badge-amber">👀 <span class="en">Fresh Nov 2026 • 2 Chanotes</span><span class="th">ประกาศใหม่ พ.ย. 69 • 2 โฉนด</span></span>
+              <span class="badge badge-forest"><span class="en">Doi Saket</span><span class="th">อ.ดอยสะเก็ด</span></span>
+            </div>
+            <h3 style="margin-block-start: 0.6rem;">
+              <span class="en">#8 — Sa-Nga Ban 4.49-Rai Orchard/Paddy + Large Private Pond</span>
+              <span class="th">#8 — ที่ดินสวนผสมและนา 4.49 ไร่ ติดถนนคอนกรีต พร้อมบ่อน้ำใหญ่ ต.สง่าบ้าน</span>
+            </h3>
+            <div class="plot-meta-grid">
+              <div class="plot-meta-item">
+                <span class="plot-meta-label"><span class="en">Size</span><span class="th">เนื้อที่</span></span>
+                <span class="plot-meta-val">4-1-97 <span class="en">Rai (7,188 m²)</span><span class="th">ไร่ (4.49 ไร่)</span></span>
+              </div>
+              <div class="plot-meta-item">
+                <span class="plot-meta-label"><span class="en">Price (Total / per Rai)</span><span class="th">ราคารวม (เฉลี่ย/ไร่)</span></span>
+                <span class="plot-meta-val">฿4.95M <span class="muted">(฿1.10M/ไร่)</span></span>
+              </div>
+              <div class="plot-meta-item">
+                <span class="plot-meta-label"><span class="en">Title Deed</span><span class="th">เอกสารสิทธิ์</span></span>
+                <span class="plot-meta-val">✅ <span class="en">Chanote × 2 (Red Garuda)</span><span class="th">โฉนดครุฑแดง 2 แปลง</span></span>
+              </div>
+              <div class="plot-meta-item">
+                <span class="plot-meta-label"><span class="en">Drive to CM City</span><span class="th">เวลาเข้าเมือง</span></span>
+                <span class="plot-meta-val">~25–35 <span class="en">mins</span><span class="th">นาที</span></span>
+              </div>
+            </div>
+            <ul class="plot-checklist" style="margin-block-start: 0.8rem;">
+              <li><span>💧</span><div><span class="en"><strong>Pond + Full Infra:</strong> Large private rear pond + municipal water + gov't power + fiber internet + small shed!</span><span class="th"><strong>ครบพร้อมอยู่:</strong> บ่อน้ำขนาดใหญ่ด้านหลัง + ประปา + ไฟฟ้าหลวง + อินเทอร์เน็ตไฟเบอร์ + เรือนเก็บของ</span></div></li>
+              <li><span>🛣️</span><div><span class="en"><strong>Close to Town:</strong> Long public concrete road frontage, only 7 mins to Doi Saket Fresh Market &amp; Hospital.</span><span class="th"><strong>ใกล้สิ่งอำนวยความสะดวก:</strong> หน้ากว้างติดถนนคอนกรีตสาธารณะ ห่างตลาดสดและ รพ.ดอยสะเก็ดแค่ 7 นาที</span></div></li>
+              <li><span>⚠️</span><div><span class="en"><strong>Check:</strong> Higher total price (฿4.95M) due to town proximity; verify rainy-season drainage on paddy section.</span><span class="th"><strong>สิ่งที่ต้องเช็ค:</strong> ราคาค่อนข้างสูงตามทำเลใกล้เมือง และเช็คระดับน้ำขังหน้าฝนในส่วนที่เป็นที่นา</span></div></li>
+            </ul>
+          </div>
+          <div class="btn-row">
+            <a class="btn btn-primary" href="https://www.dotproperty.co.th/en/ads/land-for-sale-in-sa-nga-ban-chiang-mai_2c3c2b866cde-1db1-fe42-9877-d4da8f89" target="_blank" rel="noopener">🔗 <span class="en">View DotProperty</span><span class="th">ดูประกาศจริง</span></a>
+            <a class="btn" href="https://www.google.com/maps/search/Sa+Nga+Ban+Doi+Saket+Chiang+Mai" target="_blank" rel="noopener">📍 <span class="en">Area Map</span><span class="th">แผนที่ ต.สง่าบ้าน</span></a>
+          </div>
+        </article>
+
+        <!-- PLOT 9: On Nuea, Mae On -->
+        <article class="plot-card" data-status="visit" data-district="mae-on" data-price-total="3800000" data-price-rai="1138577" data-size-rai="3.34" data-order="9">
+          <div>
+            <div class="tag-row" style="justify-content: space-between;">
+              <span class="badge badge-amber">👀 <span class="en">Fresh Nov 2026 • 2 Ponds</span><span class="th">ประกาศใหม่ พ.ย. 69 • มี 2 บ่อ</span></span>
+              <span class="badge badge-forest"><span class="en">Mae On</span><span class="th">อ.แม่ออน</span></span>
+            </div>
+            <h3 style="margin-block-start: 0.6rem;">
+              <span class="en">#9 — On Nuea 3.34-Rai Foothill Lot + 2 Ponds + Container House</span>
+              <span class="th">#9 — ที่ดินวิวเขา 3.34 ไร่ ติดถนนคอนกรีต พร้อมบ่อน้ำ 2 บ่อ และบ้านคอนเทนเนอร์</span>
+            </h3>
+            <div class="plot-meta-grid">
+              <div class="plot-meta-item">
+                <span class="plot-meta-label"><span class="en">Size (47m × 125m)</span><span class="th">เนื้อที่ (หน้ากว้าง 47×125 ม.)</span></span>
+                <span class="plot-meta-val">3-1-35 <span class="en">Rai (5,340 m²)</span><span class="th">ไร่ (3.34 ไร่)</span></span>
+              </div>
+              <div class="plot-meta-item">
+                <span class="plot-meta-label"><span class="en">Price (Total / per Rai)</span><span class="th">ราคารวม (เฉลี่ย/ไร่)</span></span>
+                <span class="plot-meta-val">฿3.80M <span class="muted">(฿1.14M/ไร่)</span></span>
+              </div>
+              <div class="plot-meta-item">
+                <span class="plot-meta-label"><span class="en">Title Deed</span><span class="th">เอกสารสิทธิ์</span></span>
+                <span class="plot-meta-val">✅ <span class="en">Chanote (Nor Sor 4)</span><span class="th">โฉนด (น.ส.4)</span></span>
+              </div>
+              <div class="plot-meta-item">
+                <span class="plot-meta-label"><span class="en">Drive to CM City</span><span class="th">เวลาเข้าเมือง</span></span>
+                <span class="plot-meta-val">~45–55 <span class="en">mins</span><span class="th">นาที</span></span>
+              </div>
+            </div>
+            <ul class="plot-checklist" style="margin-block-start: 0.8rem;">
+              <li><span>💧</span><div><span class="en"><strong>2 Ponds + Staging Base:</strong> 2 existing ponds + existing container house so you can live on-site while building your earthen home!</span><span class="th"><strong>2 บ่อน้ำ + ที่พักชั่วคราว:</strong> มีบ่อน้ำแล้ว 2 บ่อ และบ้านคอนเทนเนอร์ใช้อยู่ระหว่างสร้างบ้านดินได้ทันที</span></div></li>
+              <li><span>🛣️</span><div><span class="en"><strong>Clean Access:</strong> 47m concrete road frontage, gov't electricity/water + internet; 4 km to local fresh market &amp; 7-Eleven.</span><span class="th"><strong>สะดวกครบ:</strong> หน้ากว้างติดถนนคอนกรีต 47 ม. ไฟฟ้า-น้ำ-เน็ตพร้อม ห่างตลาดสด 4 กม.</span></div></li>
+              <li><span>⚠️</span><div><span class="en"><strong>Check:</strong> Test foothill soil clay ratio for adobe bricks &amp; check dry-season pond water retention.</span><span class="th"><strong>สิ่งที่ต้องเช็ค:</strong> เช็คความเหนียวของเนื้อดินแถบเชิงเขาสำหรับปั้นอิฐดินดิบ และเช็คว่าบ่อเก็บน้ำอยู่ตลอดแล้งไหม</span></div></li>
+            </ul>
+          </div>
+          <div class="btn-row">
+            <a class="btn btn-primary" href="https://www.dotproperty.co.th/en/ads/land-for-sale-in-on-nuea-chiang-mai_29d9d9fb8712-d2f1-d132-cf27-b8ee8f89" target="_blank" rel="noopener">🔗 <span class="en">View DotProperty</span><span class="th">ดูประกาศจริง</span></a>
+            <a class="btn" href="https://www.google.com/maps/search/On+Nuea+Mae+On+Chiang+Mai" target="_blank" rel="noopener">📍 <span class="en">Area Map</span><span class="th">แผนที่ ต.ออนเหนือ</span></a>
+          </div>
+        </article>
+
+        <!-- PLOT 10: Makham Luang, San Pa Tong (฿1.2M Orchard) -->
+        <article class="plot-card" data-status="visit" data-district="san-pa-tong" data-price-total="1200000" data-price-rai="421793" data-size-rai="2.85" data-order="10">
+          <div>
+            <div class="tag-row" style="justify-content: space-between;">
+              <span class="badge badge-amber">👀 <span class="en">Lowest Total Price (฿1.2M)</span><span class="th">ราคารวมถูกที่สุด (1.2 ล้าน)</span></span>
+              <span class="badge badge-forest"><span class="en">San Pa Tong</span><span class="th">อ.สันป่าตอง</span></span>
+            </div>
+            <h3 style="margin-block-start: 0.6rem;">
+              <span class="en">#10 — Makham Luang 2.85-Rai Orchard + Canal + Borehole + Sprinklers</span>
+              <span class="th">#10 — สวนลำไย 2.85 ไร่ ติดคลองสาธารณะ + บาดาล + สปริงเกลอร์ + หม้อแปลงไฟ</span>
+            </h3>
+            <div class="plot-meta-grid">
+              <div class="plot-meta-item">
+                <span class="plot-meta-label"><span class="en">Size (23m × 223m)</span><span class="th">เนื้อที่ (ทรงยาว 23×223 ม.)</span></span>
+                <span class="plot-meta-val">2-3-38 <span class="en">Rai (4,552 m²)</span><span class="th">ไร่ (2.85 ไร่)</span></span>
+              </div>
+              <div class="plot-meta-item">
+                <span class="plot-meta-label"><span class="en">Price (Total / per Rai)</span><span class="th">ราคารวม (เฉลี่ย/ไร่)</span></span>
+                <span class="plot-meta-val">฿1.20M <span class="muted">(฿422k/ไร่!)</span></span>
+              </div>
+              <div class="plot-meta-item">
+                <span class="plot-meta-label"><span class="en">Title Deed</span><span class="th">เอกสารสิทธิ์</span></span>
+                <span class="plot-meta-val">⚠️ <span class="en">Verify Chanote (Bank Loan OK)</span><span class="th">เช็คโฉนด (กู้ธนาคารได้)</span></span>
+              </div>
+              <div class="plot-meta-item">
+                <span class="plot-meta-label"><span class="en">Drive to CM City</span><span class="th">เวลาเข้าเมือง</span></span>
+                <span class="plot-meta-val">~38–45 <span class="en">mins</span><span class="th">นาที</span></span>
+              </div>
+            </div>
+            <ul class="plot-checklist" style="margin-block-start: 0.8rem;">
+              <li><span>💧</span><div><span class="en"><strong>Complete Water &amp; Power:</strong> Public canal + groundwater well + full sprinkler piping + dedicated electrical transformer + concrete road!</span><span class="th"><strong>ระบบน้ำ-ไฟเต็มรูปแบบ:</strong> ติดลำเหมืองสาธารณะ + บ่อบาดาล + ระบบสปริงเกลอร์ครบทุกต้น + หม้อแปลงไฟแยก + ถนนคอนกรีต</span></div></li>
+              <li><span>⚠️</span><div><span class="en"><strong>Check:</strong> Narrow rectangular shape (23m × 223m); ask about prior pesticide history on the 190 longan trees &amp; confirm Chanote copy.</span><span class="th"><strong>สิ่งที่ต้องเช็ค:</strong> แปลงทรงยาวแคบ (23×223 ม.) และเช็คประวัติการใช้สารเคมีในสวนลำไยก่อนปรับเป็นอินทรีย์</span></div></li>
+            </ul>
+          </div>
+          <div class="btn-row">
+            <a class="btn btn-primary" href="https://www.dotproperty.co.th/en/ads/land-for-sale-in-makhun-wan-chiang-mai_e3898ac34163-a770-cf05-ea83-cbd90092" target="_blank" rel="noopener">🔗 <span class="en">View DotProperty</span><span class="th">ดูประกาศจริง</span></a>
+            <a class="btn" href="https://www.google.com/maps/search/Makham+Luang+San+Pa+Tong+Chiang+Mai" target="_blank" rel="noopener">📍 <span class="en">Area Map</span><span class="th">แผนที่ ต.มะขามหลวง</span></a>
+          </div>
+        </article>
+
+        <!-- PLOT 11: Cho Lae, Mae Taeng (4 Rai with exact GPS) -->
+        <article class="plot-card" data-status="visit" data-district="mae-taeng" data-price-total="3990000" data-price-rai="967097" data-size-rai="4.13" data-order="11">
+          <div>
+            <div class="tag-row" style="justify-content: space-between;">
+              <span class="badge badge-amber">👀 <span class="en">Pun Pun Zone • Exact GPS</span><span class="th">โซน ต.ช่อแล • มีพิกัดตรง</span></span>
+              <span class="badge badge-forest"><span class="en">Mae Taeng</span><span class="th">อ.แม่แตง</span></span>
+            </div>
+            <h3 style="margin-block-start: 0.6rem;">
+              <span class="en">#11 — Cho Lae 4.13-Rai Land near Mae Ngad Dam &amp; Wat Ban Den</span>
+              <span class="th">#11 — ที่ดิน 4 ไร่ 50.3 ตร.ว. ย่านเมืองแกน ใกล้เขื่อนแม่งัด ต.ช่อแล</span>
+            </h3>
+            <div class="plot-meta-grid">
+              <div class="plot-meta-item">
+                <span class="plot-meta-label"><span class="en">Size (34m × 200m)</span><span class="th">เนื้อที่ (หน้ากว้าง 34×200 ม.)</span></span>
+                <span class="plot-meta-val">4-0-50 <span class="en">Rai (6,601 m²)</span><span class="th">ไร่ (4.13 ไร่)</span></span>
+              </div>
+              <div class="plot-meta-item">
+                <span class="plot-meta-label"><span class="en">Price (Total / per Rai)</span><span class="th">ราคารวม (เฉลี่ย/ไร่)</span></span>
+                <span class="plot-meta-val">฿3.99M <span class="muted">(฿967k/ไร่)</span></span>
+              </div>
+              <div class="plot-meta-item">
+                <span class="plot-meta-label"><span class="en">Title Deed</span><span class="th">เอกสารสิทธิ์</span></span>
+                <span class="plot-meta-val">⚠️ <span class="en">Verify Chanote (Bank Loan OK)</span><span class="th">เช็คโฉนด (กู้ธนาคารได้)</span></span>
+              </div>
+              <div class="plot-meta-item">
+                <span class="plot-meta-label"><span class="en">Drive to CM City</span><span class="th">เวลาเข้าเมือง</span></span>
+                <span class="plot-meta-val">~45–55 <span class="en">mins</span><span class="th">นาที</span></span>
+              </div>
+            </div>
+            <ul class="plot-checklist" style="margin-block-start: 0.8rem;">
+              <li><span>📍</span><div><span class="en"><strong>Prime Mueang Kaen Valley:</strong> In Cho Lae near Wat Ban Den, community market, and Mae Ngad Dam irrigation basin. Exact GPS listed!</span><span class="th"><strong>ทำเลดีใน ต.ช่อแล:</strong> ใกล้วัดบ้านเด่น ชุมชน ตลาดสด และเขื่อนแม่งัด พร้อมพิกัด GPS จริงในประกาศ</span></div></li>
+              <li><span>⚠️</span><div><span class="en"><strong>Check:</strong> Ask agent for Chanote photo, exact canal/water access, and flood history near Ping River / Mueang Kaen.</span><span class="th"><strong>สิ่งที่ต้องเช็ค:</strong> ขอดูหน้าโฉนด ตรวจสอบแหล่งน้ำในแปลง และประวัติน้ำท่วมบริเวณลุ่มน้ำปิง-เมืองแกน</span></div></li>
+            </ul>
+            <div class="contact-pill" style="margin-block-start: 0.7rem;">📞 089-435-0422 (บอย / Code T-142713) • Line: <code>puttisaninta</code></div>
+          </div>
+          <div class="btn-row">
+            <a class="btn btn-primary" href="https://www.teedin108.com/land/view/4051575/" target="_blank" rel="noopener">🔗 <span class="en">View Teedin108</span><span class="th">ดูประกาศ Teedin108</span></a>
+            <a class="btn" href="https://maps.google.com/?q=19.14595250,99.02029080" target="_blank" rel="noopener">📍 <span class="en">Exact GPS Pin</span><span class="th">พิกัด GPS แปลงจริง</span></a>
+          </div>
+        </article>
+
+        <!-- PLOT 12: Samoeng Tai, Samoeng -->
+        <article class="plot-card" data-status="visit" data-district="samoeng" data-price-total="4500000" data-price-rai="1071429" data-size-rai="4.20" data-order="12">
+          <div>
+            <div class="tag-row" style="justify-content: space-between;">
+              <span class="badge badge-amber">👀 <span class="en">Cool Climate • Streamfront</span><span class="th">อากาศเย็น • หลังติดลำธาร</span></span>
+              <span class="badge badge-forest"><span class="en">Samoeng</span><span class="th">อ.สะเมิง</span></span>
+            </div>
+            <h3 style="margin-block-start: 0.6rem;">
+              <span class="en">#12 — Samoeng Tai 4.2-Rai Chanote + Paved Road + Natural Stream</span>
+              <span class="th">#12 — ที่ดินสะเมิงใต้ 4.2 ไร่ หน้าติดถนนดำ หลังติดลำธารและภูเขา (โฉนด)</span>
+            </h3>
+            <div class="plot-meta-grid">
+              <div class="plot-meta-item">
+                <span class="plot-meta-label"><span class="en">Size</span><span class="th">เนื้อที่</span></span>
+                <span class="plot-meta-val">4-0-80 <span class="en">Rai (6,720 m²)</span><span class="th">ไร่ (4.20 ไร่)</span></span>
+              </div>
+              <div class="plot-meta-item">
+                <span class="plot-meta-label"><span class="en">Price (Total / per Rai)</span><span class="th">ราคารวม (เฉลี่ย/ไร่)</span></span>
+                <span class="plot-meta-val">฿4.50M <span class="muted">(฿1.07M/ไร่)</span></span>
+              </div>
+              <div class="plot-meta-item">
+                <span class="plot-meta-label"><span class="en">Title Deed</span><span class="th">เอกสารสิทธิ์</span></span>
+                <span class="plot-meta-val">✅ <span class="en">Chanote (Rare in Samoeng!)</span><span class="th">โฉนดพร้อมโอน (หายากในสะเมิง!)</span></span>
+              </div>
+              <div class="plot-meta-item">
+                <span class="plot-meta-label"><span class="en">Drive to CM City</span><span class="th">เวลาเข้าเมือง</span></span>
+                <span class="plot-meta-val">~55–65 <span class="en">mins</span><span class="th">นาที</span></span>
+              </div>
+            </div>
+            <ul class="plot-checklist" style="margin-block-start: 0.8rem;">
+              <li><span>🏞️</span><div><span class="en"><strong>Dream Highland Setting:</strong> Paved asphalt road in front, natural mountain stream &amp; hillside in back! Cool air for avocado, coffee &amp; citrus.</span><span class="th"><strong>ทำเลในฝัน:</strong> หน้าติดถนนลาดยาง หลังติดลำธารธรรมชาติและภูเขา อากาศเย็นตลอดปี เหมาะปลูกอะโวคาโด กาแฟ ส้ม</span></div></li>
+              <li><span>⚠️</span><div><span class="en"><strong>Check:</strong> Posted Jan 2025 (verify still available); inspect stream bank runoff during heavy rain; winding mountain road to city.</span><span class="th"><strong>สิ่งที่ต้องเช็ค:</strong> ประกาศตั้งแต่ ม.ค. 68 (เช็คว่ายังว่างไหม) และเช็คแนวน้ำป่าในลำธารช่วงหน้าฝน</span></div></li>
+            </ul>
+          </div>
+          <div class="btn-row">
+            <a class="btn btn-primary" href="https://www.teedin108.com/land/view/3746058/" target="_blank" rel="noopener">🔗 <span class="en">View Teedin108</span><span class="th">ดูประกาศ Teedin108</span></a>
+            <a class="btn" href="https://www.google.com/maps/search/Samoeng+Tai+Samoeng+Chiang+Mai" target="_blank" rel="noopener">📍 <span class="en">Area Map</span><span class="th">แผนที่ ต.สะเมิงใต้</span></a>
           </div>
         </article>
       </div>
@@ -989,20 +1517,56 @@
       btn.addEventListener('click', () => setLanguage(btn.getAttribute('data-set-lang'), true));
     });
 
-    // Status Filter for Weekly Plot Cards
-    const filterBtns = document.querySelectorAll('[data-filter]');
-    const plotCards = document.querySelectorAll('.plot-card[data-status]');
+    // Status + District Filtering & Sorting for Weekly Plot Cards
+    const plotGrid = document.getElementById('plot-grid');
+    const plotCards = Array.from(document.querySelectorAll('.plot-card'));
+    const statusBtns = document.querySelectorAll('[data-status-filter]');
+    const districtBtns = document.querySelectorAll('[data-district-filter]');
+    const sortSelect = document.getElementById('sort-plots');
+    const visibleCountEl = document.getElementById('visible-count');
 
-    filterBtns.forEach(btn => {
+    let activeStatus = 'all';
+    let activeDistrict = 'all';
+
+    function applyFiltersAndSort() {
+      const sortBy = sortSelect.value;
+      const sorted = [...plotCards].sort((a, b) => {
+        if (sortBy === 'price-rai-asc') return Number(a.dataset.priceRai) - Number(b.dataset.priceRai);
+        if (sortBy === 'price-total-asc') return Number(a.dataset.priceTotal) - Number(b.dataset.priceTotal);
+        if (sortBy === 'size-desc') return Number(b.dataset.sizeRai) - Number(a.dataset.sizeRai);
+        return Number(a.dataset.order) - Number(b.dataset.order);
+      });
+
+      let shown = 0;
+      sorted.forEach(card => {
+        const matchStatus = activeStatus === 'all' || card.dataset.status === activeStatus;
+        const matchDistrict = activeDistrict === 'all' || card.dataset.district === activeDistrict;
+        const isVisible = matchStatus && matchDistrict;
+        card.classList.toggle('hidden', !isVisible);
+        if (isVisible) shown++;
+        plotGrid.appendChild(card);
+      });
+
+      visibleCountEl.textContent = `${shown} / ${plotCards.length}`;
+    }
+
+    statusBtns.forEach(btn => {
       btn.addEventListener('click', () => {
-        const filter = btn.getAttribute('data-filter');
-        filterBtns.forEach(b => b.setAttribute('aria-pressed', b === btn ? 'true' : 'false'));
-        plotCards.forEach(card => {
-          const match = filter === 'all' || card.getAttribute('data-status') === filter;
-          card.classList.toggle('hidden', !match);
-        });
+        activeStatus = btn.dataset.statusFilter;
+        statusBtns.forEach(b => b.setAttribute('aria-pressed', b === btn ? 'true' : 'false'));
+        applyFiltersAndSort();
       });
     });
+
+    districtBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        activeDistrict = btn.dataset.districtFilter;
+        districtBtns.forEach(b => b.setAttribute('aria-pressed', b === btn ? 'true' : 'false'));
+        applyFiltersAndSort();
+      });
+    });
+
+    sortSelect.addEventListener('change', applyFiltersAndSort);
   </script>
 </body>
 </html>
