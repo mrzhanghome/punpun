@@ -87,7 +87,11 @@ class RateLimitError(Exception):
 def normalize_url(url: str) -> str:
     parsed = urllib_parse.urlsplit(url.strip())
     path = parsed.path.rstrip("/")
-    return f"{parsed.scheme.lower()}://{parsed.netloc.lower()}{path}"
+    q = urllib_parse.parse_qs(parsed.query)
+    keep_keys = ("fbid", "set", "story_fbid", "id")
+    kept = [(k, q[k][0]) for k in keep_keys if k in q and q[k]]
+    qs = f"?{urllib_parse.urlencode(kept)}" if kept else ""
+    return f"{parsed.scheme.lower()}://{parsed.netloc.lower()}{path}{qs}"
 
 
 def load_json(path: str) -> dict:

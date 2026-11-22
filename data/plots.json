@@ -1032,6 +1032,55 @@
       "map_label_en": "Khi Lek Map",
       "map_label_th": "แผนที่ ต.ขี้เหล็ก",
       "last_checked": "2026-11-22"
+    },
+    {
+      "id": "w1-19",
+      "week": 1,
+      "status": "visit",
+      "district": "mae-taeng",
+      "district_en": "Mae Taeng",
+      "district_th": "อ.แม่แตง",
+      "badge_en": "Facebook Post • Flood-Free Near Water",
+      "badge_th": "ประกาศ Facebook • ติดน้ำ น้ำไม่ท่วม",
+      "title_en": "Mae Taeng 1 to 1.17-Rai Longan Orchard Plots Near Water (Plots #7–9)",
+      "title_th": "ที่ดินสวนลำไยแม่แตง ติดน้ำ น้ำไม่ท่วม โฉนดพร้อมโอน (1 ไร่ – 1 ไร่ 69 ตร.ว.)",
+      "size_rai_str": "1-0-0",
+      "size_rai_num": 1.0,
+      "size_sqm": 1600,
+      "dimensions_en": "Plots 1.0–1.17 Rai",
+      "dimensions_th": "มีแปลง 1–1.17 ไร่",
+      "price_total_thb": 1200000,
+      "price_per_rai_thb": 1200000,
+      "price_note_en": "฿1.20M – ฿1.50M",
+      "price_note_th": "1.20 – 1.50 ล้านบาท",
+      "title_deed_status": "verified",
+      "title_deed_en": "Chanote (Ready to Transfer)",
+      "title_deed_th": "โฉนดพร้อมโอน",
+      "drive_mins": "~35–40",
+      "bullets": [
+        {
+          "icon": "💧",
+          "label_en": "Water & Concrete Road",
+          "text_en": "Borders water, flood-free (น้ำไม่ท่วม), village concrete road, electricity & tap water ready, 1.5 km from Route 1095.",
+          "label_th": "ติดน้ำและน้ำไม่ท่วม",
+          "text_th": "บรรยากาศดี ติดน้ำ น้ำไม่ท่วม มีต้นลำไย ถนนคอนกรีต ไฟฟ้า-ประปาพร้อม ห่างถนน 1095 แค่ 1.5 กม."
+        },
+        {
+          "icon": "📐",
+          "label_en": "3 Plot Choices",
+          "text_en": "Plot #8 (1 Rai = ฿1.20M), Plot #7 (1 Rai main road = ฿1.28M), or Plot #9 (1-0-69 Rai = ฿1.50M).",
+          "label_th": "มี 3 แปลงให้เลือก",
+          "text_th": "แปลง 8 (1 ไร่ = 1.2 ล้าน), แปลง 7 (1 ไร่ ติดถนนหลัก = 1.28 ล้าน), แปลง 9 (1-0-69 ไร่ = 1.50 ล้าน)"
+        }
+      ],
+      "contact": "📞 087-188-7285 (หนิง ศศิวรรณ)",
+      "listing_url": "https://www.facebook.com/photo/?fbid=1730920007939182&set=pcb.1730920581272458",
+      "listing_source_en": "View Facebook Post",
+      "listing_source_th": "ดูโพสต์ Facebook",
+      "map_url": "https://www.google.com/maps/search/Mae+Malai+Mae+Taeng+Chiang+Mai",
+      "map_label_en": "Mae Taeng Map",
+      "map_label_th": "แผนที่ อ.แม่แตง",
+      "last_checked": "2026-11-22"
     }
   ]
 }
