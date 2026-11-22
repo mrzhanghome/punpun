@@ -12,7 +12,7 @@
 - **Physical Priorities:**
   1. **Water:** Existing pond(s), year-round irrigation canal (*ลำเหมือง / เหมืองฝาย*), stream, or good groundwater depth.
   2. **Soil:** Clay-loam / paddy / mixed orchard soil suitable for pond lining and adobe bricks.
-  3. **Access & Flood Safety:** Legal public road (*ทางสาธารณประโยชน์*) and non-flooding (check 2024 Chiang Mai flood history).
+  3. **Access & Flood Safety:** Legal public road (*ทางสาธารณประโยชน์*) and non-flooding (check 2024 Chiang Mai / Lamphun flood history).
 
 ---
 
@@ -40,6 +40,26 @@ Priority subdistricts: **Thung Pi (ต.ทุ่งปี้)**, **Ban Kat (ต.
 - DotProperty Samoeng: `https://www.dotproperty.co.th/en/land-for-sale/chiang-mai/samoeng`
 - FazWaz Mae Wang / San Pa Tong: `https://www.fazwaz.com/land-for-sale/thailand/chiang-mai/mae-wang?order_by=price|asc`
 
+### Zone D — Lamphun (จ.ลำพูน: อ.เมืองลำพูน / อ.ป่าซาง / อ.บ้านธิ / อ.แม่ทา) [30–70 mins South/Southeast]
+Usually cheaper per rai than the Chiang Mai zones: flat irrigated longan orchards and paddy with good clay soil. Districts and approximate drive from Chiang Mai Old City:
+- **Mueang Lamphun (อ.เมืองลำพูน)** ~30–40 mins — prefer **Si Bua Ban (ต.ศรีบัวบาน)** and the eastern foothills. **Avoid Ban Klang (ต.บ้านกลาง) & Makhuea Chae (ต.มะเขือแจ้)** near the Northern Region Industrial Estate (นิคมอุตสาหกรรมภาคเหนือ) — groundwater/air contamination risk.
+- **Ban Thi (อ.บ้านธิ)** ~35–45 mins — Mae Kuang irrigation (`เขื่อนแม่กวงอุดมธารา`), foothills toward Doi Saket.
+- **Pa Sang (อ.ป่าซาง)** ~40–50 mins — **Nam Dip (ต.น้ำดิบ)**, **Makok (ต.มะกอก)**, **Tha Tum (ต.ท่าตุ้ม)**; longan orchard country.
+- **Mae Tha (อ.แม่ทา)** ~55–70 mins — *optional / edge of range*; drop any listing whose realistic drive exceeds ~70 mins.
+- **Out of range — do not search:** Li (อ.ลี้), Thung Hua Chang (อ.ทุ่งหัวช้าง), Wiang Nong Long and Ban Hong unless the user widens the drive limit. Lampang province is also out of scope.
+
+Zone D cautions (add a ⚠️ bullet on every Lamphun plot that touches one of these):
+- **Flood plains:** low land along the Ping (แม่น้ำปิง, e.g. ต.ริมปิง) and Kuang (น้ำแม่กวง) rivers flooded in 2024 — ask for flood history and look for a raised site.
+- **Industrial estate:** flag any plot within ~5 km of the Northern Region Industrial Estate.
+- **Deeds:** lots of `ส.ป.ก.` farmland in Lamphun — the standard exclusion rules apply.
+
+Portals:
+- DotProperty Lamphun: `https://www.dotproperty.co.th/en/land-for-sale/lamphun` (district pages: `/lamphun/mueang-lamphun`, `/lamphun/pa-sang`, `/lamphun/ban-thi`, `/lamphun/mae-tha`)
+- Teedin108 Lamphun: `https://www.teedin108.com/land/lamphun/`
+- FazWaz Lamphun: `https://www.fazwaz.com/land-for-sale/thailand/lamphun?order_by=price|asc`
+- LivingInsider: `https://www.livinginsider.com/land-buysell` (search `ลำพูน`, `ป่าซาง`, `บ้านธิ`)
+- Facebook group #8 (ซื้อขายที่ดินเชียงใหม่-ลำพูน) below covers Lamphun.
+
 ### Facebook (logged-in browser session — owner-direct listings, often the cheapest)
 The user keeps a logged-in Facebook session in the browser. Facebook is where most owner-direct (`เจ้าของขายเอง`) rural plots appear, but listings are messy (missing deed/price, stale posts).
 - Marketplace: `https://www.facebook.com/marketplace/chiangmai/` (Property → Land) and Marketplace search with the Thai phrases below.
@@ -65,6 +85,10 @@ The user keeps a logged-in Facebook session in the browser. Facebook is where mo
 - `ขายที่ดิน ดอยสะเก็ด แม่ออน โฉนด เจ้าของขายเอง`
 - `ขายที่ดิน แม่วาง สันป่าตอง ติดลำเหมือง โฉนด`
 - `ขายที่ดิน สวนผสม โคกหนองนา เชียงใหม่ โฉนด`
+- `ขายที่ดิน ลำพูน โฉนด เจ้าของขายเอง`
+- `ขายที่ดิน ป่าซาง สวนลำไย โฉนด`
+- `ขายที่ดิน บ้านธิ ติดลำเหมือง โฉนด`
+- `ขายสวนลำไย ลำพูน 2 ไร่ โฉนด`
 
 ---
 
@@ -121,6 +145,6 @@ Save newly discovered plots to a temporary JSON array (e.g., `/tmp/week2_plots.j
 ]
 ```
 
-Allowed `district` keys: `mae-taeng`, `doi-saket`, `mae-on`, `mae-wang`, `san-pa-tong`, `samoeng`, `phrao`.
+Allowed `district` keys: `mae-taeng`, `doi-saket`, `mae-on`, `mae-wang`, `san-pa-tong`, `samoeng`, `phrao`, `mueang-lamphun`, `pa-sang`, `ban-thi`, `mae-tha-lamphun`.
 Allowed `status` values: `shortlisted`, `visit`, `contacted`, `passed`, `sold`.
 Allowed `title_deed_status` values: `verified` (Red Chanote), `ns3g` (Nor Sor 3 Gor), `unknown` (title deed not mentioned in post — list as Unknown), `verify` (needs verification before deposit).

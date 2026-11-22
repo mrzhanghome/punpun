@@ -10,6 +10,6 @@ Current criteria live in `data/plots.json` → `criteria` (1–5 rai, ≤ ฿2.5
 
 Execute all 4 steps:
 1. Run `summary` and `check-links --mark-dead` via `uv run .agents/skills/chiangmai-land-search/scripts/land_board.py`.
-2. Perform thorough parallel research across Mae Taeng, Doi Saket/Mae On, and Mae Wang/San Pa Tong/Samoeng (skipping duplicates already in `data/plots.json`, strictly excluding Sor Por Gor / Por Bor Tor 5, and never bypassing CAPTCHAs).
+2. Perform thorough parallel research across Mae Taeng, Doi Saket/Mae On, Mae Wang/San Pa Tong/Samoeng, and Lamphun (Mueang Lamphun/Pa Sang/Ban Thi, optional Mae Tha) (skipping duplicates already in `data/plots.json`, strictly excluding Sor Por Gor / Por Bor Tor 5, and never bypassing CAPTCHAs).
 3. Merge new bilingual (EN + Thai) listings with `add-plots`, regenerate `index.html` with `render`, and verify cleanly.
 4. Commit and push to `origin main`, then present a clear summary table of sold/updated plots and new Week N findings along with the live link `https://mrzhanghome.github.io/punpun/`.

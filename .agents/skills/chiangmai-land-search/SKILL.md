@@ -16,11 +16,11 @@ description: >-
 Maintains the live bilingual (`EN` + `ภาษาไทย`) Chiang Mai self-reliance land shortlist hosted on GitHub Pages (`https://mrzhanghome.github.io/punpun/`). Each weekly run:
 1. Exports existing listings from `data/plots.json` for deduplication.
 2. Politely re-checks existing listing URLs and marks dead/sold listings.
-3. Searches Thai & English portals (including Facebook) across all 3 Chiang Mai target zones for fresh 1–5 Rai plots within the budget (currently ≤ ฿2.5M total). Plots with confirmed Chanote/NS3G or unstated (`unknown`) title deeds are included; explicit `ส.ป.ก.` / `ภ.บ.ท.5` plots are excluded.
+3. Searches Thai & English portals (including Facebook) across all 4 target zones (3 Chiang Mai zones + Lamphun) for fresh 1–5 Rai plots within the budget (currently ≤ ฿2.5M total). Plots with confirmed Chanote/NS3G or unstated (`unknown`) title deeds are included; explicit `ส.ป.ก.` / `ภ.บ.ท.5` plots are excluded.
 4. Validates, merges, and tags new plots with `Week N`, renders `index.html`, and commits/pushes to GitHub Pages.
 
 ## Dependencies
-- **Browser / Web Research Capability**: Use Antigravity's `browser` subagents (3 parallel subagents — one per zone) when running in Antigravity, or Claude Code's web/browser tools + parallel subagents when running in Claude Code.
+- **Browser / Web Research Capability**: Use Antigravity's `browser` subagents (4 parallel subagents — one per zone) when running in Antigravity, or Claude Code's web/browser tools + parallel subagents when running in Claude Code.
 - **Reference Materials**: Read [references/search_portals.md](./references/search_portals.md) for target districts, portal URLs, Thai search strings, Pun Pun homestead criteria, and the exact `plots.json` schema.
 - **CLI Helper**: [scripts/land_board.py](./scripts/land_board.py) (stdlib Python 3, invoked via `uv run`).
 
@@ -63,11 +63,12 @@ uv run .agents/skills/chiangmai-land-search/scripts/land_board.py render \
    - Listings returning `needs_browser_check` (403/429 bot filter) should be spot-checked in the browser during Step 2 (never bypass CAPTCHAs — if gated, leave status unchanged and note it).
 3. Determine `next_week = current_week + 1`.
 
-### Step 2 — Parallel Browser Research Across 3 Chiang Mai Zones
-Read [references/search_portals.md](./references/search_portals.md) and search all 3 zones in parallel (passing the list of already-known URLs from `/tmp/land_summary.json` so researchers skip duplicates):
+### Step 2 — Parallel Browser Research Across 4 Zones
+Read [references/search_portals.md](./references/search_portals.md) and search all 4 zones in parallel (passing the list of already-known URLs from `/tmp/land_summary.json` so researchers skip duplicates):
 1. **Zone A:** Mae Taeng (`อ.แม่แตง` — Cho Lae, Inthakhin, Khi Lek, Ban Pao, Mae Ho Phra)
 2. **Zone B:** Doi Saket & Mae On (`อ.ดอยสะเก็ด`, `อ.แม่ออน`)
 3. **Zone C:** Mae Wang, San Pa Tong & Samoeng (`อ.แม่วาง`, `อ.สันป่าตอง`, `อ.สะเมิง`)
+4. **Zone D:** Lamphun — Mueang Lamphun, Pa Sang, Ban Thi, optional Mae Tha (`อ.เมืองลำพูน`, `อ.ป่าซาง`, `อ.บ้านธิ`, `อ.แม่ทา`); avoid plots near the Northern Region Industrial Estate and low Ping/Kuang floodplain land (see Zone D cautions in the reference). Lampang and far-south Lamphun (Li, Thung Hua Chang) are out of scope.
 
 Sources: Teedin108, DotProperty, FazWaz, LivingInsider **and Facebook** (Marketplace + group/post search through the user's logged-in browser session — follow the read-only Facebook rules in `references/search_portals.md`; use `listing_source_en: "View Facebook Post"` and the post permalink as `listing_url`).
 

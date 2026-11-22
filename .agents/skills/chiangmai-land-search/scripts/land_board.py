@@ -38,6 +38,11 @@ VALID_DISTRICTS = {
     "san-pa-tong": ("San Pa Tong", "อ.สันป่าตอง"),
     "samoeng": ("Samoeng", "อ.สะเมิง"),
     "phrao": ("Phrao", "อ.พร้าว"),
+    # Zone D — Lamphun province (names carry the province so badges aren't mistaken for Chiang Mai)
+    "mueang-lamphun": ("Mueang Lamphun", "อ.เมืองลำพูน"),
+    "pa-sang": ("Pa Sang (Lamphun)", "อ.ป่าซาง จ.ลำพูน"),
+    "ban-thi": ("Ban Thi (Lamphun)", "อ.บ้านธิ จ.ลำพูน"),
+    "mae-tha-lamphun": ("Mae Tha (Lamphun)", "อ.แม่ทา จ.ลำพูน"),
 }
 FORBIDDEN_DEED_PATTERNS = (
     r"ส\.ป\.ก",

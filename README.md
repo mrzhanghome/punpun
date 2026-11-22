@@ -7,7 +7,7 @@ Bilingual (English + ภาษาไทย) weekly land shortlist and evaluation
 
 ## Structure
 1. **Thai Land Title Deeds: What to Buy vs. What to Avoid** (`Chanote` vs `Nor Sor 3 Gor` vs `Sor Por Gor 4-01`).
-2. **Top 5 Target Areas Within ~1 Hour of Chiang Mai** (Mae Taeng, Doi Saket/Mae On, San Pa Tong/Mae Wang, Samoeng, Phrao).
+2. **Top 6 Target Areas Within ~1 Hour of Chiang Mai** (Mae Taeng, Doi Saket/Mae On, San Pa Tong/Mae Wang, Samoeng, Phrao, Lamphun).
 3. **Field Questions for Sellers, Neighbors & Village Headmen** (Water, 2024 Flood History, Soil for Adobe Bricks, Public Road Frontage).
 4. **Weekly Land Search Results** — Backed by `data/plots.json`, filterable by status, district, and week, and sortable by price per rai or size.
 
